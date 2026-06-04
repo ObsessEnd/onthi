@@ -51,93 +51,182 @@
       </div>
     </header>
 
-    <!-- Stats Section -->
-    <div class="stats-container">
-      <div class="stat-card" style="--accent-color: var(--primary);">
-        <span class="stat-lbl">Tiến Độ</span>
-        <div class="stat-val" id="stat-progress">0%</div>
+    <!-- Tab Navigation -->
+    <div class="tab-bar">
+      <button class="tab-btn active" id="tab-quiz-btn">📝 Trắc Nghiệm</button>
+      <button class="tab-btn" id="tab-uml-btn">📊 Tự Luận UML</button>
+    </div>
+
+    <!-- Quiz Mode Container -->
+    <div class="quiz-mode-container" id="quiz-mode-container" style="display: contents;">
+      <!-- Stats Section -->
+      <div class="stats-container">
+        <div class="stat-card" style="--accent-color: var(--primary);">
+          <span class="stat-lbl">Tiến Độ</span>
+          <div class="stat-val" id="stat-progress">0%</div>
+        </div>
+        <div class="stat-card" style="--accent-color: var(--success);">
+          <span class="stat-lbl">Trả Lời Đúng</span>
+          <div class="stat-val" style="color: var(--success);" id="stat-correct">0</div>
+        </div>
+        <div class="stat-card" style="--accent-color: var(--error);">
+          <span class="stat-lbl">Trả Lời Sai</span>
+          <div class="stat-val" style="color: var(--error);" id="stat-incorrect">0</div>
+        </div>
+        <div class="stat-card" style="--accent-color: var(--warning);">
+          <span class="stat-lbl">Đã Đánh Dấu</span>
+          <div class="stat-val" style="color: var(--warning);" id="stat-bookmarked">0</div>
+        </div>
       </div>
-      <div class="stat-card" style="--accent-color: var(--success);">
-        <span class="stat-lbl">Trả Lời Đúng</span>
-        <div class="stat-val" style="color: var(--success);" id="stat-correct">0</div>
+
+      <!-- Progress Bar -->
+      <div class="progress-bar-container">
+        <div class="progress-meta">
+          <span>Tiến trình học tập</span>
+          <span id="progress-text">0 / 55 câu</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
       </div>
-      <div class="stat-card" style="--accent-color: var(--error);">
-        <span class="stat-lbl">Trả Lời Sai</span>
-        <div class="stat-val" style="color: var(--error);" id="stat-incorrect">0</div>
+
+      <!-- Left side: Question Content -->
+      <div class="quiz-view">
+        <div class="question-card" id="question-card">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Bottom Controls -->
+        <div class="nav-actions">
+          <button class="btn" id="prev-btn" disabled>
+            ← Câu Trước
+          </button>
+          <button class="btn btn-warning" id="bookmark-btn" title="Đánh dấu câu hỏi này">
+            ★ Đánh Dấu
+          </button>
+          <button class="btn btn-primary" id="next-btn">
+            Câu Tiếp Theo →
+          </button>
+        </div>
       </div>
-      <div class="stat-card" style="--accent-color: var(--warning);">
-        <span class="stat-lbl">Đã Đánh Dấu</span>
-        <div class="stat-val" style="color: var(--warning);" id="stat-bookmarked">0</div>
+
+      <!-- Right side: Sidebar (Desktop Map) & Settings -->
+      <div class="sidebar" id="sidebar-panel">
+        <div class="sidebar-title">
+          <span>Bản Đồ Câu Hỏi</span>
+          <select class="filter-select" id="filter-select">
+            <option value="all">Tất cả</option>
+            <option value="unanswered">Chưa làm</option>
+            <option value="answered">Đã làm</option>
+            <option value="correct">Trả lời đúng</option>
+            <option value="incorrect">Trả lời sai</option>
+            <option value="bookmarked">Đã đánh dấu</option>
+          </select>
+        </div>
+
+        <div class="question-grid" id="question-grid">
+          <!-- Grid cells rendered dynamically -->
+        </div>
+
+        <!-- Settings Panel inside Sidebar -->
+        <div class="settings-panel">
+          <button class="btn" id="reset-btn"
+            style="width: 100%; justify-content: center; border-color: var(--error); color: var(--error);">
+            🔄 Làm Lại Từ Đầu
+          </button>
+        </div>
+      </div>
+
+      <!-- Shortcuts Guide -->
+      <div class="shortcuts-guide">
+        <span>Phím tắt:</span>
+        <span>Chọn đáp án: <span class="shortcut-key">A</span> / <span class="shortcut-key">B</span> / <span
+            class="shortcut-key">C</span> / <span class="shortcut-key">D</span> (hoặc <span
+            class="shortcut-key">1</span>-<span class="shortcut-key">4</span>)</span>
+        <span>Di chuyển: <span class="shortcut-key">←</span> / <span class="shortcut-key">→</span></span>
+        <span>Đánh dấu: <span class="shortcut-key">M</span></span>
+        <span>Làm lại: <span class="shortcut-key">R</span></span>
       </div>
     </div>
 
-    <!-- Progress Bar -->
-    <div class="progress-bar-container">
-      <div class="progress-meta">
-        <span>Tiến trình học tập</span>
-        <span id="progress-text">0 / 55 câu</span>
+    <!-- UML Mode Container -->
+    <div class="uml-mode-container" id="uml-mode-container" style="display: none; grid-column: span 2;">
+      <!-- Sidebar listing exercises -->
+      <div class="uml-sidebar">
+        <div class="uml-sidebar-section">
+          <h3>Sơ đồ Use Case</h3>
+          <button class="uml-exercise-btn active" onclick="selectUmlExercise(0)">Bài 1: QL Thư Viện 📚</button>
+          <button class="uml-exercise-btn" onclick="selectUmlExercise(1)">Bài 2: Bán Hàng Online 🛒</button>
+        </div>
+        <div class="uml-sidebar-section" style="margin-top: 20px;">
+          <h3>Sơ đồ Tuần tự</h3>
+          <button class="uml-exercise-btn" onclick="selectUmlExercise(2)">Bài 3: Đăng Nhập 🔑</button>
+          <button class="uml-exercise-btn" onclick="selectUmlExercise(3)">Bài 4: Đặt Hàng & TT 💳</button>
+        </div>
       </div>
-      <div class="progress-track">
-        <div class="progress-fill" id="progress-fill"></div>
+      
+      <!-- Workspace containing prompt, editor, renderer and reference answer -->
+      <div class="uml-workspace">
+        <div class="uml-card prompt-card">
+          <h2 id="uml-title">Bài tập vẽ Use Case: Hệ thống Quản lý Thư viện</h2>
+          <div id="uml-description" class="uml-desc-content">
+            <!-- Exercise prompt description -->
+          </div>
+        </div>
+        
+        <div class="uml-workspace-columns">
+          <!-- Live Editor & Preview -->
+          <div class="uml-column">
+            <div class="uml-card">
+              <div class="card-header">
+                <h3>Trình soạn thảo Mermaid UML 💻</h3>
+                <span class="badge" style="background: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 11px;">Live Preview</span>
+              </div>
+              <textarea id="uml-editor" class="uml-textarea" placeholder="Nhập mã vẽ sơ đồ Mermaid của bạn ở đây..."></textarea>
+              <div class="editor-help">
+                <strong>Mẹo:</strong> Sử dụng cú pháp Mermaid. Nhấp vào nút "Xem Đáp Án Mẫu" để học cú pháp tham khảo.
+              </div>
+            </div>
+            
+            <div class="uml-card" style="margin-top: 20px;">
+              <div class="card-header">
+                <h3>Bản vẽ của bạn 🎨</h3>
+              </div>
+              <div class="uml-render-area" id="uml-user-render">
+                <!-- User's live-rendered diagram -->
+              </div>
+            </div>
+          </div>
+          
+          <!-- Hướng dẫn & Đáp án mẫu -->
+          <div class="uml-column">
+            <div class="uml-card">
+              <div class="card-header">
+                <h3>Phân tích & Đáp án mẫu 🎯</h3>
+                <button class="btn btn-primary btn-sm" id="uml-solution-toggle-btn" onclick="toggleUmlSolution()">
+                  Xem Đáp Án Mẫu
+                </button>
+              </div>
+              
+              <div id="uml-solution-box" class="uml-solution-box" style="display: none;">
+                <div class="analysis-section">
+                  <h4>Hướng dẫn phân tích thiết kế:</h4>
+                  <div id="uml-analysis-guide">
+                    <!-- Detailed analysis guide -->
+                  </div>
+                </div>
+                
+                <div class="solution-diagram-section" style="margin-top: 20px;">
+                  <h4>Sơ đồ đáp án mẫu:</h4>
+                  <div class="uml-render-area" id="uml-model-render">
+                    <!-- Model-rendered diagram -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- Left side: Question Content -->
-    <div class="quiz-view">
-      <div class="question-card" id="question-card">
-        <!-- Rendered dynamically -->
-      </div>
-
-      <!-- Bottom Controls -->
-      <div class="nav-actions">
-        <button class="btn" id="prev-btn" disabled>
-          ← Câu Trước
-        </button>
-        <button class="btn btn-warning" id="bookmark-btn" title="Đánh dấu câu hỏi này">
-          ★ Đánh Dấu
-        </button>
-        <button class="btn btn-primary" id="next-btn">
-          Câu Tiếp Theo →
-        </button>
-      </div>
-    </div>
-
-    <!-- Right side: Sidebar (Desktop Map) & Settings -->
-    <div class="sidebar" id="sidebar-panel">
-      <div class="sidebar-title">
-        <span>Bản Đồ Câu Hỏi</span>
-        <select class="filter-select" id="filter-select">
-          <option value="all">Tất cả</option>
-          <option value="unanswered">Chưa làm</option>
-          <option value="answered">Đã làm</option>
-          <option value="correct">Trả lời đúng</option>
-          <option value="incorrect">Trả lời sai</option>
-          <option value="bookmarked">Đã đánh dấu</option>
-        </select>
-      </div>
-
-      <div class="question-grid" id="question-grid">
-        <!-- Grid cells rendered dynamically -->
-      </div>
-
-      <!-- Settings Panel inside Sidebar -->
-      <div class="settings-panel">
-        <button class="btn" id="reset-btn"
-          style="width: 100%; justify-content: center; border-color: var(--error); color: var(--error);">
-          🔄 Làm Lại Từ Đầu
-        </button>
-      </div>
-    </div>
-
-    <!-- Shortcuts Guide -->
-    <div class="shortcuts-guide">
-      <span>Phím tắt:</span>
-      <span>Chọn đáp án: <span class="shortcut-key">A</span> / <span class="shortcut-key">B</span> / <span
-          class="shortcut-key">C</span> / <span class="shortcut-key">D</span> (hoặc <span
-          class="shortcut-key">1</span>-<span class="shortcut-key">4</span>)</span>
-      <span>Di chuyển: <span class="shortcut-key">←</span> / <span class="shortcut-key">→</span></span>
-      <span>Đánh dấu: <span class="shortcut-key">M</span></span>
-      <span>Làm lại: <span class="shortcut-key">R</span></span>
     </div>
 
   </div>
@@ -147,6 +236,9 @@
 
   <!-- External Script files -->
   <script src="questions.js"></script>
+  <!-- Load Mermaid Library for Live Rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="uml.js"></script>
   <script src="app.js"></script>
 </body>
 
