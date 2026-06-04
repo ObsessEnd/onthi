@@ -523,6 +523,16 @@ header {
   background: var(--warning-bg);
 }
 
+.btn-reset {
+  background: transparent;
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.btn-reset:hover:not(:disabled) {
+  background: var(--error-bg);
+}
+
 .btn-icon-only {
   padding: 12px;
   border-radius: var(--radius-md);
