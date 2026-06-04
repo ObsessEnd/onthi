@@ -21,6 +21,7 @@ let consecutiveIncorrectCount = 0;
 let consecutiveCorrectCount = 0;
 let logoClicks = 0;
 let proctorTimer = null;
+let isTrollDisabled = false; // State to disable all trolls & easter eggs
 
 // ----------------------------------------------------
 // LOCAL STORAGE KEYS
@@ -33,7 +34,8 @@ const KEYS = {
   SHUFFLE_Q: STORAGE_PREFIX + "shuffle_q",
   SHUFFLE_O: STORAGE_PREFIX + "shuffle_o",
   CURRENT_INDEX: STORAGE_PREFIX + "current_index",
-  SHUFFLED_STATE: STORAGE_PREFIX + "shuffled_state"
+  SHUFFLED_STATE: STORAGE_PREFIX + "shuffled_state",
+  TROLL_DISABLED: STORAGE_PREFIX + "troll_disabled"
 };
 
 // ----------------------------------------------------
@@ -75,6 +77,9 @@ function loadState() {
   } else {
     currentIndex = 0;
   }
+
+  // 4. Serious study mode (trolls disabled)
+  isTrollDisabled = localStorage.getItem(KEYS.TROLL_DISABLED) === "true";
 }
 
 // Initialize questions list based on shuffle and options settings
@@ -310,11 +315,11 @@ function renderQuestionCard() {
   const answer = userAnswers[q.id];
   const isAnswered = !!answer;
   
-  // Clear and start strict proctor timer
+  // Clear and start strict proctor timer (if trolls not disabled)
   if (proctorTimer) {
     clearTimeout(proctorTimer);
   }
-  if (!isAnswered) {
+  if (!isTrollDisabled && !isAnswered) {
     proctorTimer = setTimeout(triggerStrictProctor, 30000);
   }
 
@@ -346,8 +351,8 @@ function renderQuestionCard() {
 
   // Construct Options HTML
   let optionsHTML = "";
-  // 2% chance per question that one of the buttons runs away/trolls (only if not answered yet)
-  const runAwayIndex = (!isAnswered && Math.random() < 0.02) ? Math.floor(Math.random() * q.options.length) : -1;
+  // 2% chance per question that one of the buttons runs away/trolls (only if not answered yet and trolls not disabled)
+  const runAwayIndex = (!isTrollDisabled && !isAnswered && Math.random() < 0.02) ? Math.floor(Math.random() * q.options.length) : -1;
 
   q.options.forEach((opt, idx) => {
     // Map display badge label (a, b, c, d)
@@ -447,8 +452,8 @@ function selectAnswer(questionId, selectedKey, bypassCheck = false) {
     clearTimeout(proctorTimer);
   }
 
-  // 5% chance of Confidence Checker dialog (if not bypassed and question is not answered yet)
-  if (!bypassCheck && Math.random() < 0.05) {
+  // 5% chance of Confidence Checker dialog (if not bypassed and question is not answered yet and trolls not disabled)
+  if (!isTrollDisabled && !bypassCheck && Math.random() < 0.05) {
     showConfidenceCheck(questionId, selectedKey, (finalKey) => {
       selectAnswer(questionId, finalKey, true);
     });
@@ -465,6 +470,11 @@ function selectAnswer(questionId, selectedKey, bypassCheck = false) {
   renderQuestionCard();
   renderStats();
   renderGrid();
+
+  if (isTrollDisabled) {
+    playFeedbackSound(isCorrect);
+    return; // Skip streak checking and supernatural events
+  }
 
   if (isCorrect) {
     consecutiveIncorrectCount = 0;
@@ -1212,6 +1222,42 @@ window.addEventListener("DOMContentLoaded", () => {
         } else {
           showNotification("Hacker Mode Deactivated 🔴");
         }
+      }
+    });
+  }
+
+  // Secret 3-click trigger on brand-icon to toggle Serious Study Mode
+  let iconClicks = 0;
+  const brandIcon = document.querySelector(".brand-icon");
+  if (brandIcon) {
+    brandIcon.addEventListener("click", (e) => {
+      e.stopPropagation(); // Avoid triggering logo click theme change
+      iconClicks++;
+      if (iconClicks >= 3) {
+        iconClicks = 0;
+        isTrollDisabled = !isTrollDisabled;
+        localStorage.setItem(KEYS.TROLL_DISABLED, isTrollDisabled.toString());
+        playBeepSound();
+        if (isTrollDisabled) {
+          // Clear any active proctor timer
+          if (proctorTimer) {
+            clearTimeout(proctorTimer);
+            const proctor = document.querySelector(".strict-proctor");
+            if (proctor) proctor.remove();
+          }
+          showNotification("Chế độ Học Tập Nghiêm Túc đã kích hoạt! 📖 (Đã tắt Easter Eggs & Trolls)");
+        } else {
+          showNotification("Chế độ Học Tập Vui Vẻ đã kích hoạt! 🎉 (Đã bật lại Easter Eggs & Trolls)");
+          // Restart proctor timer if current question is unanswered
+          const filtered = getFilteredQuestions();
+          if (filtered.length > 0 && currentIndex < filtered.length) {
+            const q = filtered[currentIndex];
+            if (!userAnswers[q.id]) {
+              proctorTimer = setTimeout(triggerStrictProctor, 30000);
+            }
+          }
+        }
+        renderQuestionCard(); // Re-render to clear runaway buttons if active
       }
     });
   }
