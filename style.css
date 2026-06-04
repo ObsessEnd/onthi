@@ -843,6 +843,13 @@ input:checked + .slider:before {
   .shortcuts-guide {
     display: none; /* Hide shortcut guides on mobile */
   }
+  .easter-title {
+    font-size: 2.2rem;
+  }
+  .easter-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
 }
 
 /* ====================================================
