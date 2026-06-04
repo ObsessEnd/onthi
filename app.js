@@ -354,8 +354,13 @@ function renderQuestionCard() {
 
   // Construct Options HTML
   let optionsHTML = "";
-  // 2% chance per question that one of the buttons runs away/trolls (only if not answered yet and trolls not disabled)
-  const runAwayIndex = (!isTrollDisabled && !isAnswered && Math.random() < 0.02) ? Math.floor(Math.random() * q.options.length) : -1;
+  // 0.5% chance per question that one of the buttons runs away/trolls (only if not answered yet and trolls not disabled)
+  const runAwayIndex = (!isTrollDisabled && !isAnswered && Math.random() < 0.005) ? Math.floor(Math.random() * q.options.length) : -1;
+
+  // 1.5% chance per question that a ghost appears saying "Chọn nhanh đê!" (only if not answered yet and trolls not disabled)
+  if (!isTrollDisabled && !isAnswered && Math.random() < 0.015) {
+    setTimeout(triggerChooseQuicklyGhost, 800);
+  }
 
   q.options.forEach((opt, idx) => {
     // Map display badge label (a, b, c, d)
@@ -497,9 +502,9 @@ function selectAnswer(questionId, selectedKey, bypassCheck = false) {
     }
   }
 
-  // 3% chance to trigger a random supernatural event (shaking screen glitch or force reset prank)
+  // 0.5% chance to trigger a random supernatural event (shaking screen glitch or force reset prank)
   const randomRoll = Math.random();
-  if (randomRoll < 0.03) {
+  if (randomRoll < 0.005) {
     setTimeout(() => {
       if (Math.random() < 0.5) {
         triggerGlitchEvent();
@@ -1207,27 +1212,7 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("reset-btn").addEventListener("click", resetQuiz);
   document.getElementById("filter-select").addEventListener("change", handleFilterChange);
 
-  // Brand Logo clicks (Hacker theme trigger)
-  const brandLogo = document.getElementById("brand-logo");
-  if (brandLogo) {
-    brandLogo.addEventListener("click", () => {
-      logoClicks++;
-      if (logoClicks >= 5) {
-        logoClicks = 0;
-        const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
-        const newTheme = currentTheme === "hacker" ? "dark" : "hacker";
-        document.documentElement.setAttribute("data-theme", newTheme);
-        localStorage.setItem(KEYS.THEME, newTheme);
-        updateThemeIcon(newTheme);
-        playBeepSound();
-        if (newTheme === "hacker") {
-          showNotification("Hacker Mode Activated 🟢 (Click logo 5 times to exit)");
-        } else {
-          showNotification("Hacker Mode Deactivated 🔴");
-        }
-      }
-    });
-  }
+  // Hacker theme trigger removed
 
   // Secret 3-click trigger on brand-icon to toggle Serious Study Mode
   let iconClicks = 0;
@@ -1272,3 +1257,76 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("drawer-toggle-btn").addEventListener("click", openMobileDrawer);
   document.getElementById("sidebar-overlay").addEventListener("click", closeMobileDrawer);
 });
+
+// Random Spooky Troll Event: Ghost appearing and telling user to choose quickly
+function triggerChooseQuicklyGhost() {
+  if (document.querySelector(".quickly-ghost") || isTrollDisabled) return;
+
+  // Sound feedback (subtle spooky beep/wail)
+  try {
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(880, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(440, audioCtx.currentTime + 0.5);
+    gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.5);
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.5);
+  } catch (e) {}
+
+  const ghost = document.createElement("div");
+  ghost.className = "quickly-ghost";
+  Object.assign(ghost.style, {
+    position: "fixed",
+    bottom: "-150px",
+    right: "32px",
+    zIndex: "99999",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    transition: "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+    pointerEvents: "none"
+  });
+
+  ghost.innerHTML = `
+    <div style="background: rgba(15, 23, 42, 0.95); border: 1px solid var(--border); padding: 8px 12px; border-radius: 12px; font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.35); position: relative; text-align: center; white-space: nowrap; animation: floatBubble 1.5s infinite ease-in-out alternate;">
+      Chọn nhanh đê! ⚡
+      <div style="position: absolute; bottom: -6px; right: 24px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid rgba(15, 23, 42, 0.95);"></div>
+    </div>
+    <div style="font-size: 64px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3)); animation: hoverGhost 2s infinite ease-in-out alternate;">👻</div>
+  `;
+
+  // Add bubble floating animations to document style if not exists
+  if (!document.getElementById("ghost-animations")) {
+    const style = document.createElement("style");
+    style.id = "ghost-animations";
+    style.innerHTML = `
+      @keyframes floatBubble {
+        from { transform: translateY(0); }
+        to { transform: translateY(-4px); }
+      }
+      @keyframes hoverGhost {
+        from { transform: translateY(0) scale(1); }
+        to { transform: translateY(-8px) scale(0.95); }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  document.body.appendChild(ghost);
+
+  // Animate in (slide up)
+  setTimeout(() => {
+    ghost.style.transform = "translateY(-180px)";
+  }, 50);
+
+  // Animate out (slide down) and remove
+  setTimeout(() => {
+    ghost.style.transform = "translateY(0)";
+    setTimeout(() => ghost.remove(), 400);
+  }, 2800);
+}
