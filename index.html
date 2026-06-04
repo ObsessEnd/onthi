@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ôn Thi Trắc Nghiệm - Thiết Kế & Hiện Thực Phần Mềm</title>
+  
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header>
+      <div class="brand" id="brand-logo" style="cursor: pointer;">
+        <div class="brand-icon">✓</div>
+        <div class="brand-text">
+          <h1>Ôn Thi Trắc Nghiệm</h1>
+          <p>Thiết Kế & Hiện Thực Phần Mềm</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <!-- Mobile Quiz Map Button -->
+        <button class="btn mobile-drawer-btn" id="drawer-toggle-btn">
+          <span style="font-size: 18px;">☰</span> Lưới Câu Hỏi
+        </button>
+        <!-- Theme Toggle -->
+        <button class="btn btn-icon-only" id="theme-toggle-btn" title="Đổi giao diện">
+          <span id="theme-icon">☀</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Stats Section -->
+    <div class="stats-container">
+      <div class="stat-card" style="--accent-color: var(--primary);">
+        <span class="stat-lbl">Tiến Độ</span>
+        <div class="stat-val" id="stat-progress">0%</div>
+      </div>
+      <div class="stat-card" style="--accent-color: var(--success);">
+        <span class="stat-lbl">Trả Lời Đúng</span>
+        <div class="stat-val" style="color: var(--success);" id="stat-correct">0</div>
+      </div>
+      <div class="stat-card" style="--accent-color: var(--error);">
+        <span class="stat-lbl">Trả Lời Sai</span>
+        <div class="stat-val" style="color: var(--error);" id="stat-incorrect">0</div>
+      </div>
+      <div class="stat-card" style="--accent-color: var(--warning);">
+        <span class="stat-lbl">Đã Đánh Dấu</span>
+        <div class="stat-val" style="color: var(--warning);" id="stat-bookmarked">0</div>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+      <div class="progress-meta">
+        <span>Tiến trình học tập</span>
+        <span id="progress-text">0 / 55 câu</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Left side: Question Content -->
+    <div class="quiz-view">
+      <div class="question-card" id="question-card">
+        <!-- Rendered dynamically -->
+      </div>
+      
+      <!-- Bottom Controls -->
+      <div class="nav-actions">
+        <button class="btn" id="prev-btn" disabled>
+          ← Câu Trước
+        </button>
+        <button class="btn btn-warning" id="bookmark-btn" title="Đánh dấu câu hỏi này">
+          ★ Đánh Dấu
+        </button>
+        <button class="btn btn-primary" id="next-btn">
+          Câu Tiếp Theo →
+        </button>
+      </div>
+    </div>
+
+    <!-- Right side: Sidebar (Desktop Map) & Settings -->
+    <div class="sidebar" id="sidebar-panel">
+      <div class="sidebar-title">
+        <span>Bản Đồ Câu Hỏi</span>
+        <select class="filter-select" id="filter-select">
+          <option value="all">Tất cả</option>
+          <option value="unanswered">Chưa làm</option>
+          <option value="answered">Đã làm</option>
+          <option value="correct">Trả lời đúng</option>
+          <option value="incorrect">Trả lời sai</option>
+          <option value="bookmarked">Đã đánh dấu</option>
+        </select>
+      </div>
+      
+      <div class="question-grid" id="question-grid">
+        <!-- Grid cells rendered dynamically -->
+      </div>
+
+      <!-- Settings Panel inside Sidebar -->
+      <div class="settings-panel">
+        <button class="btn" id="reset-btn" style="width: 100%; justify-content: center; border-color: var(--error); color: var(--error);">
+          🔄 Làm Lại Từ Đầu
+        </button>
+      </div>
+    </div>
+
+    <!-- Shortcuts Guide -->
+    <div class="shortcuts-guide">
+      <span>Phím tắt:</span>
+      <span>Chọn đáp án: <span class="shortcut-key">A</span> / <span class="shortcut-key">B</span> / <span class="shortcut-key">C</span> / <span class="shortcut-key">D</span> (hoặc <span class="shortcut-key">1</span>-<span class="shortcut-key">4</span>)</span>
+      <span>Di chuyển: <span class="shortcut-key">←</span> / <span class="shortcut-key">→</span></span>
+      <span>Đánh dấu: <span class="shortcut-key">M</span></span>
+      <span>Làm lại: <span class="shortcut-key">R</span></span>
+    </div>
+
+  </div>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- External Script files -->
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
