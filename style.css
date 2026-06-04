@@ -749,7 +749,7 @@ input:checked + .slider:before {
   }
   
   header, .stats-container, .progress-bar-container, .shortcuts-guide, .night-owl-banner, .tab-bar {
-    grid-column: span 1;
+    grid-column: span 1 !important;
   }
 
   .sidebar {
