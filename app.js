@@ -80,6 +80,9 @@ function loadState() {
 
   // 4. Serious study mode (trolls disabled)
   isTrollDisabled = localStorage.getItem(KEYS.TROLL_DISABLED) === "true";
+  if (typeof updateUmlTabVisibility === "function") {
+    updateUmlTabVisibility();
+  }
 }
 
 // Initialize questions list based on shuffle and options settings
@@ -1245,9 +1248,9 @@ window.addEventListener("DOMContentLoaded", () => {
             const proctor = document.querySelector(".strict-proctor");
             if (proctor) proctor.remove();
           }
-          showNotification("Chế độ Học Tập Nghiêm Túc đã kích hoạt! 📖 (Đã tắt Easter Eggs & Trolls)");
+          showNotification("Chế độ Học Tập Nghiêm Túc đã kích hoạt! 📖 (Đã tắt Easter Eggs & Trolls, đã hiện Tự Luận UML)");
         } else {
-          showNotification("Chế độ Học Tập Vui Vẻ đã kích hoạt! 🎉 (Đã bật lại Easter Eggs & Trolls)");
+          showNotification("Chế độ Học Tập Vui Vẻ đã kích hoạt! 🎉 (Đã bật lại Easter Eggs & Trolls, đã ẩn Tự Luận UML)");
           // Restart proctor timer if current question is unanswered
           const filtered = getFilteredQuestions();
           if (filtered.length > 0 && currentIndex < filtered.length) {
@@ -1256,6 +1259,9 @@ window.addEventListener("DOMContentLoaded", () => {
               proctorTimer = setTimeout(triggerStrictProctor, 30000);
             }
           }
+        }
+        if (typeof updateUmlTabVisibility === "function") {
+          updateUmlTabVisibility();
         }
         renderQuestionCard(); // Re-render to clear runaway buttons if active
       }

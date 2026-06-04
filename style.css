@@ -748,7 +748,7 @@ input:checked + .slider:before {
     grid-template-columns: 1fr;
   }
   
-  header, .stats-container, .progress-bar-container, .shortcuts-guide, .night-owl-banner {
+  header, .stats-container, .progress-bar-container, .shortcuts-guide, .night-owl-banner, .tab-bar {
     grid-column: span 1;
   }
 

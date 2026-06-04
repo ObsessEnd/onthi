@@ -1,3 +1,14 @@
+// Helper to escape HTML to prevent XSS/injection in preview
+function escapeHTML(str) {
+  if (!str) return "";
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 // ----------------------------------------------------
 // UML DATA & EXERCISES DATABASE
 // ----------------------------------------------------
@@ -50,7 +61,7 @@ const UML_EXERCISES = [
     Reader --> UC_Borrow
     
     %% Mối quan hệ include / extend
-    UC_Borrow -.->|include|--> UC_Login`,
+    UC_Borrow -.->|include| UC_Login`,
     modelCode: `graph LR
     %% Định nghĩa các Actor
     Reader[Độc giả 👤]
@@ -81,12 +92,12 @@ const UML_EXERCISES = [
     Admin --> UC_ManageUsers
     
     %% Mối quan hệ include (Bắt buộc đăng nhập trước)
-    UC_Borrow -.->|include|--> UC_Login
-    UC_History -.->|include|--> UC_Login
-    UC_ManageBooks -.->|include|--> UC_Login
-    UC_RecordLoan -.->|include|--> UC_Login
-    UC_Penalty -.->|include|--> UC_Login
-    UC_ManageUsers -.->|include|--> UC_Login`
+    UC_Borrow -.->|include| UC_Login
+    UC_History -.->|include| UC_Login
+    UC_ManageBooks -.->|include| UC_Login
+    UC_RecordLoan -.->|include| UC_Login
+    UC_Penalty -.->|include| UC_Login
+    UC_ManageUsers -.->|include| UC_Login`
   },
   {
     title: "Vẽ sơ đồ Use Case: Hệ thống Bán hàng Online 🛒",
@@ -153,7 +164,7 @@ const UML_EXERCISES = [
     Staff --> UC_ConfirmOrder
     
     %% Relationships
-    UC_Order -.->|include|--> UC_Pay
+    UC_Order -.->|include| UC_Pay
     UC_Pay --> Gateway`
   },
   {
@@ -334,7 +345,7 @@ async function renderMermaidDiagram(containerId, code) {
         <span style="font-size: 11px; opacity: 0.85;">${escapeHTML(err.message || err.toString())}</span>
       </div>
     `;
-    const badElement = document.getElementById(id);
+    const badElement = document.getElementById(id) || document.getElementById("d" + id);
     if (badElement) badElement.remove();
   }
 }
@@ -438,12 +449,40 @@ function switchMode(mode) {
   }
 }
 
+// Update UML tab visibility based on Serious Study Mode
+function updateUmlTabVisibility() {
+  const tabUml = document.getElementById("tab-uml-btn");
+  const tabBar = document.querySelector(".tab-bar");
+  
+  // Read value from app.js or localStorage
+  const isSeriousMode = typeof isTrollDisabled !== "undefined" ? isTrollDisabled : (localStorage.getItem("onthi_quiz_troll_disabled") === "true");
+  
+  if (tabUml) {
+    if (isSeriousMode) {
+      tabUml.style.display = "";
+      if (tabBar) tabBar.style.display = "flex";
+    } else {
+      tabUml.style.display = "none";
+      if (tabBar) tabBar.style.display = "none";
+      
+      // If we are currently showing UML mode, force back to quiz mode
+      const umlContainer = document.getElementById("uml-mode-container");
+      if (umlContainer && umlContainer.style.display !== "none") {
+        switchMode("quiz");
+      }
+    }
+  }
+}
+
 // ----------------------------------------------------
 // EVENT SETUP
 // ----------------------------------------------------
 window.addEventListener("DOMContentLoaded", () => {
   // Load drafts
   loadUmlDrafts();
+
+  // Initial tab visibility update
+  updateUmlTabVisibility();
 
   // Bind tab buttons
   const tabQuiz = document.getElementById("tab-quiz-btn");
@@ -468,6 +507,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (typeof mermaid !== "undefined") {
     mermaid.initialize({
       startOnLoad: false,
+      suppressErrorRendering: true,
       theme: 'dark',
       securityLevel: 'loose',
       themeVariables: {
