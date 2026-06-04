@@ -1277,9 +1277,21 @@ input:checked + .slider:before {
 @media (max-width: 1024px) {
   .uml-mode-container {
     grid-template-columns: 1fr;
+    grid-column: span 1 !important;
+    gap: 16px;
+  }
+  .uml-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+  .uml-sidebar-section {
+    margin-top: 0 !important;
   }
   .uml-workspace-columns {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
