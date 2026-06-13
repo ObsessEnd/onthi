@@ -1,937 +1,5805 @@
+// Ngân hàng câu hỏi ôn tập trắc nghiệm môn Kiểm thử phần mềm (KTPM)
+// Tổng cộng: 200 câu hỏi được parse tự động từ tài liệu ôn tập.
+
 const QUESTIONS_DATA = [
   {
-    id: 1,
-    question: "Thiết kế phần mềm là gì?",
-    options: [
-      { key: "a", text: "Quá trình viết mã nguồn" },
-      { key: "b", text: "Quá trình xác định các thành phần phần mềm và mối liên kết giữa chúng dựa trên yêu cầu của khách hàng" },
-      { key: "c", text: "Quá trình kiểm thử phần mềm" },
-      { key: "d", text: "Quá trình bảo trì phần mềm" }
+    "id": 1,
+    "question": "Phát biểu nào sau đây đúng nhất về kiểm thử tĩnh?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử động có ít giá trị hơn vì kiểm thử tĩnh tìm ra lỗi tốt hơn"
+      },
+      {
+        "key": "b",
+        "text": "Test tĩnh giúp phát hiện sớm các vấn đề về thời gian chạy trong vòng đời"
+      },
+      {
+        "key": "c",
+        "text": "Test tĩnh là một cách ít tốn kém để phát hiện và loại bỏ lỗi"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử tĩnh có ít giá trị hơn vì kiểm thử động tìm ra lỗi tốt hơn"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Viết mã nguồn thuộc về pha Hiện thực phần mềm (Implementation/Coding), chứ không phải pha Thiết kế.",
-      b: "Chính xác! Thiết kế phần mềm là quá trình chuyển đổi các yêu cầu thành mô hình kiến trúc, xác định rõ các thành phần hệ thống và cách chúng giao tiếp, tương tác với nhau.",
-      c: "Kiểm thử phần mềm (Testing) là một pha riêng biệt nhằm tìm kiếm lỗi, không phải thiết kế.",
-      d: "Bảo trì phần mềm (Maintenance) là hoạt động sửa chữa, nâng cấp sau khi sản phẩm đã bàn giao."
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Test tĩnh là một cách ít tốn kém để phát hiện và loại bỏ lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Test tĩnh là một cách ít tốn kém để phát hiện và loại bỏ lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Kiểm thử tĩnh (Static testing) là phương pháp xem xét mã nguồn, tài liệu thiết kế hoặc yêu cầu mà không cần thực thi chương trình. Nó giúp phát hiện lỗi cú pháp, cấu trúc lập trình và lỗi logic sớm trong vòng đời, tiết kiệm đáng kể chi phí sửa lỗi.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Test tĩnh là một cách ít tốn kém để phát hiện và loại bỏ lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 2,
-    question: "Hiện thực phần mềm là gì?",
-    options: [
-      { key: "a", text: "Quá trình kiểm thử phần mềm" },
-      { key: "b", text: "Quá trình hiện thực hóa thiết kế thành chương trình" },
-      { key: "c", text: "Quá trình viết tài liệu hướng dẫn" },
-      { key: "d", text: "Quá trình bảo trì phần mềm" }
+    "id": 2,
+    "question": "Tiền thưởng được tính theo thời gian làm việc đối với các nhân viên làm việc từ 2 năm trở lên. Tùy thuộc vào thời gian làm việc từ 2 năm đến dưới 5 năm, 5 đến 10 năm hoặc nhiều hơn 10 năm, nhân viên sẽ nhận được tiền thưởng từ 10%, 25% hoặc 35%. Cần bao nhiêu phân vùng tương đương để kiểm tra việc này?",
+    "options": [
+      {
+        "key": "a",
+        "text": "2"
+      },
+      {
+        "key": "b",
+        "text": "4"
+      },
+      {
+        "key": "c",
+        "text": "3"
+      },
+      {
+        "key": "d",
+        "text": "5"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Kiểm thử phần mềm là hoạt động tìm lỗi, diễn ra song song hoặc sau pha hiện thực.",
-      b: "Chính xác! Hiện thực phần mềm (Coding/Implementation) chính là quá trình dịch các mô hình, tài liệu thiết kế chi tiết thành mã nguồn chạy được.",
-      c: "Viết tài liệu hướng dẫn chỉ là một phần việc hỗ trợ, không phản ánh cốt lõi của hiện thực phần mềm.",
-      d: "Bảo trì phần mềm là pha hoạt động sau khi sản phẩm đã được đưa vào sử dụng thực tế."
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Phân vùng tương đương là kỹ thuật kiểm thử hộp đen chia miền đầu vào thành các lớp dữ liệu mà phần mềm xử lý giống nhau, từ đó chọn đại diện từ mỗi lớp để kiểm thử, giúp giảm số lượng test case cần thiết.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 4,
-    question: "Thiết kế hướng đối tượng sử dụng gì để biểu diễn?",
-    options: [
-      { key: "a", text: "UML" },
-      { key: "b", text: "SQL" },
-      { key: "c", text: "HTML" },
-      { key: "d", text: "XML" }
+    "id": 3,
+    "question": "Phát biểu nào sau đây về mối quan hệ phủ lệnh và phủ quyết định là đúng?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Phủ lệnh mạnh hơn phủ quyết định"
+      },
+      {
+        "key": "b",
+        "text": "Không bao giờ đạt được 100% phủ quyết định"
+      },
+      {
+        "key": "c",
+        "text": "Phủ lệnh 100% sẽ đảm bảo phủ được 100% phủ quyết định"
+      },
+      {
+        "key": "d",
+        "text": "Phủ quyết định mạnh hơn phủ lệnh"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! UML (Unified Modeling Language) cung cấp các biểu đồ chuẩn hóa (Class, Sequence, Use Case...) chuyên dụng để mô hình hóa và thiết kế các hệ thống hướng đối tượng.",
-      b: "SQL là ngôn ngữ truy vấn dùng cho các Cơ sở dữ liệu quan hệ, không dùng để biểu diễn thiết kế hướng đối tượng.",
-      c: "HTML là ngôn ngữ đánh dấu dùng để xây dựng cấu trúc trang web.",
-      d: "XML là ngôn ngữ đánh dấu dùng để lưu trữ và truyền tải dữ liệu có cấu trúc."
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Phủ quyết định mạnh hơn phủ lệnh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Phủ quyết định mạnh hơn phủ lệnh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Phủ quyết định mạnh hơn phủ lệnh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Phủ quyết định mạnh hơn phủ lệnh**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
     }
   },
   {
-    id: 5,
-    question: "Thiết kế mẫu là gì?",
-    options: [
-      { key: "a", text: "Một phương pháp lập trình" },
-      { key: "b", text: "Một phương pháp thiết kế giao diện người dùng" },
-      { key: "c", text: "Một phương pháp để giải quyết các vấn đề thiết kế thường gặp" },
-      { key: "d", text: "Một phương pháp kiểm thử phần mềm" }
+    "id": 4,
+    "question": "Phát biểu nào sau đây đúng với kiểm thử beta?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Được thực hiện bởi coder"
+      },
+      {
+        "key": "b",
+        "text": "Được thực hiện bởi người dùng cuối"
+      },
+      {
+        "key": "c",
+        "text": "Được thực hiện bởi tester"
+      },
+      {
+        "key": "d",
+        "text": "Được thực hiện bởi các chuyên gia"
+      }
     ],
-    correct: "c",
-    explanations: {
-      a: "Lập trình (Programming paradigm) rộng hơn và khác với các mẫu thiết kế kiến trúc.",
-      b: "Mặc dù có các mẫu thiết kế UI riêng, nhưng khái niệm chung của Thiết kế mẫu (Design Pattern) áp dụng cho kiến trúc mã nguồn tổng thể.",
-      c: "Chính xác! Thiết kế mẫu (Design Pattern) là các giải pháp mẫu đã được chuẩn hóa và kiểm chứng giúp giải quyết các bài toán thiết kế hệ thống lặp đi lặp lại thường gặp.",
-      d: "Kiểm thử phần mềm có các kỹ thuật riêng biệt, không thuộc khái niệm Thiết kế mẫu."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Được thực hiện bởi người dùng cuối\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Kiểm thử chấp nhận (Acceptance Testing) là mức kiểm thử cuối cùng để xác định xem hệ thống đã sẵn sàng bàn giao cho người dùng chưa, thường dựa trên yêu cầu nghiệp vụ thực tế của khách hàng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Được thực hiện bởi người dùng cuối\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Được thực hiện bởi người dùng cuối\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 6,
-    question: "Phát triển mã nguồn mở liên quan đến gì?",
-    options: [
-      { key: "a", text: "Sử dụng phần mềm đóng gói" },
-      { key: "b", text: "Sử dụng và phát triển các thành phần mã nguồn mở" },
-      { key: "c", text: "Thiết kế giao diện người dùng" },
-      { key: "d", text: "Quản lý dự án phần mềm" }
+    "id": 5,
+    "question": "Phát biểu nào sau đây mô tả đúng một trong bảy nguyên tắc chính của kiểm thử phần mềm?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Bằng cách sử dụng test tự động, có thể test mọi thứ"
+      },
+      {
+        "key": "b",
+        "text": "Không thể test tất cả các kết hợp tập đầu vào trong một hệ thống"
+      },
+      {
+        "key": "c",
+        "text": "Mục đích của việc kiểm tra là để chứng minh sự vắng mặt của các khiếm khuyết"
+      },
+      {
+        "key": "d",
+        "text": "Với sự hỗ trợ của công cụ, việc kiểm tra toàn diện (exhaustive testing) là khả thi đối với tất cả các phần mềm"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Sử dụng phần mềm đóng gói (thương mại) thường đi liền với mã nguồn đóng và bản quyền nghiêm ngặt.",
-      b: "Chính xác! Phát triển mã nguồn mở (Open Source Development) là quá trình xây dựng phần mềm có công khai mã nguồn, cho phép mọi người tự do kế thừa, tùy biến và đóng góp phát triển.",
-      c: "Thiết kế UI là công việc thuộc về giao diện, áp dụng cho cả mã nguồn đóng lẫn nguồn mở.",
-      d: "Quản lý dự án là quy trình tổ chức nhân sự và thời gian, không đặc thù riêng cho mã nguồn mở."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Không thể test tất cả các kết hợp tập đầu vào trong một hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Không thể test tất cả các kết hợp tập đầu vào trong một hệ thống**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Không thể test tất cả các kết hợp tập đầu vào trong một hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Không thể test tất cả các kết hợp tập đầu vào trong một hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 7,
-    question: "Một trong những nguyên tắc chính trong thiết kế giao diện người dùng là gì?",
-    options: [
-      { key: "a", text: "Tối ưu hóa cho các thiết bị di động" },
-      { key: "b", text: "Tính đến nhu cầu, kinh nghiệm và khả năng của người dùng hệ thống" },
-      { key: "c", text: "Tăng tốc độ phát triển phần mềm" },
-      { key: "d", text: "Giảm chi phí phát triển" }
+    "id": 6,
+    "question": "Xác minh (verification) là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử xem chúng ta có đang xây dựng hệ thống phù hợp không"
+      },
+      {
+        "key": "c",
+        "text": "Được thực hiện bởi một nhóm kiểm thử độc lập"
+      },
+      {
+        "key": "d",
+        "text": "Đảm bảo rằng đó là những gì người dùng thực sự muốn"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Tối ưu cho di động chỉ là một phần của thiết kế đa nền tảng, không phải nguyên tắc cốt lõi tổng quát nhất.",
-      b: "Chính xác! Thiết kế UI/UX phải lấy người dùng làm trung tâm (User-Centered Design). Ta cần thấu hiểu kinh nghiệm sống, thói quen và giới hạn khả năng của họ để giao diện dễ dùng nhất.",
-      c: "Thiết kế giao diện kỹ lưỡng đôi khi có thể làm tăng thời gian phát triển ban đầu.",
-      d: "Tương tự, đầu tư cho thiết kế giao diện chất lượng cao có thể làm tăng chi phí ban đầu nhưng tiết kiệm chi phí hỗ trợ và vận hành lâu dài."
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 8,
-    question: "Thiết kế UI cần nhận thức được điều gì?",
-    options: [
-      { key: "a", text: "Các hạn chế về tài chính của dự án" },
-      { key: "b", text: "Các hạn chế về vật lý và tinh thần của người dùng" },
-      { key: "c", text: "Các công nghệ mới nhất" },
-      { key: "d", text: "Các yêu cầu chức năng của hệ thống" }
+    "id": 7,
+    "question": "Điều quan trọng nhất về thiết kế kiểm thử sớm là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Làm cho việc chuẩn bị kiểm thử dễ dàng hơn"
+      },
+      {
+        "key": "b",
+        "text": "Có thể ngăn chặn sự nhân lên của lỗi"
+      },
+      {
+        "key": "c",
+        "text": "Giúp tìm ra tất cả các lỗi"
+      },
+      {
+        "key": "d",
+        "text": "Giảm chi phí thiết kế test case"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Hạn chế tài chính thuộc về phạm vi quản trị dự án, không thuộc nguyên lý thiết kế tương tác người-máy.",
-      b: "Chính xác! Người dùng có các giới hạn sinh học (ví dụ: kích thước ngón tay, thị lực kém ở người cao tuổi) và tinh thần (khả năng tập trung, trí nhớ ngắn hạn). UI tốt phải thiết kế để thích ứng với những hạn chế này.",
-      c: "Đuổi theo công nghệ mới nhất mà không chú ý đến khả năng sử dụng của người dùng sẽ dẫn đến thất bại.",
-      d: "Yêu cầu chức năng quyết định hệ thống làm được gì, còn thiết kế UI quyết định làm thế nào để người dùng tương tác dễ dàng nhất."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Có thể ngăn chặn sự nhân lên của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Có thể ngăn chặn sự nhân lên của lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Có thể ngăn chặn sự nhân lên của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Có thể ngăn chặn sự nhân lên của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 9,
-    question: "Các mô hình thiết kế hệ thống có vai trò gì trong dự án lớn?",
-    options: [
-      { key: "a", text: "Giảm thời gian phát triển" },
-      { key: "b", text: "Là cơ chế giao tiếp quan trọng giữa các nhóm thiết kế khác nhau" },
-      { key: "c", text: "Tăng chi phí dự án" },
-      { key: "d", text: "Giảm số lượng lỗi phần mềm" }
+    "id": 8,
+    "question": "Để kiểm tra một hàm, lập trình viên phải viết một...., gọi hàm được kiểm tra và truyền dữ liệu kiểm tra cho nó.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Mock"
+      },
+      {
+        "key": "b",
+        "text": "Driver"
+      },
+      {
+        "key": "c",
+        "text": "Stub"
+      },
+      {
+        "key": "d",
+        "text": "Proxy"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Việc dựng mô hình thiết kế ban đầu có thể làm kéo dài pha chuẩn bị, dù nó giúp giảm thời gian sửa lỗi về sau.",
-      b: "Chính xác! Trong các dự án lớn có hàng trăm lập trình viên, các mô hình thiết kế đóng vai trò như một bản vẽ kỹ thuật chung giúp các nhóm khác nhau giao tiếp, tích hợp và phát triển nhất quán.",
-      c: "Mô hình thiết kế chuẩn chỉnh giúp tối ưu hóa chi phí chứ không phải sinh ra để tăng chi phí.",
-      d: "Giảm lỗi là lợi ích gián tiếp thông qua việc hiểu đúng thiết kế, nhưng vai trò trực tiếp cốt lõi là làm phương tiện truyền đạt thông tin."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Driver\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Driver**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Driver\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Driver\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 10,
-    question: "Thiết kế thuật toán là gì?",
-    options: [
-      { key: "a", text: "Quá trình thiết kế giao diện người dùng" },
-      { key: "b", text: "Quá trình thiết kế các thuật toán để giải quyết các vấn đề cụ thể" },
-      { key: "c", text: "Quá trình viết mã nguồn" },
-      { key: "d", text: "Quá trình kiểm thử phần mềm" }
+    "id": 9,
+    "question": "Các test case có thể được thiết kế sớm nhất khi nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sau khi có tài liệu đặc tả"
+      },
+      {
+        "key": "b",
+        "text": "Sau khi code"
+      },
+      {
+        "key": "c",
+        "text": "Sau khi có bản thiết kế"
+      },
+      {
+        "key": "d",
+        "text": "Trong quá trình test"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Thiết kế giao diện liên quan đến đồ họa và luồng tương tác, không liên quan đến thuật toán xử lý dữ liệu.",
-      b: "Chính xác! Thiết kế thuật toán là việc xây dựng các bước logic tuần tự, cấu trúc dữ liệu và công thức tính toán để giải quyết một bài toán cụ thể tối ưu về bộ nhớ và thời gian.",
-      c: "Viết mã nguồn là bước Hiện thực (Coding) sau khi đã thiết kế xong thuật toán.",
-      d: "Kiểm thử phần mềm là tìm lỗi của mã nguồn sau khi đã lập trình xong."
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Sau khi có tài liệu đặc tả**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sau khi có tài liệu đặc tả\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sau khi có tài liệu đặc tả\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sau khi có tài liệu đặc tả\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 11,
-    question: "Thiết kế cơ sở dữ liệu liên quan đến điều gì?",
-    options: [
-      { key: "a", text: "Thiết kế giao diện người dùng" },
-      { key: "b", text: "Thiết kế cấu trúc và tổ chức của cơ sở dữ liệu" },
-      { key: "c", text: "Thiết kế các thuật toán" },
-      { key: "d", text: "Kiểm thử cơ sở dữ liệu" }
+    "id": 10,
+    "question": "Mục tiêu quan trọng nhất của việc xác định độ ưu tiên kiểm thử là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Test các khu vực rủi ro cao"
+      },
+      {
+        "key": "b",
+        "text": "Tìm càng nhiều lỗi càng tốt"
+      },
+      {
+        "key": "c",
+        "text": "Đạt được độ bao phủ cao"
+      },
+      {
+        "key": "d",
+        "text": "Cái nào dễ thì test trước"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Thiết kế giao diện hiển thị dữ liệu ra màn hình, còn CSDL lưu trữ dữ liệu phía dưới.",
-      b: "Chính xác! Thiết kế cơ sở dữ liệu liên quan đến việc xác định cấu trúc lưu trữ, định dạng các bảng, liên kết quan hệ (khóa ngoại) và chỉ mục để truy vấn dữ liệu hiệu quả.",
-      c: "Thiết kế thuật toán tập trung vào luồng tính toán, khác thiết kế cấu trúc dữ liệu lưu trữ.",
-      d: "Kiểm thử CSDL là một pha kiểm định phụ, không phải pha thiết kế."
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Test các khu vực rủi ro cao**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Test các khu vực rủi ro cao\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Test các khu vực rủi ro cao\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Test các khu vực rủi ro cao\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 12,
-    question: "Trong thiết kế giao diện người dùng, cần thừa nhận điều gì?",
-    options: [
-      { key: "a", text: "Người dùng luôn biết cách sử dụng hệ thống" },
-      { key: "b", text: "Ai cũng có thể nhầm lẫn" },
-      { key: "c", text: "Hệ thống không bao giờ gặp lỗi" },
-      { key: "d", text: "Giao diện không cần thân thiện" }
+    "id": 11,
+    "question": "Điều nào sau đây mô tả lợi ích chính của việc xác minh (verification) sớm trong vòng đời?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Nó làm giảm sự gia tăng của lỗi"
+      },
+      {
+        "key": "b",
+        "text": "Nó tạo điều kiện cho việc thiết lập môi trường kiểm thử kịp thời"
+      },
+      {
+        "key": "c",
+        "text": "Nó cho phép xác định các thay đổi trong yêu cầu của người dùng"
+      },
+      {
+        "key": "d",
+        "text": "Nó cho phép người kiểm thử sớm tham gia vào dự án"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Mọi người dùng, dù chuyên nghiệp hay mới dùng, đều cần thời gian làm quen và dễ gặp bỡ ngỡ.",
-      b: "Chính xác! Thừa nhận 'con người ai cũng có thể nhầm lẫn' giúp thiết kế ra các giao diện có tính dung sai cao (cung cấp hộp thoại xác nhận, nút Undo, hướng dẫn sửa lỗi rõ ràng thay vì làm sập ứng dụng).",
-      c: "Hệ thống phần mềm luôn có khả năng phát sinh lỗi khách quan.",
-      d: "Giao diện thân thiện là mục tiêu sống còn của UI thiết kế."
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Nó làm giảm sự gia tăng của lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Nó làm giảm sự gia tăng của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Nó làm giảm sự gia tăng của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Nó làm giảm sự gia tăng của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 13,
-    question: "Mục tiêu chính của thiết kế giao diện người dùng là gì?",
-    options: [
-      { key: "a", text: "Tăng tốc độ phát triển phần mềm" },
-      { key: "b", text: "Đáp ứng nhu cầu và trải nghiệm người dùng" },
-      { key: "c", text: "Giảm chi phí phát triển" },
-      { key: "d", text: "Tăng tính bảo mật của hệ thống" }
+    "id": 12,
+    "question": "Lựa chọn nào sau đây được phân loại là kỹ thuật kiểm thử hộp đen?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Một kỹ thuật dựa trên phân tích kiến trúc"
+      },
+      {
+        "key": "b",
+        "text": "Một kỹ thuật dựa trên kiến thức về lỗi trong quá khứ hoặc kiến thức chung về lỗi"
+      },
+      {
+        "key": "c",
+        "text": "Một kỹ thuật dựa trên các đặc tả yêu cầu chính thức"
+      },
+      {
+        "key": "d",
+        "text": "Một kỹ thuật kiểm tra xem đối tượng kiểm thử có hoạt động theo thiết kế kỹ thuật hay không"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Thiết kế UI tốt đòi hỏi nhiều thời gian phân tích và chạy thử nên không trực tiếp tăng tốc độ lập trình.",
-      b: "Chính xác! Mục tiêu tối thượng của UI/UX là giúp người dùng thao tác dễ dàng nhất, làm việc năng suất nhất và cảm thấy thoải mái khi trải nghiệm hệ thống.",
-      c: "Tương tự, nó có thể tăng chi phí nhân sự thiết kế ban đầu.",
-      d: "Tính bảo mật là nhiệm vụ của kiến trúc phân quyền và kỹ thuật mã hóa hệ thống."
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Một kỹ thuật dựa trên các đặc tả yêu cầu chính thức\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Một kỹ thuật dựa trên các đặc tả yêu cầu chính thức\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Kiểm thử hộp đen (Black-box testing) là phương pháp thiết kế ca kiểm thử dựa hoàn toàn vào tài liệu đặc tả yêu cầu chức năng, giao diện của phần mềm mà không quan tâm đến cấu trúc mã nguồn bên trong.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Một kỹ thuật dựa trên các đặc tả yêu cầu chính thức\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 14,
-    question: "Quá trình thiết kế phần mềm bao gồm gì?",
-    options: [
-      { key: "a", text: "Viết mã nguồn" },
-      { key: "b", text: "Định nghĩa các thành phần phần mềm và mối liên kết giữa chúng" },
-      { key: "c", text: "Kiểm thử phần mềm" },
-      { key: "d", text: "Bảo trì phần mềm" }
+    "id": 13,
+    "question": "Kiểm thử alpha là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử cuối cùng trước khi phát hành"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử đầu tiên được thực hiện"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử sau khi phát hành được thực hiện bởi người dùng cuối"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử trước khi phát hành được thực hiện bởi nhóm đại diện người dùng"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Viết mã nguồn là công việc của pha hiện thực mã chương trình.",
-      b: "Chính xác! Thiết kế phần mềm là pha kiến trúc hóa hệ thống, định nghĩa cấu trúc của các mô-đun thành phần và giao diện tích hợp giữa chúng.",
-      c: "Kiểm thử phần mềm diễn ra sau khi đã có code chạy được để tìm lỗi.",
-      d: "Bảo trì phần mềm thực hiện sau khi phần mềm đã bàn giao cho khách hàng sử dụng."
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử trước khi phát hành được thực hiện bởi nhóm đại diện người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử trước khi phát hành được thực hiện bởi nhóm đại diện người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử trước khi phát hành được thực hiện bởi nhóm đại diện người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Kiểm thử chấp nhận (Acceptance Testing) là mức kiểm thử cuối cùng để xác định xem hệ thống đã sẵn sàng bàn giao cho người dùng chưa, thường dựa trên yêu cầu nghiệp vụ thực tế của khách hàng."
     }
   },
   {
-    id: 15,
-    question: "Một ví dụ về biểu đồ hoạt động trong thiết kế phần mềm là gì?",
-    options: [
-      { key: "a", text: "Biểu đồ lớp" },
-      { key: "b", text: "Biểu đồ liên kết" },
-      { key: "c", text: "Biểu đồ hoạt động swimming lane" },
-      { key: "d", text: "Biểu đồ thành phần" }
+    "id": 14,
+    "question": "Loại test nào mà không do tester thực hiện?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Test hệ thống"
+      },
+      {
+        "key": "b",
+        "text": "Test chấp nhận"
+      },
+      {
+        "key": "c",
+        "text": "Test bảo mật"
+      },
+      {
+        "key": "d",
+        "text": "Test tích hợp"
+      }
     ],
-    correct: "c",
-    explanations: {
-      a: "Biểu đồ lớp (Class Diagram) là biểu đồ cấu trúc tĩnh, không mô tả hoạt động hay tiến trình xử lý.",
-      b: "Biểu đồ liên kết thường dùng để chỉ ra sự kết nối cấu trúc tĩnh.",
-      c: "Chính xác! Biểu đồ hoạt động bơi làn (Swimlane Activity Diagram) mô tả luồng công việc (workflow) với các hoạt động được phân nhóm theo các làn đại diện cho các đối tượng thực hiện khác nhau.",
-      d: "Biểu đồ thành phần (Component Diagram) chỉ ra cấu trúc vật lý của mã nguồn, là biểu đồ tĩnh."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Test chấp nhận\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Test chấp nhận**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Test chấp nhận\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Test chấp nhận\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 16,
-    question: "Quản lý bản quyền trong thiết kế phần mềm liên quan đến điều gì?",
-    options: [
-      { key: "a", text: "Sử dụng các thành phần mã nguồn mở mà không cần kiểm tra" },
-      { key: "b", text: "Duy trì thông tin về các thành phần mã nguồn mở đã tải về và sử dụng" },
-      { key: "c", text: "Thiết kế giao diện người dùng" },
-      { key: "d", text: "Bảo trì phần mềm" }
+    "id": 15,
+    "question": "Kiểm thử là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Là quá trình thực thi chương trình để tìm lỗi"
+      },
+      {
+        "key": "b",
+        "text": "Là quá trình đo lường chất lượng của phần mềm"
+      },
+      {
+        "key": "c",
+        "text": "Gồm các hoạt động kiểm tra, đánh giá các sản phẩm trung gian trong quá trình phát triển"
+      },
+      {
+        "key": "d",
+        "text": "Tất cả các ý kiến trên"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Tải và dùng mã nguồn mở không kiểm tra giấy phép (License) có thể dẫn tới bị kiện vi phạm bản quyền nghiêm trọng.",
-      b: "Chính xác! Việc quản lý bản quyền đòi hỏi nhà phát triển phải theo dõi kỹ giấy phép của các phần mềm/thư viện bên thứ ba (MIT, GPL, Apache...) mà dự án đã tích hợp.",
-      c: "Thiết kế UI hay Bảo trì phần mềm là công việc chuyên môn kỹ thuật, không trực tiếp là hoạt động quản lý pháp lý bản quyền.",
-      d: "Thiết kế UI hay Bảo trì phần mềm là công việc chuyên môn kỹ thuật, không trực tiếp là hoạt động quản lý pháp lý bản quyền."
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý kiến trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý kiến trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý kiến trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Tất cả các ý kiến trên**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
     }
   },
   {
-    id: 17,
-    question: "Một trong những nguyên tắc quan trọng trong thiết kế phần mềm là gì?",
-    options: [
-      { key: "a", text: "Giảm thiểu số lượng mã nguồn" },
-      { key: "b", text: "Đảm bảo phần mềm dễ dàng bảo trì và mở rộng" },
-      { key: "c", text: "Tăng số lượng thành phần phần mềm" },
-      { key: "d", text: "Giảm thiểu tài liệu hướng dẫn" }
+    "id": 16,
+    "question": "Câu hỏi nào sau đây KHÔNG phải là một phần của quy trình kiểm thử hệ thống?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm tra các chức năng nghiệp vụ"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm tra hiệu năng hệ thống"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm tra các giao diện người dùng"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm tra sự tích hợp giữa các module"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Giảm số dòng code bừa bãi có thể làm mã nguồn trở nên khó đọc, khó hiểu hơn.",
-      b: "Chính xác! Yêu cầu thay đổi là liên tục trong suốt vòng đời phần mềm. Vì vậy thiết kế tốt phải có tính modul cao để việc bảo trì, sửa lỗi và nâng cấp diễn ra dễ dàng, an toàn.",
-      c: "Tăng số lượng thành phần quá mức làm tăng độ phức tạp và chi phí quản lý kết nối.",
-      d: "Không có tài liệu hướng dẫn sẽ khiến dự án trở thành 'cơn ác mộng' cho những lập trình viên tiếp quản sau này."
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm tra sự tích hợp giữa các module\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm tra sự tích hợp giữa các module\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm tra sự tích hợp giữa các module\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Kiểm tra sự tích hợp giữa các module**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
     }
   },
   {
-    id: 18,
-    question: "Thiết kế cơ sở dữ liệu bao gồm việc gì?",
-    options: [
-      { key: "a", text: "Xác định cấu trúc dữ liệu và cách tổ chức dữ liệu trong cơ sở dữ liệu" },
-      { key: "b", text: "Viết mã nguồn" },
-      { key: "c", text: "Thiết kế giao diện người dùng" },
-      { key: "d", text: "Kiểm thử cơ sở dữ liệu" }
+    "id": 17,
+    "question": "Kiểm tra toàn diện là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Không khả thi trong thực tế"
+      },
+      {
+        "key": "b",
+        "text": "Có thể thực hiện được nếu có công cụ hỗ trợ"
+      },
+      {
+        "key": "c",
+        "text": "Là yêu cầu bắt buộc của mọi dự án phần mềm"
+      },
+      {
+        "key": "d",
+        "text": "Chỉ thực hiện khi có yêu cầu của khách hàng"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Thiết kế CSDL tập trung vào việc mô hình hóa các thực thể, thuộc tính và liên kết để tạo nên Schema CSDL tối ưu.",
-      b: "Viết code, thiết kế giao diện hay kiểm thử là các hoạt động chuyên biệt khác trong vòng đời phát triển phần mềm.",
-      c: "Viết code, thiết kế giao diện hay kiểm thử là các hoạt động chuyên biệt khác trong vòng đời phát triển phần mềm.",
-      d: "Viết code, thiết kế giao diện hay kiểm thử là các hoạt động chuyên biệt khác trong vòng đời phát triển phần mềm."
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Không khả thi trong thực tế**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Không khả thi trong thực tế\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Không khả thi trong thực tế\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Không khả thi trong thực tế\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 19,
-    question: "Thiết kế thuật toán có vai trò gì trong phần mềm?",
-    options: [
-      { key: "a", text: "Định nghĩa các giao diện người dùng" },
-      { key: "b", text: "Giải quyết các vấn đề cụ thể bằng cách xác định các bước xử lý" },
-      { key: "c", text: "Tăng tốc độ phát triển phần mềm" },
-      { key: "d", text: "Bảo trì phần mềm" }
+    "id": 18,
+    "question": "Phát biểu nào sau đây không phải nguyên tắc của kiểm thử phần mềm?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử chứng minh sự hiện diện của lỗi"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử càng sớm càng tốt"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử độc lập với việc phát triển"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử là để chứng minh phần mềm không có lỗi"
+      }
     ],
-    correct: "b",
-    explanations: {
-      a: "Định nghĩa giao diện là vai trò của thiết kế đồ họa / giao diện (UI).",
-      b: "Chính xác! Thuật toán xác định các bước logic và tính toán để biến đổi dữ liệu đầu vào thành đầu ra mong muốn, giải quyết các bài toán nghiệp vụ cụ thể.",
-      c: "Thiết kế thuật toán phức tạp đòi hỏi nhiều chất xám và thời gian, không trực tiếp rút ngắn thời gian làm dự án.",
-      d: "Bảo trì là pha sửa chữa sau phát hành, không phải nhiệm vụ của thuật toán."
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử là để chứng minh phần mềm không có lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử là để chứng minh phần mềm không có lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử là để chứng minh phần mềm không có lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Kiểm thử là để chứng minh phần mềm không có lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
     }
   },
   {
-    id: 20,
-    question: "Mục đích của việc hiện thực phần mềm là gì?",
-    options: [
-      { key: "a", text: "Đáp ứng các yêu cầu thiết kế chi tiết" },
-      { key: "b", text: "Thỏa mãn người dùng cuối" },
-      { key: "c", text: "Tăng tính phức tạp của mã nguồn" },
-      { key: "d", text: "Giảm chi phí phát triển" }
+    "id": 19,
+    "question": "Mục đích của điều kiện dừng kiểm thử là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để biết khi nào cần dừng việc kiểm thử"
+      },
+      {
+        "key": "b",
+        "text": "Để chứng minh rằng tất cả các lỗi đã được tìm thấy"
+      },
+      {
+        "key": "c",
+        "text": "Để kết thúc dự án đúng hạn"
+      },
+      {
+        "key": "d",
+        "text": "Để tiết kiệm chi phí cho dự án"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Mục tiêu trực tiếp của pha lập trình/coding là hiện thực hóa các yêu cầu kỹ thuật và bản vẽ thiết kế chi tiết thành chương trình hoạt động đúng đặc tả.",
-      b: "Thỏa mãn người dùng cuối là cái đích chung của toàn bộ quy trình phát triển chứ không phải riêng pha viết code.",
-      c: "Tăng tính phức tạp của mã nguồn là điều tối kỵ cần tránh khi viết code.",
-      d: "Pha hiện thực tiêu tốn nhiều thời gian và tiền bạc nhất, không nhằm mục đích giảm chi phí phát triển."
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Để biết khi nào cần dừng việc kiểm thử**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để biết khi nào cần dừng việc kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để biết khi nào cần dừng việc kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để biết khi nào cần dừng việc kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 21,
-    question: "Unit Implementation được hiểu là gì?",
-    options: [
-      { key: "a", text: "Lập trình các đơn vị phần mềm nhỏ nhất" },
-      { key: "b", text: "Thiết kế giao diện người dùng" },
-      { key: "c", text: "Tạo lập các tài liệu hướng dẫn sử dụng" },
-      { key: "d", text: "Kiểm tra và bảo trì phần mềm" }
+    "id": 20,
+    "question": "Số test case tối thiểu để đạt được phủ cấp 3 cho hàm sau là bao nhiêu?\nint maxAm(int a[], int n){    int max = 0;    for (int i = 0; i &lt; n; i++)        if (a[i] &lt; 0 &amp;&amp; (max == 0 || a[i] &gt; max))            max = a[i];    return max;}",
+    "options": [
+      {
+        "key": "a",
+        "text": "3"
+      },
+      {
+        "key": "b",
+        "text": "2"
+      },
+      {
+        "key": "c",
+        "text": "1"
+      },
+      {
+        "key": "d",
+        "text": "4"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Unit Implementation là việc viết mã nguồn cho các phần tử nhỏ nhất có thể lập trình độc lập (như một hàm, một lớp hay một phương thức).",
-      b: "Thiết kế giao diện là công việc thiết kế mỹ thuật và luồng đi (UI/UX).",
-      c: "Viết tài liệu là nhiệm vụ viết kỹ thuật (Technical Writing).",
-      d: "Kiểm tra và bảo trì phần mềm là các pha thuộc giai đoạn sau."
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **4**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
     }
   },
   {
-    id: 22,
-    question: "Một quy tắc vàng trong hiện thực phần mềm là gì?",
-    options: [
-      { key: "a", text: "Kiểm tra các yêu cầu và thiết kế lại một lần nữa" },
-      { key: "b", text: "Không cần kiểm tra lại thiết kế sau khi mã hóa" },
-      { key: "c", text: "Tập trung vào việc lập trình nhanh chóng" },
-      { key: "d", text: "Đơn giản hóa tất cả các quy trình" }
+    "id": 21,
+    "question": "Số test case tối thiểu để đạt được phủ điều kiện 100% cho hàm sau là bao nhiêu?\nint maxAm(int a[], int n){    int max = 0;    for (int i = 0; i &lt; n; i++)        if (a[i] &lt; 0 &amp;&amp; (max == 0 || a[i] &gt; max))            max = a[i];    return max;}",
+    "options": [
+      {
+        "key": "a",
+        "text": "1"
+      },
+      {
+        "key": "b",
+        "text": "3"
+      },
+      {
+        "key": "c",
+        "text": "2"
+      },
+      {
+        "key": "d",
+        "text": "4"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Trước khi viết mã, luôn luôn kiểm tra lại tài liệu yêu cầu và bản thiết kế. Điều này giúp ngăn ngừa việc lập trình sai hướng, vốn tốn rất nhiều chi phí để sửa đổi.",
-      b: "Không kiểm tra lại thiết kế là thói quen xấu dẫn đến việc code sai nghiệp vụ mà không biết.",
-      c: "Lập trình quá nhanh mà thiếu suy nghĩ thấu đáo thường tạo ra 'code rác' chứa nhiều lỗi bảo mật và hiệu năng.",
-      d: "Không phải mọi quy trình đều có thể đơn giản hóa, đặc biệt là các quy trình kiểm thử và đảm bảo chất lượng."
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **4**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
     }
   },
   {
-    id: 23,
-    question: "Tại sao cần xác nhận các thiết kế chi tiết trước khi hiện thực?",
-    options: [
-      { key: "a", text: "Để đảm bảo các thiết kế đáp ứng yêu cầu của người dùng" },
-      { key: "b", text: "Để giảm chi phí phát triển" },
-      { key: "c", text: "Để tiết kiệm thời gian kiểm thử" },
-      { key: "d", text: "Để tăng tốc độ mã hóa" }
+    "id": 22,
+    "question": "Số test case tối thiểu để đạt được phủ 100% nhánh cho hàm sau là bao nhiêu?\nint maxAm(int a[], int n){    int max = 0;    for (int i = 0; i &lt; n; i++)        if (a[i] &lt; 0 &amp;&amp; (max == 0 || a[i] &gt; max))            max = a[i];    return max;}",
+    "options": [
+      {
+        "key": "a",
+        "text": "3"
+      },
+      {
+        "key": "b",
+        "text": "1"
+      },
+      {
+        "key": "c",
+        "text": "2"
+      },
+      {
+        "key": "d",
+        "text": "4"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Việc xác nhận (validate) giúp đảm bảo bản thiết kế phản ánh đúng nhu cầu và mong muốn thực tế của khách hàng trước khi đội ngũ lập trình bỏ công sức viết mã.",
-      b: "Các lợi ích về chi phí, kiểm thử hay tốc độ chỉ là những kết quả tích cực gián tiếp phát sinh từ việc có một bản thiết kế đúng đắn.",
-      c: "Các lợi ích về chi phí, kiểm thử hay tốc độ chỉ là những kết quả tích cực gián tiếp phát sinh từ việc có một bản thiết kế đúng đắn.",
-      d: "Các lợi ích về chi phí, kiểm thử hay tốc độ chỉ là những kết quả tích cực gián tiếp phát sinh từ việc có một bản thiết kế đúng đắn."
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"2\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"2\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **2**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"2\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 24,
-    question: "Mục đích của việc ghi lại lỗi khi sử dụng form là gì?",
-    options: [
-      { key: "a", text: "Để theo dõi và sửa chữa lỗi một cách hệ thống" },
-      { key: "b", text: "Để lưu trữ dữ liệu người dùng" },
-      { key: "c", text: "Để tăng tốc độ phát triển phần mềm" },
-      { key: "d", text: "Để phân tích thị trường" }
+    "id": 23,
+    "question": "Phương pháp test nào mà tất cả các module được tích hợp đồng thời để test?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sandwich testing"
+      },
+      {
+        "key": "b",
+        "text": "Bottom-up testing"
+      },
+      {
+        "key": "c",
+        "text": "Top-down testing"
+      },
+      {
+        "key": "d",
+        "text": "Big-Bang testing"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Phiếu ghi lỗi (Bug report/Form báo lỗi) giúp ghi nhận lại chi tiết lỗi phát sinh, thiết bị, hệ điều hành và các bước tái hiện lỗi để lập trình viên phân loại, sửa chữa có tổ chức.",
-      b: "Lưu dữ liệu người dùng là nhiệm vụ của CSDL nghiệp vụ, không phải của hệ thống ghi lỗi.",
-      c: "Ghi log lỗi không làm tăng tốc phát triển trực tiếp và cũng không nhằm mục đích phân tích thị trường kinh doanh.",
-      d: "Ghi log lỗi không làm tăng tốc phát triển trực tiếp và cũng không nhằm mục đích phân tích thị trường kinh doanh."
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Big-Bang testing\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Big-Bang testing\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Big-Bang testing\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Kiểm thử tích hợp (Integration Testing) tập trung kiểm tra các giao tiếp (interfaces), tương tác và dòng dữ liệu qua lại giữa các module hoặc component phần mềm khác nhau."
     }
   },
   {
-    id: 25,
-    question: "Tiêu chuẩn yêu cầu đối với việc mã hóa bao gồm gì?",
-    options: [
-      { key: "a", text: "Tính đúng đắn và rõ ràng" },
-      { key: "b", text: "Tính linh hoạt và tiết kiệm" },
-      { key: "c", text: "Tính đơn giản và nhanh chóng" },
-      { key: "d", text: "Tính bảo mật và khả năng mở rộng" }
+    "id": 24,
+    "question": "Số đơn đặt hàng trên hệ thống kiểm soát kho có thể bao gồm từ 1000 đến 99999. Đầu vào nào sau đây thuộc cùng 1 lớp tương đương:",
+    "options": [
+      {
+        "key": "a",
+        "text": "10000, 50000, 999999"
+      },
+      {
+        "key": "b",
+        "text": "1000, 5000, 10000"
+      },
+      {
+        "key": "c",
+        "text": "9999, 50000, 100000"
+      },
+      {
+        "key": "d",
+        "text": "10000, 999999"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Code trước tiên phải chạy chính xác (correctness) theo yêu cầu, và thứ hai phải rõ ràng (clarity), tuân thủ coding convention để các thành viên khác dễ bảo trì.",
-      b: "Tính linh hoạt, bảo mật hay mở rộng là các tiêu chí nâng cao cực kỳ quan trọng, nhưng không phải tiêu chuẩn cơ bản tối thiểu hàng đầu như việc chạy đúng và viết rõ ràng.",
-      c: "Tính linh hoạt, bảo mật hay mở rộng là các tiêu chí nâng cao cực kỳ quan trọng, nhưng không phải tiêu chuẩn cơ bản tối thiểu hàng đầu như việc chạy đúng và viết rõ ràng.",
-      d: "Tính linh hoạt, bảo mật hay mở rộng là các tiêu chí nâng cao cực kỳ quan trọng, nhưng không phải tiêu chuẩn cơ bản tối thiểu hàng đầu như việc chạy đúng và viết rõ ràng."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"1000, 5000, 10000\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **1000, 5000, 10000**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"1000, 5000, 10000\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"1000, 5000, 10000\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 26,
-    question: "Ước lượng kích thước và thời gian dựa trên gì?",
-    options: [
-      { key: "a", text: "Dữ liệu đã có" },
-      { key: "b", text: "Kinh nghiệm cá nhân" },
-      { key: "c", text: "Yêu cầu khách hàng" },
-      { key: "d", text: "Ngân sách dự án" }
+    "id": 25,
+    "question": "Nội dung nào sau đây KHÔNG có trong tài liệu test plan:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Môi trường thử nghiệm"
+      },
+      {
+        "key": "b",
+        "text": "Những gì không được kiểm tra"
+      },
+      {
+        "key": "c",
+        "text": "Báo cáo kết quả test"
+      },
+      {
+        "key": "d",
+        "text": "Lịch trình và thời hạn"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Ước lượng khoa học (ví dụ dùng phương pháp COCOMO, Function Point) luôn dựa trên cơ sở dữ liệu lịch sử của các dự án tương tự đã thực hiện.",
-      b: "Kinh nghiệm cá nhân (Expert judgment) cũng là một nguồn quan trọng nhưng dễ mang tính chủ quan so với dữ liệu thực nghiệm đã có.",
-      c: "Khách hàng thường chỉ đưa ra hạn định thời gian mong muốn, không phải cơ sở kỹ thuật để ước lượng.",
-      d: "Ngân sách là giới hạn tài chính, không phải căn cứ kỹ thuật để tính toán thời gian viết code."
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Báo cáo kết quả test\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Báo cáo kết quả test\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Báo cáo kết quả test**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Báo cáo kết quả test\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 27,
-    question: "Hiện thực mã chương trình bao gồm bước nào sau đây?",
-    options: [
-      { key: "a", text: "Lập kế hoạch cấu trúc và thiết kế mã" },
-      { key: "b", text: "Thiết kế giao diện người dùng" },
-      { key: "c", text: "Viết tài liệu hướng dẫn" },
-      { key: "d", text: "Tạo lập báo cáo phân tích" }
+    "id": 26,
+    "question": "Kiểm thử hệ thống (System Testing) được thực hiện trước khi:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử tích hợp"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử module"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử đơn vị"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử chấp nhận"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Trước khi bắt đầu gõ code, lập trình viên cần lập kế hoạch phân tổ chức các file, các thư viện sử dụng và thiết kế cấu trúc lớp/hàm chi tiết.",
-      b: "Thiết kế giao diện thuộc về pha thiết kế UI/UX.",
-      c: "Viết tài liệu thuộc pha bàn giao / kỹ thuật viết tài liệu.",
-      d: "Tạo lập báo cáo phân tích thuộc về pha phân tích yêu cầu (Analysis phase)."
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử chấp nhận\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử chấp nhận\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử chấp nhận\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Kiểm thử chấp nhận**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
     }
   },
   {
-    id: 28,
-    question: "Tại sao cần tự kiểm tra lại thiết kế/cấu trúc trước khi mã hóa?",
-    options: [
-      { key: "a", text: "Để đảm bảo tính đúng đắn và hiệu quả của mã nguồn" },
-      { key: "b", text: "Để tăng tốc độ mã hóa" },
-      { key: "c", text: "Để giảm chi phí phát triển" },
-      { key: "d", text: "Để làm hài lòng khách hàng" }
+    "id": 27,
+    "question": "Mục đích của việc phân vùng tương đương trong kiểm thử phần mềm là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để kiểm tra sự tương đương của các thành phần hệ thống"
+      },
+      {
+        "key": "b",
+        "text": "Để tìm lỗi trong code"
+      },
+      {
+        "key": "c",
+        "text": "Để chia các giá trị đầu vào thành các lớp tương đương nhằm giảm số ca kiểm thử"
+      },
+      {
+        "key": "d",
+        "text": "Để đánh giá sự tương đương của các phiên bản phần mềm khác nhau"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Tự kiểm tra lại thiết kế giúp nhà phát triển định hình thuật toán tối ưu nhất, phát hiện sớm các bất cập cấu trúc để tránh viết mã thừa thãi hoặc sai logic.",
-      b: "Các lợi ích về thời gian gõ code, tiết kiệm chi phí hay sự hài lòng của khách hàng là những kết quả gián tiếp có được.",
-      c: "Các lợi ích về thời gian gõ code, tiết kiệm chi phí hay sự hài lòng của khách hàng là những kết quả gián tiếp có được.",
-      d: "Các lợi ích về thời gian gõ code, tiết kiệm chi phí hay sự hài lòng của khách hàng là những kết quả gián tiếp có được."
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Để chia các giá trị đầu vào thành các lớp tương đương nhằm giảm số ca kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Để chia các giá trị đầu vào thành các lớp tương đương nhằm giảm số ca kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Phân vùng tương đương là kỹ thuật kiểm thử hộp đen chia miền đầu vào thành các lớp dữ liệu mà phần mềm xử lý giống nhau, từ đó chọn đại diện từ mỗi lớp để kiểm thử, giúp giảm số lượng test case cần thiết.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Để chia các giá trị đầu vào thành các lớp tương đương nhằm giảm số ca kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 29,
-    question: "Quy tắc đặt tên trong hiện thực mã chương trình cần tuân thủ những gì?",
-    options: [
-      { key: "a", text: "Phù hợp và rõ ràng" },
-      { key: "b", text: "Ngắn gọn và xúc tích" },
-      { key: "c", text: "Phức tạp và chi tiết" },
-      { key: "d", text: "Bất kỳ tên nào cũng được" }
+    "id": 28,
+    "question": "Kiểm thử hệ thống (System Testing) được thực hiện ngay sau khi nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử module"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử đơn vị"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử tích hợp"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử chấp nhận"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Tên biến, hàm, class cần phản ánh đúng mục đích sử dụng (phù hợp) và rõ ràng để bất kỳ ai đọc vào cũng hiểu ngay mà không cần xem code chi tiết.",
-      b: "Ngắn gọn quá mức (như đặt tên biến là `x`, `y`, `temp`) thường gây mơ hồ, khó hiểu.",
-      c: "Đặt tên quá phức tạp, dài dòng sẽ gây khó đọc, rối mắt.",
-      d: "Đặt tên tùy tiện sẽ làm giảm nghiêm trọng khả năng bảo trì của mã nguồn."
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử tích hợp\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử tích hợp\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Kiểm thử tích hợp**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử tích hợp\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 30,
-    question: "Kiểm tra Class cần xem xét điều gì?",
-    options: [
-      { key: "a", text: "Tên Class có thích hợp không" },
-      { key: "b", text: "Class có được trừu tượng không" },
-      { key: "c", text: "Header của Class có mô tả mục đích của hàm hay không" },
-      { key: "d", text: "Tất cả các ý trên" }
+    "id": 29,
+    "question": "Mục đích của kiểm thử chấp nhận để làm gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Chứng minh hệ thống không còn lỗi"
+      },
+      {
+        "key": "b",
+        "text": "Chứng minh tính thỏa mãn tất cả yêu cầu của khách hàng"
+      },
+      {
+        "key": "c",
+        "text": "Chứng minh tính bảo mật của hệ thống"
+      },
+      {
+        "key": "d",
+        "text": "Chứng minh tính tích hợp của hệ thống"
+      }
     ],
-    correct: "d",
-    explanations: {
-      a: "Tên class phải phản ánh đúng trách nhiệm của nó theo quy tắc OOP.",
-      b: "Class cần đạt độ trừu tượng hóa phù hợp, ẩn giấu chi tiết không cần thiết.",
-      c: "Header class (comment đầu file) giúp tóm tắt mục đích sử dụng của lớp để lập trình viên khác nắm bắt nhanh.",
-      d: "Chính xác! Cả 3 khía cạnh trên đều cần được rà soát kỹ lưỡng để đảm bảo lớp thiết kế đạt chất lượng cao."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Chứng minh tính thỏa mãn tất cả yêu cầu của khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Kiểm thử chấp nhận (Acceptance Testing) là mức kiểm thử cuối cùng để xác định xem hệ thống đã sẵn sàng bàn giao cho người dùng chưa, thường dựa trên yêu cầu nghiệp vụ thực tế của khách hàng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Chứng minh tính thỏa mãn tất cả yêu cầu của khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Chứng minh tính thỏa mãn tất cả yêu cầu của khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 31,
-    question: "Kiểm tra thuộc tính cần xác định điều gì?",
-    options: [
-      { key: "a", text: "Thuộc tính có cần thiết không" },
-      { key: "b", text: "Thuộc tính có thể là static không" },
-      { key: "c", text: "Thuộc tính có nên là final không" },
-      { key: "d", text: "Tất cả các ý trên" }
+    "id": 30,
+    "question": "Mục tiêu chính của kiểm thử tích hợp là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tìm các lỗi thủ tục"
+      },
+      {
+        "key": "b",
+        "text": "Tìm các lỗi bảo mật"
+      },
+      {
+        "key": "c",
+        "text": "Tìm các lỗi thiết kế"
+      },
+      {
+        "key": "d",
+        "text": "Tìm các lỗi giao diện"
+      }
     ],
-    correct: "d",
-    explanations: {
-      a: "Rà soát xem thuộc tính đó có thừa hay không để tối ưu hóa bộ nhớ.",
-      b: "Nếu thuộc tính dùng chung cho mọi đối tượng, nó nên là `static` để tiết kiệm tài nguyên.",
-      c: "Nếu giá trị của thuộc tính không đổi sau khi khởi tạo, nó nên là `final` (hằng số) để tránh lỗi ghi đè dữ liệu vô ý.",
-      d: "Chính xác! Cả 3 tiêu chí trên là các quy chuẩn để tối ưu hóa việc quản lý trạng thái của lớp."
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tìm các lỗi giao diện\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tìm các lỗi giao diện\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tìm các lỗi giao diện\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Kiểm thử tích hợp (Integration Testing) tập trung kiểm tra các giao tiếp (interfaces), tương tác và dòng dữ liệu qua lại giữa các module hoặc component phần mềm khác nhau."
     }
   },
   {
-    id: 32,
-    question: "Phương pháp kiểm tra phương thức khởi dựng cần xác định điều gì?",
-    options: [
-      { key: "a", text: "Phương thức có cần thiết không" },
-      { key: "b", text: "Phương thức có leverage các constructor hiện có không" },
-      { key: "c", text: "Phương thức có initialize tất cả các thuộc tính không" },
-      { key: "d", text: "Tất cả các ý trên" }
+    "id": 31,
+    "question": "Theo kết quả của việc phân tích rủi ro, việc test đang được hướng tới các khu vực của hệ thống được test, nơi mà ban đầu tìm thấy nhiều lỗi hơn mức trung bình. Nguyên tắc kiểm thử nào sau đây đang được áp dụng?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Lỗi thường tập trung"
+      },
+      {
+        "key": "b",
+        "text": "Nghịch lý thuốc trừ sâu"
+      },
+      {
+        "key": "c",
+        "text": "Test theo ngữ cảnh"
+      },
+      {
+        "key": "d",
+        "text": "Không thể chứng minh hết lỗi"
+      }
     ],
-    correct: "d",
-    explanations: {
-      a: "Kiểm tra xem constructor có thực sự cần khai báo tường minh hay không.",
-      b: "Sử dụng từ khóa `this(...)` để nạp chồng (leverage) các constructor có sẵn nhằm tránh trùng lặp code.",
-      c: "Đảm bảo mọi thuộc tính bắt buộc của đối tượng đều được gán giá trị hợp lệ khi khởi tạo.",
-      d: "Chính xác! Rà soát đầy đủ cả 3 khía cạnh trên để đảm bảo hàm dựng của Class chạy an toàn, hiệu quả."
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Lỗi thường tập trung**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lỗi thường tập trung\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lỗi thường tập trung\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lỗi thường tập trung\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 33,
-    question: "Làm thế nào để lập trình 1000 LoC/ngày?",
-    options: [
-      { key: "a", text: "Lập kế hoạch cấu trúc và thiết kế mã chương trình" },
-      { key: "b", text: "Tăng tốc độ đánh máy" },
-      { key: "c", text: "Tập trung vào các yêu cầu của khách hàng" },
-      { key: "d", text: "Giảm thời gian kiểm tra mã" }
+    "id": 32,
+    "question": "Điều nào sau đây không đúng với điều kiện phủ (coverage criteria) của kiểm thử?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Thước đo điều kiện phủ kiểm thử là tỷ lệ phần trăm lệnh được thực thi"
+      },
+      {
+        "key": "b",
+        "text": "Thước đo điều kiện phủ là tỷ lệ phần trăm yêu cầu của người dùng được phủ"
+      },
+      {
+        "key": "c",
+        "text": "Các điều kiện phủ thường được sử dụng khi chỉ định các tiêu chí hoàn thành kiểm thử"
+      },
+      {
+        "key": "d",
+        "text": "Cho biết số lỗi còn lại trong hệ thống"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Năng suất viết code phụ thuộc vào tư duy hơn là tốc độ tay. Khi lập trình viên đã lập kế hoạch cấu trúc và thiết kế logic rõ ràng, việc gõ mã sẽ diễn ra liên tục, không bị tắc nghẽn và ít lỗi.",
-      b: "Gõ phím nhanh mà không có kế hoạch logic sẽ tạo ra code sai, tốn thời gian viết lại.",
-      c: "Yêu cầu khách hàng là đích đến, nhưng để gõ được lượng code lớn chất lượng thì cần công cụ tổ chức cấu trúc lập trình cụ thể.",
-      d: "Giảm kiểm tra mã sẽ làm tăng lỗi nghiêm trọng trong hệ thống, gây mất nhiều thời gian sửa chữa sau này."
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Cho biết số lỗi còn lại trong hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Cho biết số lỗi còn lại trong hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Cho biết số lỗi còn lại trong hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Độ bao phủ kiểm thử (Test Coverage) là tỷ lệ phần trăm các thành phần cấu trúc (lệnh, quyết định, nhánh) được thực thi bởi bộ ca kiểm thử. Độ bao phủ càng cao thì độ tin cậy của bộ kiểm thử càng cao."
     }
   },
   {
-    id: 34,
-    question: "Kiểm tra thuộc tính có cần xác định điều gì?",
-    options: [
-      { key: "a", text: "Sự cần thiết của thuộc tính" },
-      { key: "b", text: "Thuộc tính có thể là static hay không" },
-      { key: "c", text: "Thuộc tính có nên là final hay không" },
-      { key: "d", text: "Tất cả các ý trên" }
+    "id": 33,
+    "question": "Phát biểu nào sau đây phù hợp nhất về phủ lệnh?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Đây là thước đo để xác nhận xem tất cả các câu lệnh có được thực thi hay không"
+      },
+      {
+        "key": "b",
+        "text": "Đây là một thước đo được sử dụng để tính toán và đo lường phần trăm các câu lệnh trong code đã được thực thi"
+      },
+      {
+        "key": "c",
+        "text": "Đây là một thước đo được sử dụng để tính toán và đo lường tỷ lệ phần trăm các test case đã được thực thi"
+      },
+      {
+        "key": "d",
+        "text": "Đây là một thước đo được sử dụng để tính toán và đo lường số lượng câu lệnh trong code đã được thực thi bởi các test case có kết quả pass"
+      }
     ],
-    correct: "d",
-    explanations: {
-      a: "Đây là các câu hỏi rà soát chuẩn mực về thuộc tính để bảo đảm tính đóng gói (encapsulation) và tối ưu hóa bộ nhớ.",
-      b: "Đây là các câu hỏi rà soát chuẩn mực về thuộc tính để bảo đảm tính đóng gói (encapsulation) và tối ưu hóa bộ nhớ.",
-      c: "Đây là các câu hỏi rà soát chuẩn mực về thuộc tính để bảo đảm tính đóng gói (encapsulation) và tối ưu hóa bộ nhớ.",
-      d: "Chính xác! (Câu hỏi này lặp lại câu 31 trong tài liệu gốc nhằm nhấn mạnh tầm quan trọng của việc kiểm tra thuộc tính)."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đây là một thước đo được sử dụng để tính toán và đo lường phần trăm các câu lệnh trong code đã được thực thi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Đây là một thước đo được sử dụng để tính toán và đo lường phần trăm các câu lệnh trong code đã được thực thi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đây là một thước đo được sử dụng để tính toán và đo lường phần trăm các câu lệnh trong code đã được thực thi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đây là một thước đo được sử dụng để tính toán và đo lường phần trăm các câu lệnh trong code đã được thực thi\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 35,
-    question: "Tại sao cần ghi chú lại các mốc thời gian trong quá trình hiện thực mã chương trình?",
-    options: [
-      { key: "a", text: "Để theo dõi tiến độ và quản lý thời gian hiệu quả" },
-      { key: "b", text: "Để lưu trữ dữ liệu người dùng" },
-      { key: "c", text: "Để phân tích thị trường" },
-      { key: "d", text: "Để giảm chi phí phát triển" }
+    "id": 34,
+    "question": "Câu nào sau đây mô tả nguyên tắc chính của kiểm thử phần mềm?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử tự động cho phép đưa ra những tuyên bố đáng tin hơn về chất lượng của sản phẩm phần mềm"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử phần mềm toàn diện (Exhaustive software testing), với đủ nỗ lực và công cụ hỗ trợ, có thể thực hiện được đối với tất cả phần mềm"
+      },
+      {
+        "key": "c",
+        "text": "Mục đích của kiểm thử phần mềm là chứng minh rằng sản phẩm phần mềm không có lỗi"
+      },
+      {
+        "key": "d",
+        "text": "Đối với một hệ thống phần mềm, thông thường không thể kiểm tra tất cả các kết hợp đầu vào và đầu ra"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Ghi chép thời gian tiêu thụ cho từng tác vụ lập trình (Time-tracking) giúp lập trình viên tự đánh giá năng lực, quản lý thời gian tốt hơn và giúp dự án ước lượng tiến độ thực tế chính xác hơn.",
-      b: "Việc theo dõi thời gian viết code của dev không liên quan đến cơ sở dữ liệu của người dùng cuối.",
-      c: "Phân tích thị trường là công việc của bộ phận kinh doanh và marketing.",
-      d: "Theo dõi thời gian không trực tiếp làm giảm chi phí sản xuất phần mềm."
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Đối với một hệ thống phần mềm, thông thường không thể kiểm tra tất cả các kết hợp đầu vào và đầu ra\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Đối với một hệ thống phần mềm, thông thường không thể kiểm tra tất cả các kết hợp đầu vào và đầu ra\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Đối với một hệ thống phần mềm, thông thường không thể kiểm tra tất cả các kết hợp đầu vào và đầu ra\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Đối với một hệ thống phần mềm, thông thường không thể kiểm tra tất cả các kết hợp đầu vào và đầu ra**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
     }
   },
   {
-    id: 36,
-    question: "Việc chuẩn bị để hiện thực bao gồm gì?",
-    options: [
-      { key: "a", text: "Xác nhận các thiết kế chi tiết phải hiện thực" },
-      { key: "b", text: "Mã hóa từ một thiết kế được mô tả bằng văn bản" },
-      { key: "c", text: "Đo thời gian phân loại theo các bước" },
-      { key: "d", text: "Tất cả các ý trên" }
+    "id": 35,
+    "question": "Alpha và Beta testing là hình thức test nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Acceptance testing"
+      },
+      {
+        "key": "b",
+        "text": "White-box testing"
+      },
+      {
+        "key": "c",
+        "text": "Black-box testing"
+      },
+      {
+        "key": "d",
+        "text": "System testing"
+      }
     ],
-    correct: "d",
-    explanations: {
-      a: "Cần đảm bảo bản vẽ thiết kế đã chính xác và được phê duyệt.",
-      b: "Đọc hiểu kỹ lưỡng các mô tả văn bản và lưu đồ thuật toán liên quan.",
-      c: "Thiết lập kế hoạch/công cụ để đo lường thời gian thực hiện từng bước.",
-      d: "Chính xác! Tất cả các công tác chuẩn bị trên giúp pha coding diễn ra khoa học, hạn chế sai lệch."
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Kiểm thử chấp nhận (Acceptance Testing) là mức kiểm thử cuối cùng để xác định xem hệ thống đã sẵn sàng bàn giao cho người dùng chưa, thường dựa trên yêu cầu nghiệp vụ thực tế của khách hàng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Acceptance testing\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Acceptance testing\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Acceptance testing\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 37,
-    question: "Mục đích của việc biên dịch mã lệnh là gì?",
-    options: [
-      { key: "a", text: "Kiểm tra và sửa chữa các lỗi cú pháp" },
-      { key: "b", text: "Thiết kế giao diện người dùng" },
-      { key: "c", text: "Viết tài liệu hướng dẫn" },
-      { key: "d", text: "Tạo lập báo cáo phân tích" }
+    "id": 36,
+    "question": "Thiết kế phần mềm là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Quá trình viết mã nguồn"
+      },
+      {
+        "key": "b",
+        "text": "Quá trình xác định các thành phần phần mềm và mối liên kết giữa chúng dựa trên yêu cầu của khách hàng"
+      },
+      {
+        "key": "c",
+        "text": "Quá trình kiểm thử phần mềm"
+      },
+      {
+        "key": "d",
+        "text": "Quá trình bảo trì phần mềm"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Trình biên dịch (Compiler) quét qua toàn bộ mã nguồn để phát hiện các lỗi ngữ pháp của ngôn ngữ lập trình (cú pháp) và ngăn không cho chương trình chạy cho đến khi các lỗi này được khắc phục.",
-      b: "Đây là các hoạt động phi lập trình khác trong dự án.",
-      c: "Đây là các hoạt động phi lập trình khác trong dự án.",
-      d: "Đây là các hoạt động phi lập trình khác trong dự án."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình xác định các thành phần phần mềm và mối liên kết giữa chúng dựa trên yêu cầu của khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Quá trình xác định các thành phần phần mềm và mối liên kết giữa chúng dựa trên yêu cầu của khách hàng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình xác định các thành phần phần mềm và mối liên kết giữa chúng dựa trên yêu cầu của khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình xác định các thành phần phần mềm và mối liên kết giữa chúng dựa trên yêu cầu của khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 38,
-    question: "Mục tiêu của kiểm thử phần mềm là gì?",
-    options: [
-      { key: "a", text: "Để chỉ ra rằng chương trình thực hiện đúng như mong đợi và tìm ra lỗi" },
-      { key: "b", text: "Để giảm chi phí phát triển" },
-      { key: "c", text: "Để tăng tốc độ lập trình" },
-      { key: "d", text: "Để làm hài lòng khách hàng" }
+    "id": 37,
+    "question": "Hiện thực phần mềm là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Quá trình kiểm thử phần mềm"
+      },
+      {
+        "key": "b",
+        "text": "Quá trình hiện thực hóa thiết kế thành chương trình"
+      },
+      {
+        "key": "c",
+        "text": "Quá trình viết tài liệu hướng dẫn"
+      },
+      {
+        "key": "d",
+        "text": "Quá trình bảo trì phần mềm"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Kiểm thử có hai mục tiêu chính: Xác minh xem phần mềm có hoạt động đúng theo yêu cầu thiết kế không (Validation) và chủ động tìm kiếm các lỗi ẩn giấu (Verification) để sửa chữa.",
-      b: "Kiểm thử là một pha tốn kém chi phí, dù giúp tránh tổn thất nặng nề sau khi phát hành.",
-      c: "Kiểm thử không làm tăng tốc độ viết code của lập trình viên.",
-      d: "Sự hài lòng của khách hàng chỉ là kết quả gián tiếp khi họ nhận được một sản phẩm chạy ổn định."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình hiện thực hóa thiết kế thành chương trình\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Quá trình hiện thực hóa thiết kế thành chương trình**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình hiện thực hóa thiết kế thành chương trình\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình hiện thực hóa thiết kế thành chương trình\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 39,
-    question: "Kiểm thử đơn vị (unit testing) tập trung vào điều gì?",
-    options: [
-      { key: "a", text: "Kiểm thử chức năng của các đối tượng hay các phương thức" },
-      { key: "b", text: "Kiểm thử giao diện người dùng" },
-      { key: "c", text: "Kiểm thử hiệu suất hệ thống" },
-      { key: "d", text: "Kiểm thử tính bảo mật" }
+    "id": 38,
+    "question": "Thiết kế và hiện thực phần mềm là hai hoạt động như thế nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tách biệt hoàn toàn"
+      },
+      {
+        "key": "b",
+        "text": "Đan xen lẫn nhau"
+      },
+      {
+        "key": "c",
+        "text": "Hoàn toàn độc lập"
+      },
+      {
+        "key": "d",
+        "text": "Không liên quan đến nhau"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Kiểm thử đơn vị (Unit Testing) tập trung kiểm tra độc lập các khối mã nhỏ nhất có thể cô lập được (hàm, thủ tục, hoặc phương thức của class) để đảm bảo tính đúng đắn của logic bên trong.",
-      b: "Kiểm thử UI, hiệu năng hay bảo mật thường được thực hiện ở cấp độ tích hợp hoặc hệ thống (System Testing).",
-      c: "Kiểm thử UI, hiệu năng hay bảo mật thường được thực hiện ở cấp độ tích hợp hoặc hệ thống (System Testing).",
-      d: "Kiểm thử UI, hiệu năng hay bảo mật thường được thực hiện ở cấp độ tích hợp hoặc hệ thống (System Testing)."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đan xen lẫn nhau\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Kiểm thử động (Dynamic testing) yêu cầu chương trình phải chạy thực tế trên máy tính với dữ liệu đầu vào cụ thể để so sánh kết quả thực tế và kết quả mong đợi.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đan xen lẫn nhau\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đan xen lẫn nhau\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 40,
-    question: "Kiểm thử component (component testing) tập trung vào điều gì?",
-    options: [
-      { key: "a", text: "Kiểm thử giao diện component" },
-      { key: "b", text: "Kiểm thử chức năng của các phương thức" },
-      { key: "c", text: "Kiểm thử tính bảo mật" },
-      { key: "d", text: "Kiểm thử giao diện người dùng" }
+    "id": 39,
+    "question": "Thiết kế hướng đối tượng sử dụng gì để biểu diễn?",
+    "options": [
+      {
+        "key": "a",
+        "text": "UML"
+      },
+      {
+        "key": "b",
+        "text": "SQL"
+      },
+      {
+        "key": "c",
+        "text": "HTML"
+      },
+      {
+        "key": "d",
+        "text": "XML"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Component là một nhóm các đối tượng/lớp liên kết chặt chẽ. Kiểm thử component tập trung rà soát các giao tiếp (interfaces) và trao đổi thông tin giữa các thành phần cấu thành component đó.",
-      b: "Kiểm thử các phương thức độc lập là nhiệm vụ của Unit testing.",
-      c: "Bảo mật và UI người dùng thuộc phạm vi kiểm thử hệ thống rộng hơn.",
-      d: "Bảo mật và UI người dùng thuộc phạm vi kiểm thử hệ thống rộng hơn."
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **UML**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"UML\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"UML\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"UML\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 41,
-    question: "Kiểm thử hệ thống (system testing) tập trung vào điều gì?",
-    options: [
-      { key: "a", text: "Kiểm thử tương tác giữa các component" },
-      { key: "b", text: "Kiểm thử giao diện người dùng" },
-      { key: "c", text: "Kiểm thử tính bảo mật" },
-      { key: "d", text: "Kiểm thử hiệu suất hệ thống" }
+    "id": 40,
+    "question": "Thiết kế mẫu là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Một phương pháp lập trình"
+      },
+      {
+        "key": "b",
+        "text": "Một phương pháp thiết kế giao diện người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Một phương pháp để giải quyết các vấn đề thiết kế thường gặp"
+      },
+      {
+        "key": "d",
+        "text": "Một phương pháp kiểm thử phần mềm"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! (Theo ngữ cảnh tài liệu). Kiểm thử hệ thống ghép nối tất cả các component lại để xác nhận xem tương tác giữa chúng và toàn bộ luồng nghiệp vụ tích hợp có hoạt động đồng bộ hay không.",
-      b: "Các yếu tố này cũng được kiểm tra trong pha System test nhưng không phản ánh khái niệm tích hợp cốt lõi của nó.",
-      c: "Các yếu tố này cũng được kiểm tra trong pha System test nhưng không phản ánh khái niệm tích hợp cốt lõi của nó.",
-      d: "Các yếu tố này cũng được kiểm tra trong pha System test nhưng không phản ánh khái niệm tích hợp cốt lõi của nó."
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Một phương pháp để giải quyết các vấn đề thiết kế thường gặp\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Một phương pháp để giải quyết các vấn đề thiết kế thường gặp\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Một phương pháp để giải quyết các vấn đề thiết kế thường gặp**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Một phương pháp để giải quyết các vấn đề thiết kế thường gặp\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 42,
-    question: "Kiểm thử tự động nên sử dụng gì để hỗ trợ kiểm thử đơn vị?",
-    options: [
-      { key: "a", text: "Framework kiểm thử tự động (như JUnit)" },
-      { key: "b", text: "Các công cụ kiểm thử thủ công" },
-      { key: "c", text: "Phần mềm thiết kế giao diện" },
-      { key: "d", text: "Các chương trình bảo mật" }
+    "id": 41,
+    "question": "Phát triển mã nguồn mở liên quan đến gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sử dụng phần mềm đóng gói"
+      },
+      {
+        "key": "b",
+        "text": "Sử dụng và phát triển các thành phần mã nguồn mở"
+      },
+      {
+        "key": "c",
+        "text": "Thiết kế giao diện người dùng"
+      },
+      {
+        "key": "d",
+        "text": "Quản lý dự án phần mềm"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Các framework như JUnit (cho Java), PyTest (cho Python), NUnit (cho C#) giúp lập trình viên viết mã test, tự động hóa quá trình chạy thử và lập báo cáo kết quả tức thì.",
-      b: "Kiểm thử thủ công không thể tự động hóa quy trình test code.",
-      c: "Phần mềm UI hay chương trình bảo mật không hỗ trợ chạy các kịch bản kiểm thử đơn vị tự động.",
-      d: "Phần mềm UI hay chương trình bảo mật không hỗ trợ chạy các kịch bản kiểm thử đơn vị tự động."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Sử dụng và phát triển các thành phần mã nguồn mở\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Sử dụng và phát triển các thành phần mã nguồn mở**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Sử dụng và phát triển các thành phần mã nguồn mở\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Sử dụng và phát triển các thành phần mã nguồn mở\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 43,
-    question: "Mục tiêu của kiểm thử giao diện là gì?",
-    options: [
-      { key: "a", text: "Tìm ra lỗi gây ra bởi các lỗi giao diện hoặc giả định sai về các giao diện" },
-      { key: "b", text: "Kiểm thử chức năng của các phương thức" },
-      { key: "c", text: "Kiểm thử hiệu suất hệ thống" },
-      { key: "d", text: "Kiểm thử tính bảo mật" }
+    "id": 42,
+    "question": "Một trong những nguyên tắc chính trong thiết kế giao diện người dùng là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tối ưu hóa cho các thiết bị di động"
+      },
+      {
+        "key": "b",
+        "text": "Tính đến nhu cầu, kinh nghiệm và khả năng của người dùng hệ thống"
+      },
+      {
+        "key": "c",
+        "text": "Tăng tốc độ phát triển phần mềm"
+      },
+      {
+        "key": "d",
+        "text": "Giảm chi phí phát triển"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Kiểm thử giao diện tích hợp (Interface Testing) nhằm phát hiện lỗi do sự không tương thích về định dạng dữ liệu, tham số truyền vào hoặc các giả định sai giữa hai hệ thống/mô-đun giao tiếp với nhau.",
-      b: "Là mục tiêu của Unit testing.",
-      c: "Là mục tiêu của các loại kiểm thử phi chức năng ở cấp hệ thống.",
-      d: "Là mục tiêu của các loại kiểm thử phi chức năng ở cấp hệ thống."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Tính đến nhu cầu, kinh nghiệm và khả năng của người dùng hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Tính đến nhu cầu, kinh nghiệm và khả năng của người dùng hệ thống**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Tính đến nhu cầu, kinh nghiệm và khả năng của người dùng hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Tính đến nhu cầu, kinh nghiệm và khả năng của người dùng hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 44,
-    question: "Một loại giao diện trong kiểm thử giao diện là gì?",
-    options: [
-      { key: "a", text: "Giao diện có tham số" },
-      { key: "b", text: "Giao diện người dùng" },
-      { key: "c", text: "Giao diện hệ thống" },
-      { key: "d", text: "Giao diện bảo mật" }
+    "id": 43,
+    "question": "Thiết kế UI cần nhận thức được điều gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Các hạn chế về tài chính của dự án"
+      },
+      {
+        "key": "b",
+        "text": "Các hạn chế về vật lý và tinh thần của người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Các công nghệ mới nhất"
+      },
+      {
+        "key": "d",
+        "text": "Các yêu cầu chức năng của hệ thống"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Giao diện có tham số (Parameter interface) là nơi dữ liệu được truyền qua lại dưới dạng các đối số giữa các hàm. Đây là đối tượng kiểm tra chính trong kiểm thử giao diện lập trình.",
-      b: "Đây là các thuật ngữ mô tả khái niệm giao tiếp tổng quát, không phải phân loại giao diện kỹ thuật chuyên biệt trong lập trình tích hợp mô-đun.",
-      c: "Đây là các thuật ngữ mô tả khái niệm giao tiếp tổng quát, không phải phân loại giao diện kỹ thuật chuyên biệt trong lập trình tích hợp mô-đun.",
-      d: "Đây là các thuật ngữ mô tả khái niệm giao tiếp tổng quát, không phải phân loại giao diện kỹ thuật chuyên biệt trong lập trình tích hợp mô-đun."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Các hạn chế về vật lý và tinh thần của người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Các hạn chế về vật lý và tinh thần của người dùng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Các hạn chế về vật lý và tinh thần của người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Các hạn chế về vật lý và tinh thần của người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 45,
-    question: "Kiểm thử phát triển là trách nhiệm của ai?",
-    options: [
-      { key: "a", text: "Đội ngũ phát triển phần mềm" },
-      { key: "b", text: "Người dùng cuối" },
-      { key: "c", text: "Nhóm marketing" },
-      { key: "d", text: "Nhóm hỗ trợ khách hàng" }
+    "id": 44,
+    "question": "Các mô hình thiết kế hệ thống có vai trò gì trong dự án lớn?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Giảm thời gian phát triển"
+      },
+      {
+        "key": "b",
+        "text": "Là cơ chế giao tiếp quan trọng giữa các nhóm thiết kế khác nhau"
+      },
+      {
+        "key": "c",
+        "text": "Tăng chi phí dự án"
+      },
+      {
+        "key": "d",
+        "text": "Giảm số lượng lỗi phần mềm"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Kiểm thử phát triển (Development testing) bao gồm Unit test, Component test do chính các kỹ sư lập trình và QA nội bộ thực hiện trong quá trình viết code.",
-      b: "Người dùng cuối thực hiện kiểm thử chấp nhận (Acceptance testing).",
-      c: "Nhóm marketing và CS không có chức năng kỹ thuật kiểm thử mã nguồn.",
-      d: "Nhóm marketing và CS không có chức năng kỹ thuật kiểm thử mã nguồn."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Là cơ chế giao tiếp quan trọng giữa các nhóm thiết kế khác nhau\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Là cơ chế giao tiếp quan trọng giữa các nhóm thiết kế khác nhau**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Là cơ chế giao tiếp quan trọng giữa các nhóm thiết kế khác nhau\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Là cơ chế giao tiếp quan trọng giữa các nhóm thiết kế khác nhau\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 46,
-    question: "Kiểm thử phát hành là gì?",
-    options: [
-      { key: "a", text: "Kiểm thử hệ thống trước khi phát hành cho khách hàng" },
-      { key: "b", text: "Kiểm thử hệ thống sau khi phát hành cho khách hàng" },
-      { key: "c", text: "Kiểm thử hệ thống trong giai đoạn phát triển" },
-      { key: "d", text: "Kiểm thử hệ thống trong giai đoạn bảo trì" }
+    "id": 45,
+    "question": "Thiết kế thuật toán là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Quá trình thiết kế giao diện người dùng"
+      },
+      {
+        "key": "b",
+        "text": "Quá trình thiết kế các thuật toán để giải quyết các vấn đề cụ thể"
+      },
+      {
+        "key": "c",
+        "text": "Quá trình viết mã nguồn"
+      },
+      {
+        "key": "d",
+        "text": "Quá trình kiểm thử phần mềm"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Kiểm thử phát hành (Release testing) là bước đánh giá hộp đen toàn diện cuối cùng do một đội ngũ kiểm thử độc lập thực hiện nhằm đảm bảo chất lượng hệ thống đạt chuẩn trước khi giao tới tay khách hàng.",
-      b: "Sau phát hành chỉ có hoạt động giám sát vận hành thực tế.",
-      c: "Trong giai đoạn phát triển là Development testing.",
-      d: "Trong giai đoạn bảo trì là kiểm thử hồi quy (Regression testing) để tránh làm hỏng các tính năng cũ."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình thiết kế các thuật toán để giải quyết các vấn đề cụ thể\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Quá trình thiết kế các thuật toán để giải quyết các vấn đề cụ thể**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình thiết kế các thuật toán để giải quyết các vấn đề cụ thể\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình thiết kế các thuật toán để giải quyết các vấn đề cụ thể\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 47,
-    question: "Phương pháp kiểm thử hộp đen tập trung vào điều gì?",
-    options: [
-      { key: "a", text: "Kiểm thử chức năng của hệ thống mà không cần biết cấu trúc bên trong" },
-      { key: "b", text: "Kiểm thử hiệu suất hệ thống" },
-      { key: "c", text: "Kiểm thử tính bảo mật" },
-      { key: "d", text: "Kiểm thử giao diện người dùng" }
+    "id": 46,
+    "question": "Thiết kế cơ sở dữ liệu liên quan đến điều gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Thiết kế giao diện người dùng"
+      },
+      {
+        "key": "b",
+        "text": "Thiết kế cấu trúc và tổ chức của cơ sở dữ liệu"
+      },
+      {
+        "key": "c",
+        "text": "Thiết kế các thuật toán"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử cơ sở dữ liệu"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Kiểm thử hộp đen (Black-box testing) bỏ qua cấu trúc mã nguồn bên trong, chỉ nhập dữ liệu đầu vào và kiểm tra xem đầu ra có khớp với yêu cầu nghiệp vụ hay không.",
-      b: "Các loại kiểm thử này có thể dùng cả phương pháp hộp đen hoặc hộp trắng tùy theo mục tiêu kỹ thuật cụ thể.",
-      c: "Các loại kiểm thử này có thể dùng cả phương pháp hộp đen hoặc hộp trắng tùy theo mục tiêu kỹ thuật cụ thể.",
-      d: "Các loại kiểm thử này có thể dùng cả phương pháp hộp đen hoặc hộp trắng tùy theo mục tiêu kỹ thuật cụ thể."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Thiết kế cấu trúc và tổ chức của cơ sở dữ liệu\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Thiết kế cấu trúc và tổ chức của cơ sở dữ liệu**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Thiết kế cấu trúc và tổ chức của cơ sở dữ liệu\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Thiết kế cấu trúc và tổ chức của cơ sở dữ liệu\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 48,
-    question: "Phương pháp kiểm thử hộp trắng tập trung vào điều gì?",
-    options: [
-      { key: "a", text: "Kiểm thử cấu trúc bên trong của hệ thống" },
-      { key: "b", text: "Kiểm thử hiệu suất hệ thống" },
-      { key: "c", text: "Kiểm thử tính bảo mật" },
-      { key: "d", text: "Kiểm thử giao diện người dùng" }
+    "id": 47,
+    "question": "Trong thiết kế giao diện người dùng, cần thừa nhận điều gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Người dùng luôn biết cách sử dụng hệ thống"
+      },
+      {
+        "key": "b",
+        "text": "Ai cũng có thể nhầm lẫn"
+      },
+      {
+        "key": "c",
+        "text": "Hệ thống không bao giờ gặp lỗi"
+      },
+      {
+        "key": "d",
+        "text": "Giao diện không cần thân thiện"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Kiểm thử hộp trắng (White-box testing) đòi hỏi lập trình viên phải hiểu rõ cấu trúc mã nguồn để thiết kế các kịch bản bao phủ hết các dòng lệnh, các nhánh rẽ và các vòng lặp.",
-      b: "Không phản ánh định nghĩa kỹ thuật cơ bản của kiểm thử hộp trắng.",
-      c: "Không phản ánh định nghĩa kỹ thuật cơ bản của kiểm thử hộp trắng.",
-      d: "Không phản ánh định nghĩa kỹ thuật cơ bản của kiểm thử hộp trắng."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Ai cũng có thể nhầm lẫn\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Ai cũng có thể nhầm lẫn**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Ai cũng có thể nhầm lẫn\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Ai cũng có thể nhầm lẫn\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 49,
-    question: "Phương pháp kiểm thử hộp xám là gì?",
-    options: [
-      { key: "a", text: "Kết hợp giữa kiểm thử hộp đen và kiểm thử hộp trắng" },
-      { key: "b", text: "Kiểm thử hiệu suất hệ thống" },
-      { key: "c", text: "Kiểm thử tính bảo mật" },
-      { key: "d", text: "Kiểm thử giao diện người dùng" }
+    "id": 48,
+    "question": "Mục tiêu chính của thiết kế giao diện người dùng là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tăng tốc độ phát triển phần mềm"
+      },
+      {
+        "key": "b",
+        "text": "Đáp ứng nhu cầu và trải nghiệm người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Giảm chi phí phát triển"
+      },
+      {
+        "key": "d",
+        "text": "Tăng tính bảo mật của hệ thống"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Kiểm thử hộp xám (Gray-box testing) là sự kết hợp lai: kiểm thử viên kiểm tra chức năng từ bên ngoài như hộp đen, nhưng có trang bị một phần hiểu biết về cấu trúc bên trong (như sơ đồ CSDL, thuật toán) để thiết kế kịch bản hiệu quả hơn.",
-      b: "Không phải định nghĩa của kiểm thử hộp xám.",
-      c: "Không phải định nghĩa của kiểm thử hộp xám.",
-      d: "Không phải định nghĩa của kiểm thử hộp xám."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đáp ứng nhu cầu và trải nghiệm người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Đáp ứng nhu cầu và trải nghiệm người dùng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đáp ứng nhu cầu và trải nghiệm người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đáp ứng nhu cầu và trải nghiệm người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 50,
-    question: "Mục tiêu của kiểm thử validation là gì?",
-    options: [
-      { key: "a", text: "Để chỉ ra rằng phần mềm thỏa mãn các yêu cầu đưa ra" },
-      { key: "b", text: "Để tìm ra các lỗi của phần mềm" },
-      { key: "c", text: "Để giảm chi phí phát triển" },
-      { key: "d", text: "Để tăng tốc độ lập trình" }
+    "id": 49,
+    "question": "Quá trình thiết kế phần mềm bao gồm gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Viết mã nguồn"
+      },
+      {
+        "key": "b",
+        "text": "Định nghĩa các thành phần phần mềm và mối liên kết giữa chúng"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử phần mềm"
+      },
+      {
+        "key": "d",
+        "text": "Bảo trì phần mềm"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Kiểm thử xác nhận (Validation testing) nhằm trả lời câu hỏi: 'Chúng ta có xây dựng đúng sản phẩm khách hàng cần không?' (Are we building the right product?).",
-      b: "Tìm kiếm các lỗi phần mềm là mục tiêu chính của kiểm thử tìm lỗi (Defect testing).",
-      c: "Kiểm thử là quá trình tốn tài nguyên và thời gian, không trực tiếp giảm chi phí hay tăng tốc độ lập trình.",
-      d: "Kiểm thử là quá trình tốn tài nguyên và thời gian, không trực tiếp giảm chi phí hay tăng tốc độ lập trình."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Định nghĩa các thành phần phần mềm và mối liên kết giữa chúng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Định nghĩa các thành phần phần mềm và mối liên kết giữa chúng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Định nghĩa các thành phần phần mềm và mối liên kết giữa chúng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Định nghĩa các thành phần phần mềm và mối liên kết giữa chúng\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 51,
-    question: "Mục tiêu của kiểm thử defect là gì?",
-    options: [
-      { key: "a", text: "Để tìm ra các tình huống mà phần mềm không hoạt động đúng như mong đợi" },
-      { key: "b", text: "Để chỉ ra rằng phần mềm thỏa mãn các yêu cầu đưa ra" },
-      { key: "c", text: "Để giảm chi phí phát triển" },
-      { key: "d", text: "Để làm hài lòng khách hàng" }
+    "id": 50,
+    "question": "Một ví dụ về biểu đồ hoạt động trong thiết kế phần mềm là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Biểu đồ lớp"
+      },
+      {
+        "key": "b",
+        "text": "Biểu đồ liên kết"
+      },
+      {
+        "key": "c",
+        "text": "Biểu đồ hoạt động swimming lane"
+      },
+      {
+        "key": "d",
+        "text": "Biểu đồ thành phần"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Defect testing được thiết kế nhằm mục đích chủ động 'phá hoại' hệ thống, tìm ra các lỗ hổng, sai sót và các ca kiểm thử biên mà phần mềm xử lý sai để lập trình viên sửa đổi.",
-      b: "Là mục tiêu của Validation testing.",
-      c: "Không phải mục tiêu kỹ thuật trực tiếp của Defect testing.",
-      d: "Không phải mục tiêu kỹ thuật trực tiếp của Defect testing."
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Biểu đồ hoạt động swimming lane\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Biểu đồ hoạt động swimming lane\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Kiểm thử động (Dynamic testing) yêu cầu chương trình phải chạy thực tế trên máy tính với dữ liệu đầu vào cụ thể để so sánh kết quả thực tế và kết quả mong đợi.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Biểu đồ hoạt động swimming lane\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 52,
-    question: "Tại sao cần kiểm tra kết quả của việc kiểm thử?",
-    options: [
-      { key: "a", text: "Để tìm ra lỗi và các bất thường" },
-      { key: "b", text: "Để lưu trữ dữ liệu người dùng" },
-      { key: "c", text: "Để phân tích thị trường" },
-      { key: "d", text: "Để tăng tốc độ phát triển phần mềm" }
+    "id": 51,
+    "question": "Quản lý bản quyền trong thiết kế phần mềm liên quan đến điều gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sử dụng các thành phần mã nguồn mở mà không cần kiểm tra"
+      },
+      {
+        "key": "b",
+        "text": "Duy trì thông tin về các thành phần mã nguồn mở đã tải về và sử dụng"
+      },
+      {
+        "key": "c",
+        "text": "Thiết kế giao diện người dùng"
+      },
+      {
+        "key": "d",
+        "text": "Bảo trì phần mềm"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Việc rà soát kết quả test (so sánh Actual Result và Expected Result) giúp chỉ ra các điểm sai lệch của hệ thống để kịp thời ghi nhận lỗi (Bug logging).",
-      b: "Không liên quan đến hoạt động đối chiếu kết quả kiểm thử.",
-      c: "Không liên quan đến hoạt động đối chiếu kết quả kiểm thử.",
-      d: "Không liên quan đến hoạt động đối chiếu kết quả kiểm thử."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Duy trì thông tin về các thành phần mã nguồn mở đã tải về và sử dụng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Duy trì thông tin về các thành phần mã nguồn mở đã tải về và sử dụng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Duy trì thông tin về các thành phần mã nguồn mở đã tải về và sử dụng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Duy trì thông tin về các thành phần mã nguồn mở đã tải về và sử dụng\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 53,
-    question: "Kiểm thử người dùng tập trung vào điều gì?",
-    options: [
-      { key: "a", text: "Kiểm thử phần mềm bởi người dùng cuối" },
-      { key: "b", text: "Kiểm thử tính bảo mật" },
-      { key: "c", text: "Kiểm thử hiệu suất hệ thống" },
-      { key: "d", text: "Kiểm thử giao diện người dùng" }
+    "id": 52,
+    "question": "Một trong những nguyên tắc quan trọng trong thiết kế phần mềm là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Giảm thiểu số lượng mã nguồn"
+      },
+      {
+        "key": "b",
+        "text": "Đảm bảo phần mềm dễ dàng bảo trì và mở rộng"
+      },
+      {
+        "key": "c",
+        "text": "Tăng số lượng thành phần phần mềm"
+      },
+      {
+        "key": "d",
+        "text": "Giảm thiểu tài liệu hướng dẫn"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Kiểm thử người dùng (User testing / Alpha-Beta testing) là quá trình đưa phần mềm cho chính đối tượng khách hàng sử dụng thực tế để đánh giá sự phù hợp với quy trình làm việc của họ.",
-      b: "Các kỹ thuật kiểm thử chuyên sâu này do đội kỹ thuật/QA đảm nhiệm, không phải do người dùng cuối thực hiện.",
-      c: "Các kỹ thuật kiểm thử chuyên sâu này do đội kỹ thuật/QA đảm nhiệm, không phải do người dùng cuối thực hiện.",
-      d: "Các kỹ thuật kiểm thử chuyên sâu này do đội kỹ thuật/QA đảm nhiệm, không phải do người dùng cuối thực hiện."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đảm bảo phần mềm dễ dàng bảo trì và mở rộng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Đảm bảo phần mềm dễ dàng bảo trì và mở rộng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đảm bảo phần mềm dễ dàng bảo trì và mở rộng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đảm bảo phần mềm dễ dàng bảo trì và mở rộng\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 54,
-    question: "Cải tiến quy trình phần mềm bao gồm gì?",
-    options: [
-      { key: "a", text: "Cải tiến các phương pháp phát triển và kiểm thử phần mềm" },
-      { key: "b", text: "Tăng tốc độ lập trình" },
-      { key: "c", text: "Giảm chi phí phát triển" },
-      { key: "d", text: "Tập trung vào giao diện người dùng" }
+    "id": 53,
+    "question": "Thiết kế cơ sở dữ liệu bao gồm việc gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Xác định cấu trúc dữ liệu và cách tổ chức dữ liệu trong cơ sở dữ liệu"
+      },
+      {
+        "key": "b",
+        "text": "Viết mã nguồn"
+      },
+      {
+        "key": "c",
+        "text": "Thiết kế giao diện người dùng"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử cơ sở dữ liệu"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Cải tiến quy trình phần mềm (Software Process Improvement - SPI) là chu kỳ phân tích, đánh giá và tối ưu hóa các phương pháp phát triển, công cụ hỗ trợ và các kịch bản kiểm thử nhằm nâng cao chất lượng sản phẩm.",
-      b: "Chỉ là các khía cạnh nhỏ, không bao quát toàn bộ mục tiêu của SPI.",
-      c: "Chỉ là các khía cạnh nhỏ, không bao quát toàn bộ mục tiêu của SPI.",
-      d: "Chỉ là các khía cạnh nhỏ, không bao quát toàn bộ mục tiêu của SPI."
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Xác định cấu trúc dữ liệu và cách tổ chức dữ liệu trong cơ sở dữ liệu**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Xác định cấu trúc dữ liệu và cách tổ chức dữ liệu trong cơ sở dữ liệu\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Xác định cấu trúc dữ liệu và cách tổ chức dữ liệu trong cơ sở dữ liệu\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Xác định cấu trúc dữ liệu và cách tổ chức dữ liệu trong cơ sở dữ liệu\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 55,
-    question: "Bảo trì phần mềm bao gồm gì?",
-    options: [
-      { key: "a", text: "Sửa lỗi và nâng cấp phần mềm sau khi phát hành" },
-      { key: "b", text: "Thiết kế giao diện người dùng" },
-      { key: "c", text: "Viết tài liệu hướng dẫn" },
-      { key: "d", text: "Tạo lập báo cáo phân tích" }
+    "id": 54,
+    "question": "Thiết kế thuật toán có vai trò gì trong phần mềm?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Định nghĩa các giao diện người dùng"
+      },
+      {
+        "key": "b",
+        "text": "Giải quyết các vấn đề cụ thể bằng cách xác định các bước xử lý"
+      },
+      {
+        "key": "c",
+        "text": "Tăng tốc độ phát triển phần mềm"
+      },
+      {
+        "key": "d",
+        "text": "Bảo trì phần mềm"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Bảo trì phần mềm là các hoạt động diễn ra sau khi bàn giao sản phẩm, bao gồm sửa lỗi phát sinh, thích ứng môi trường mới, nâng cấp tối ưu hiệu năng và bổ sung tính năng mới.",
-      b: "Đây là các hoạt động diễn ra trước khi phần mềm được phát hành.",
-      c: "Đây là các hoạt động diễn ra trước khi phần mềm được phát hành.",
-      d: "Đây là các hoạt động diễn ra trước khi phần mềm được phát hành."
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Giải quyết các vấn đề cụ thể bằng cách xác định các bước xử lý\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Giải quyết các vấn đề cụ thể bằng cách xác định các bước xử lý**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Giải quyết các vấn đề cụ thể bằng cách xác định các bước xử lý\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Giải quyết các vấn đề cụ thể bằng cách xác định các bước xử lý\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   },
   {
-    id: 56,
-    question: "Mục đích của việc kiểm thử bản release là gì?",
-    options: [
-      { key: "a", text: "Để đảm bảo phần mềm hoạt động đúng như mong đợi trước khi phát hành" },
-      { key: "b", text: "Để giảm chi phí phát triển" },
-      { key: "c", text: "Để tăng tốc độ lập trình" },
-      { key: "d", text: "Để làm hài lòng khách hàng" }
+    "id": 55,
+    "question": "Mục đích của việc hiện thực phần mềm là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Đáp ứng các yêu cầu thiết kế chi tiết"
+      },
+      {
+        "key": "b",
+        "text": "Thỏa mãn người dùng cuối"
+      },
+      {
+        "key": "c",
+        "text": "Tăng tính phức tạp của mã nguồn"
+      },
+      {
+        "key": "d",
+        "text": "Giảm chi phí phát triển"
+      }
     ],
-    correct: "a",
-    explanations: {
-      a: "Chính xác! Kiểm thử release nhằm đánh giá độ tin cậy và chất lượng tổng thể của hệ thống để chắc chắn sản phẩm không còn lỗi nghiêm trọng trước khi phát hành rộng rãi.",
-      b: "Không phải mục tiêu kỹ thuật trực tiếp của kiểm thử bản release.",
-      c: "Không phải mục tiêu kỹ thuật trực tiếp của kiểm thử bản release.",
-      d: "Không phải mục tiêu kỹ thuật trực tiếp của kiểm thử bản release."
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Đáp ứng các yêu cầu thiết kế chi tiết**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Đáp ứng các yêu cầu thiết kế chi tiết\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Đáp ứng các yêu cầu thiết kế chi tiết\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Đáp ứng các yêu cầu thiết kế chi tiết\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 56,
+    "question": "Unit Implementation được hiểu là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Lập trình các đơn vị phần mềm nhỏ nhất"
+      },
+      {
+        "key": "b",
+        "text": "Thiết kế giao diện người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Tạo lập các tài liệu hướng dẫn sử dụng"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm tra và bảo trì phần mềm"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Lập trình các đơn vị phần mềm nhỏ nhất**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lập trình các đơn vị phần mềm nhỏ nhất\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lập trình các đơn vị phần mềm nhỏ nhất\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lập trình các đơn vị phần mềm nhỏ nhất\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 57,
+    "question": "Một quy tắc vàng trong hiện thực phần mềm là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm tra các yêu cầu và thiết kế lại một lần nữa"
+      },
+      {
+        "key": "b",
+        "text": "Không cần kiểm tra lại thiết kế sau khi mã hóa"
+      },
+      {
+        "key": "c",
+        "text": "Tập trung vào việc lập trình nhanh chóng"
+      },
+      {
+        "key": "d",
+        "text": "Đơn giản hóa tất cả các quy trình"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Kiểm tra các yêu cầu và thiết kế lại một lần nữa**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm tra các yêu cầu và thiết kế lại một lần nữa\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm tra các yêu cầu và thiết kế lại một lần nữa\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm tra các yêu cầu và thiết kế lại một lần nữa\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 58,
+    "question": "Tại sao cần xác nhận các thiết kế chi tiết trước khi hiện thực?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để đảm bảo các thiết kế đáp ứng yêu cầu của người dùng"
+      },
+      {
+        "key": "b",
+        "text": "Để giảm chi phí phát triển"
+      },
+      {
+        "key": "c",
+        "text": "Để tiết kiệm thời gian kiểm thử"
+      },
+      {
+        "key": "d",
+        "text": "Để tăng tốc độ mã hóa"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Để đảm bảo các thiết kế đáp ứng yêu cầu của người dùng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để đảm bảo các thiết kế đáp ứng yêu cầu của người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để đảm bảo các thiết kế đáp ứng yêu cầu của người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để đảm bảo các thiết kế đáp ứng yêu cầu của người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 59,
+    "question": "Mục đích của việc ghi lại lỗi khi sử dụng form là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để theo dõi và sửa chữa lỗi một cách hệ thống"
+      },
+      {
+        "key": "b",
+        "text": "Để lưu trữ dữ liệu người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Để tăng tốc độ phát triển phần mềm"
+      },
+      {
+        "key": "d",
+        "text": "Để phân tích thị trường"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Để theo dõi và sửa chữa lỗi một cách hệ thống**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để theo dõi và sửa chữa lỗi một cách hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để theo dõi và sửa chữa lỗi một cách hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để theo dõi và sửa chữa lỗi một cách hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 60,
+    "question": "Tiêu chuẩn yêu cầu đối với việc mã hóa bao gồm gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tính đúng đắn và rõ ràng"
+      },
+      {
+        "key": "b",
+        "text": "Tính linh hoạt và tiết kiệm"
+      },
+      {
+        "key": "c",
+        "text": "Tính đơn giản và nhanh chóng"
+      },
+      {
+        "key": "d",
+        "text": "Tính bảo mật và khả năng mở rộng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Tính đúng đắn và rõ ràng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Tính đúng đắn và rõ ràng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Tính đúng đắn và rõ ràng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Tính đúng đắn và rõ ràng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 61,
+    "question": "Ước lượng kích thước và thời gian dựa trên gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Dữ liệu đã có"
+      },
+      {
+        "key": "b",
+        "text": "Kinh nghiệm cá nhân"
+      },
+      {
+        "key": "c",
+        "text": "Yêu cầu khách hàng"
+      },
+      {
+        "key": "d",
+        "text": "Ngân sách dự án"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Dữ liệu đã có**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Dữ liệu đã có\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Dữ liệu đã có\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Dữ liệu đã có\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 62,
+    "question": "Hiện thực mã chương trình bao gồm bước nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Lập kế hoạch cấu trúc và thiết kế mã"
+      },
+      {
+        "key": "b",
+        "text": "Thiết kế giao diện người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Viết tài liệu hướng dẫn"
+      },
+      {
+        "key": "d",
+        "text": "Tạo lập báo cáo phân tích"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Lập kế hoạch cấu trúc và thiết kế mã**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lập kế hoạch cấu trúc và thiết kế mã\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lập kế hoạch cấu trúc và thiết kế mã\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lập kế hoạch cấu trúc và thiết kế mã\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 63,
+    "question": "Tại sao cần tự kiểm tra lại thiết kế/cấu trúc trước khi mã hóa?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để đảm bảo tính đúng đắn và hiệu quả của mã nguồn"
+      },
+      {
+        "key": "b",
+        "text": "Để tăng tốc độ mã hóa"
+      },
+      {
+        "key": "c",
+        "text": "Để giảm chi phí phát triển"
+      },
+      {
+        "key": "d",
+        "text": "Để làm hài lòng khách hàng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Để đảm bảo tính đúng đắn và hiệu quả của mã nguồn**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để đảm bảo tính đúng đắn và hiệu quả của mã nguồn\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để đảm bảo tính đúng đắn và hiệu quả của mã nguồn\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để đảm bảo tính đúng đắn và hiệu quả của mã nguồn\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 64,
+    "question": "Quy tắc đặt tên trong hiện thực mã chương trình cần tuân thủ những gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Phù hợp và rõ ràng"
+      },
+      {
+        "key": "b",
+        "text": "Ngắn gọn và xúc tích"
+      },
+      {
+        "key": "c",
+        "text": "Phức tạp và chi tiết"
+      },
+      {
+        "key": "d",
+        "text": "Bất kỳ tên nào cũng được"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Phù hợp và rõ ràng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Phù hợp và rõ ràng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Phù hợp và rõ ràng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Phù hợp và rõ ràng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 65,
+    "question": "Kiểm tra Class cần xem xét điều gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tên Class có thích hợp không"
+      },
+      {
+        "key": "b",
+        "text": "Class có được trừu tượng không"
+      },
+      {
+        "key": "c",
+        "text": "Header của Class có mô tả mục đích của hàm hay không"
+      },
+      {
+        "key": "d",
+        "text": "Tất cả các ý trên"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Tất cả các ý trên**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 66,
+    "question": "Kiểm tra thuộc tính cần xác định điều gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Thuộc tính có cần thiết không"
+      },
+      {
+        "key": "b",
+        "text": "Thuộc tính có thể là static không"
+      },
+      {
+        "key": "c",
+        "text": "Thuộc tính có nên là final không"
+      },
+      {
+        "key": "d",
+        "text": "Tất cả các ý trên"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Tất cả các ý trên**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 67,
+    "question": "Phương pháp kiểm tra phương thức khởi dựng cần xác định điều gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Phương thức có cần thiết không"
+      },
+      {
+        "key": "b",
+        "text": "Phương thức có leverage các constructor hiện có không"
+      },
+      {
+        "key": "c",
+        "text": "Phương thức có initialize tất cả các thuộc tính không"
+      },
+      {
+        "key": "d",
+        "text": "Tất cả các ý trên"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Tất cả các ý trên**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 68,
+    "question": "Làm thế nào để lập trình 1000 LoC/ngày?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Lập kế hoạch cấu trúc và thiết kế mã chương trình"
+      },
+      {
+        "key": "b",
+        "text": "Tăng tốc độ đánh máy"
+      },
+      {
+        "key": "c",
+        "text": "Tập trung vào các yêu cầu của khách hàng"
+      },
+      {
+        "key": "d",
+        "text": "Giảm thời gian kiểm tra mã"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Lập kế hoạch cấu trúc và thiết kế mã chương trình**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lập kế hoạch cấu trúc và thiết kế mã chương trình\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lập kế hoạch cấu trúc và thiết kế mã chương trình\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lập kế hoạch cấu trúc và thiết kế mã chương trình\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 69,
+    "question": "Kiểm tra thuộc tính có cần xác định điều gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sự cần thiết của thuộc tính"
+      },
+      {
+        "key": "b",
+        "text": "Thuộc tính có thể là static hay không"
+      },
+      {
+        "key": "c",
+        "text": "Thuộc tính có nên là final hay không"
+      },
+      {
+        "key": "d",
+        "text": "Tất cả các ý trên"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Tất cả các ý trên**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 70,
+    "question": "Tại sao cần ghi chú lại các mốc thời gian trong quá trình hiện thực mã chương trình?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để theo dõi tiến độ và quản lý thời gian hiệu quả"
+      },
+      {
+        "key": "b",
+        "text": "Để lưu trữ dữ liệu người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Để phân tích thị trường"
+      },
+      {
+        "key": "d",
+        "text": "Để giảm chi phí phát triển"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Để theo dõi tiến độ và quản lý thời gian hiệu quả**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để theo dõi tiến độ và quản lý thời gian hiệu quả\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để theo dõi tiến độ và quản lý thời gian hiệu quả\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để theo dõi tiến độ và quản lý thời gian hiệu quả\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 71,
+    "question": "Việc chuẩn bị để hiện thực bao gồm gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Xác nhận các thiết kế chi tiết phải hiện thực"
+      },
+      {
+        "key": "b",
+        "text": "Mã hóa từ một thiết kế được mô tả bằng văn bản"
+      },
+      {
+        "key": "c",
+        "text": "Đo thời gian phân loại theo các bước"
+      },
+      {
+        "key": "d",
+        "text": "Tất cả các ý trên"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Tất cả các ý trên**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 72,
+    "question": "Mục đích của việc biên dịch mã lệnh là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm tra và sửa chữa các lỗi cú pháp"
+      },
+      {
+        "key": "b",
+        "text": "Thiết kế giao diện người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Viết tài liệu hướng dẫn"
+      },
+      {
+        "key": "d",
+        "text": "Tạo lập báo cáo phân tích"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Phân tích giá trị biên (Boundary Value Analysis) là kỹ thuật kiểm thử hộp đen tập trung vào các điểm cực trị ở biên của phân vùng tương đương (như Min, Max, lân cận biên) do lỗi lập trình rất hay xảy ra tại các điểm này.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm tra và sửa chữa các lỗi cú pháp\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm tra và sửa chữa các lỗi cú pháp\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm tra và sửa chữa các lỗi cú pháp\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 73,
+    "question": "Mục tiêu của kiểm thử phần mềm là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để chỉ ra rằng chương trình thực hiện đúng như mong đợi và tìm ra lỗi"
+      },
+      {
+        "key": "b",
+        "text": "Để giảm chi phí phát triển"
+      },
+      {
+        "key": "c",
+        "text": "Để tăng tốc độ lập trình"
+      },
+      {
+        "key": "d",
+        "text": "Để làm hài lòng khách hàng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Để chỉ ra rằng chương trình thực hiện đúng như mong đợi và tìm ra lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để chỉ ra rằng chương trình thực hiện đúng như mong đợi và tìm ra lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để chỉ ra rằng chương trình thực hiện đúng như mong đợi và tìm ra lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để chỉ ra rằng chương trình thực hiện đúng như mong đợi và tìm ra lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 74,
+    "question": "Kiểm thử đơn vị (unit testing) tập trung vào điều gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử chức năng của các đối tượng hay các phương thức"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử giao diện người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử hiệu suất hệ thống"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử tính bảo mật"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Kiểm thử đơn vị (Unit Testing) tập trung kiểm tra độc lập các đơn vị phần mềm nhỏ nhất có thể lập trình được (hàm, phương thức, lớp) và thường do chính các lập trình viên (Developers) thực hiện trước khi tích hợp.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử chức năng của các đối tượng hay các phương thức\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử chức năng của các đối tượng hay các phương thức\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử chức năng của các đối tượng hay các phương thức\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 75,
+    "question": "Kiểm thử component (component testing) tập trung vào điều gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử giao diện component"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử chức năng của các phương thức"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử tính bảo mật"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử giao diện người dùng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Kiểm thử giao diện component**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử giao diện component\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử giao diện component\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử giao diện component\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 76,
+    "question": "Kiểm thử hệ thống (system testing) tập trung vào điều gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử tương tác giữa các component"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử giao diện người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử tính bảo mật"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử hiệu suất hệ thống"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Kiểm thử tương tác giữa các component**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử tương tác giữa các component\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử tương tác giữa các component\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử tương tác giữa các component\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 77,
+    "question": "Kiểm thử tự động nên sử dụng gì để hỗ trợ kiểm thử đơn vị:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Framework kiểm thử tự động (như JUnit)"
+      },
+      {
+        "key": "b",
+        "text": "Các công cụ kiểm thử thủ công"
+      },
+      {
+        "key": "c",
+        "text": "Phần mềm thiết kế giao diện"
+      },
+      {
+        "key": "d",
+        "text": "Các chương trình bảo mật"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Kiểm thử động (Dynamic testing) yêu cầu chương trình phải chạy thực tế trên máy tính với dữ liệu đầu vào cụ thể để so sánh kết quả thực tế và kết quả mong đợi.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Framework kiểm thử tự động (như JUnit)\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Framework kiểm thử tự động (như JUnit)\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Framework kiểm thử tự động (như JUnit)\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 78,
+    "question": "Mục tiêu của kiểm thử giao diện là gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tìm ra lỗi gây ra bởi các lỗi giao diện hoặc giả định sai về các giao diện"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử chức năng của các phương thức"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử hiệu suất hệ thống"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử tính bảo mật"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Tìm ra lỗi gây ra bởi các lỗi giao diện hoặc giả định sai về các giao diện**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Tìm ra lỗi gây ra bởi các lỗi giao diện hoặc giả định sai về các giao diện\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Tìm ra lỗi gây ra bởi các lỗi giao diện hoặc giả định sai về các giao diện\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Tìm ra lỗi gây ra bởi các lỗi giao diện hoặc giả định sai về các giao diện\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 79,
+    "question": "Một loại giao diện trong kiểm thử giao diện là gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Giao diện có tham số"
+      },
+      {
+        "key": "b",
+        "text": "Giao diện người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Giao diện hệ thống"
+      },
+      {
+        "key": "d",
+        "text": "Giao diện bảo mật"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Giao diện có tham số**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Giao diện có tham số\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Giao diện có tham số\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Giao diện có tham số\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 80,
+    "question": "Kiểm thử phát triển là trách nhiệm của ai:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Đội ngũ phát triển phần mềm"
+      },
+      {
+        "key": "b",
+        "text": "Người dùng cuối"
+      },
+      {
+        "key": "c",
+        "text": "Nhóm marketing"
+      },
+      {
+        "key": "d",
+        "text": "Nhóm hỗ trợ khách hàng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Đội ngũ phát triển phần mềm**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Đội ngũ phát triển phần mềm\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Đội ngũ phát triển phần mềm\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Đội ngũ phát triển phần mềm\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 81,
+    "question": "Kiểm thử phát hành là gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử hệ thống trước khi phát hành cho khách hàng"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử hệ thống sau khi phát hành cho khách hàng"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử hệ thống trong giai đoạn phát triển"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử hệ thống trong giai đoạn bảo trì"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Kiểm thử hệ thống trước khi phát hành cho khách hàng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử hệ thống trước khi phát hành cho khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử hệ thống trước khi phát hành cho khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử hệ thống trước khi phát hành cho khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 82,
+    "question": "Phương pháp kiểm thử hộp đen tập trung vào điều gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử chức năng của hệ thống mà không cần biết cấu trúc bên trong"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử hiệu suất hệ thống"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử tính bảo mật"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử giao diện người dùng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Kiểm thử hộp đen (Black-box testing) là phương pháp thiết kế ca kiểm thử dựa hoàn toàn vào tài liệu đặc tả yêu cầu chức năng, giao diện của phần mềm mà không quan tâm đến cấu trúc mã nguồn bên trong.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử chức năng của hệ thống mà không cần biết cấu trúc bên trong\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử chức năng của hệ thống mà không cần biết cấu trúc bên trong\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử chức năng của hệ thống mà không cần biết cấu trúc bên trong\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 83,
+    "question": "Phương pháp kiểm thử hộp trắng tập trung vào điều gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử cấu trúc bên trong của hệ thống"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử hiệu suất hệ thống"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử tính bảo mật"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử giao diện người dùng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Kiểm thử hộp trắng (White-box testing) dựa trên kiến thức về mã nguồn, cấu trúc thuật toán bên trong để kiểm tra các đường chạy (paths), nhánh quyết định (branches), và câu lệnh (statements) của chương trình.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử cấu trúc bên trong của hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử cấu trúc bên trong của hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử cấu trúc bên trong của hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 84,
+    "question": "Phương pháp kiểm thử hộp xám là gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kết hợp giữa kiểm thử hộp đen và kiểm thử hộp trắng"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử hiệu suất hệ thống"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử tính bảo mật"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử giao diện người dùng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Kết hợp giữa kiểm thử hộp đen và kiểm thử hộp trắng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kết hợp giữa kiểm thử hộp đen và kiểm thử hộp trắng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kết hợp giữa kiểm thử hộp đen và kiểm thử hộp trắng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kết hợp giữa kiểm thử hộp đen và kiểm thử hộp trắng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 85,
+    "question": "Mục tiêu của kiểm thử validation là gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để chỉ ra rằng phần mềm thỏa mãn các yêu cầu đưa ra"
+      },
+      {
+        "key": "b",
+        "text": "Để tìm ra các lỗi của phần mềm"
+      },
+      {
+        "key": "c",
+        "text": "Để giảm chi phí phát triển"
+      },
+      {
+        "key": "d",
+        "text": "Để tăng tốc độ lập trình"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Để chỉ ra rằng phần mềm thỏa mãn các yêu cầu đưa ra**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để chỉ ra rằng phần mềm thỏa mãn các yêu cầu đưa ra\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để chỉ ra rằng phần mềm thỏa mãn các yêu cầu đưa ra\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để chỉ ra rằng phần mềm thỏa mãn các yêu cầu đưa ra\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 86,
+    "question": "Mục tiêu của kiểm thử defect là gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để tìm ra các tình huống mà phần mềm không hoạt động đúng như mong đợi"
+      },
+      {
+        "key": "b",
+        "text": "Để chỉ ra rằng phần mềm thỏa mãn các yêu cầu đưa ra"
+      },
+      {
+        "key": "c",
+        "text": "Để giảm chi phí phát triển"
+      },
+      {
+        "key": "d",
+        "text": "Để làm hài lòng khách hàng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Để tìm ra các tình huống mà phần mềm không hoạt động đúng như mong đợi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để tìm ra các tình huống mà phần mềm không hoạt động đúng như mong đợi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để tìm ra các tình huống mà phần mềm không hoạt động đúng như mong đợi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để tìm ra các tình huống mà phần mềm không hoạt động đúng như mong đợi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 87,
+    "question": "Tại sao cần kiểm tra kết quả của việc kiểm thử:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để tìm ra lỗi và các bất thường"
+      },
+      {
+        "key": "b",
+        "text": "Để lưu trữ dữ liệu người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Để phân tích thị trường"
+      },
+      {
+        "key": "d",
+        "text": "Để tăng tốc độ phát triển phần mềm"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Để tìm ra lỗi và các bất thường**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để tìm ra lỗi và các bất thường\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để tìm ra lỗi và các bất thường\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để tìm ra lỗi và các bất thường\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 88,
+    "question": "Kiểm thử người dùng tập trung vào điều gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử phần mềm bởi người dùng cuối"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử tính bảo mật"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử hiệu suất hệ thống"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử giao diện người dùng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Kiểm thử phần mềm bởi người dùng cuối**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử phần mềm bởi người dùng cuối\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử phần mềm bởi người dùng cuối\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử phần mềm bởi người dùng cuối\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 89,
+    "question": "Cải tiến quy trình phần mềm bao gồm gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Cải tiến các phương pháp phát triển và kiểm thử phần mềm"
+      },
+      {
+        "key": "b",
+        "text": "Tăng tốc độ lập trình"
+      },
+      {
+        "key": "c",
+        "text": "Giảm chi phí phát triển"
+      },
+      {
+        "key": "d",
+        "text": "Tập trung vào giao diện người dùng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Cải tiến các phương pháp phát triển và kiểm thử phần mềm**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Cải tiến các phương pháp phát triển và kiểm thử phần mềm\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Cải tiến các phương pháp phát triển và kiểm thử phần mềm\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Cải tiến các phương pháp phát triển và kiểm thử phần mềm\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 90,
+    "question": "Bảo trì phần mềm bao gồm gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sửa lỗi và nâng cấp phần mềm sau khi phát hành"
+      },
+      {
+        "key": "b",
+        "text": "Thiết kế giao diện người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Viết tài liệu hướng dẫn"
+      },
+      {
+        "key": "d",
+        "text": "Tạo lập báo cáo phân tích"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Sửa lỗi và nâng cấp phần mềm sau khi phát hành**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sửa lỗi và nâng cấp phần mềm sau khi phát hành\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sửa lỗi và nâng cấp phần mềm sau khi phát hành\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sửa lỗi và nâng cấp phần mềm sau khi phát hành\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 91,
+    "question": "Mục đích của việc kiểm thử bản release là gì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để đảm bảo phần mềm hoạt động đúng như mong đợi trước khi phát hành"
+      },
+      {
+        "key": "b",
+        "text": "Để giảm chi phí phát triển"
+      },
+      {
+        "key": "c",
+        "text": "Để tăng tốc độ lập trình"
+      },
+      {
+        "key": "d",
+        "text": "Để làm hài lòng khách hàng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Để đảm bảo phần mềm hoạt động đúng như mong đợi trước khi phát hành**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để đảm bảo phần mềm hoạt động đúng như mong đợi trước khi phát hành\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để đảm bảo phần mềm hoạt động đúng như mong đợi trước khi phát hành\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để đảm bảo phần mềm hoạt động đúng như mong đợi trước khi phát hành\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 92,
+    "question": "Mục tiêu quan trọng nhất của việc xác định độ ưu tiên kiểm thử là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tìm càng nhiều lỗi càng tốt"
+      },
+      {
+        "key": "b",
+        "text": "Test các khu vực rủi ro cao"
+      },
+      {
+        "key": "c",
+        "text": "Đạt được độ bao phủ cao"
+      },
+      {
+        "key": "d",
+        "text": "Cái nào dễ thì test trước"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Test các khu vực rủi ro cao\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Test các khu vực rủi ro cao**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Test các khu vực rủi ro cao\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Test các khu vực rủi ro cao\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 93,
+    "question": "Kiểm thử được thực hiện dù khi",
+    "options": [
+      {
+        "key": "a",
+        "text": "hết thời gian"
+      },
+      {
+        "key": "b",
+        "text": "Độ tin cậy cần thiết đã đạt"
+      },
+      {
+        "key": "c",
+        "text": "không tìm thấy lỗi nào nữa"
+      },
+      {
+        "key": "d",
+        "text": "người dùng sẽ không tìm thấy bất kỳ lỗi nghiêm trọng nào"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Độ tin cậy cần thiết đã đạt\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Độ tin cậy cần thiết đã đạt**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Độ tin cậy cần thiết đã đạt\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Độ tin cậy cần thiết đã đạt\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 94,
+    "question": "Điều nào sau đây mô tả lợi ích chính của việc xác minh (verification) sớm trong vòng đời?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Nó cho phép xác định các thay đổi trong yêu cầu của người dùng"
+      },
+      {
+        "key": "b",
+        "text": "Nó tạo điều kiện cho việc thiết lập môi trường kiểm thử kịp thời"
+      },
+      {
+        "key": "c",
+        "text": "Nó làm giảm sự gia tăng của lỗi"
+      },
+      {
+        "key": "d",
+        "text": "Nó cho phép người kiểm thử sớm tham gia vào dự án"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Nó làm giảm sự gia tăng của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Nó làm giảm sự gia tăng của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Nó làm giảm sự gia tăng của lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Nó làm giảm sự gia tăng của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 95,
+    "question": "Kiểm thử alpha là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "kiểm thử sau khi phát hành được thực hiện bởi người dùng cuối"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử đầu tiên được thực hiện"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử trước khi phát hành được thực hiện bởi nhóm đại diện người dùng"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử cuối cùng trước khi phát hành"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử trước khi phát hành được thực hiện bởi nhóm đại diện người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử trước khi phát hành được thực hiện bởi nhóm đại diện người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Kiểm thử chấp nhận (Acceptance Testing) là mức kiểm thử cuối cùng để xác định xem hệ thống đã sẵn sàng bàn giao cho người dùng chưa, thường dựa trên yêu cầu nghiệp vụ thực tế của khách hàng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử trước khi phát hành được thực hiện bởi nhóm đại diện người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 96,
+    "question": "Trong một hệ thống được thiết kế để tính thuế phải trả:\nMột nhân viên có £4000 tiền lương miễn thuế. £1500 tiếp theo bị đánh thuế 10%. £28000 tiếp theo bị đánh thuế 22%. Bất kỳ số tiền còn lại sẽ bị đánh thuế ở mức 40%.\nNhóm nào trong số các nhóm sẽ rơi vào cùng một lớp tương đương?",
+    "options": [
+      {
+        "key": "a",
+        "text": "£ 4800; £ 14000; £ 28000"
+      },
+      {
+        "key": "b",
+        "text": "£ 5200; £ 5500; £ 28000"
+      },
+      {
+        "key": "c",
+        "text": "£ 28001; £ 32000; £ 35000"
+      },
+      {
+        "key": "d",
+        "text": "£ 5800; £ 28000; £ 32000"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"£ 5800; £ 28000; £ 32000\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"£ 5800; £ 28000; £ 32000\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"£ 5800; £ 28000; £ 32000\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **£ 5800; £ 28000; £ 32000**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 97,
+    "question": "Điều quan trọng nhất về thiết kế kiểm thử sớm là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Làm cho việc chuẩn bị kiểm thử dễ dàng hơn"
+      },
+      {
+        "key": "b",
+        "text": "Giúp việc kiểm thử nhanh hơn"
+      },
+      {
+        "key": "c",
+        "text": "Có thể ngăn chặn sự nhân lên của lỗi"
+      },
+      {
+        "key": "d",
+        "text": "Giúp tìm ra tất cả các lỗi"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Có thể ngăn chặn sự nhân lên của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Có thể ngăn chặn sự nhân lên của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Có thể ngăn chặn sự nhân lên của lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Có thể ngăn chặn sự nhân lên của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 98,
+    "question": "Phát biểu nào sau đây là phát biểu đúng về review?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Review không thể thực hiện dựa trên thông số kỹ thuật yêu cầu của người dùng"
+      },
+      {
+        "key": "b",
+        "text": "Review là cách kiểm tra mã kém hiệu quả nhất"
+      },
+      {
+        "key": "c",
+        "text": "Review không có khả năng tìm ra lỗi trong kế hoạch kiểm thử"
+      },
+      {
+        "key": "d",
+        "text": "Review được thực hiện dựa theo thông số kỹ thuật, code và kế hoạch kiểm thử"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Review được thực hiện dựa theo thông số kỹ thuật, code và kế hoạch kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Review được thực hiện dựa theo thông số kỹ thuật, code và kế hoạch kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Review được thực hiện dựa theo thông số kỹ thuật, code và kế hoạch kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Review được thực hiện dựa theo thông số kỹ thuật, code và kế hoạch kiểm thử**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 99,
+    "question": "Các test case được thiết kế khi nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Khi thực thi kiểm thử"
+      },
+      {
+        "key": "b",
+        "text": "Khi lập kế hoạch kiểm thử"
+      },
+      {
+        "key": "c",
+        "text": "Khi cấu hình môi trường kiểm thử"
+      },
+      {
+        "key": "d",
+        "text": "Khi phân tích và thiết kế kiểm thử"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Khi phân tích và thiết kế kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Khi phân tích và thiết kế kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Khi phân tích và thiết kế kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Khi phân tích và thiết kế kiểm thử**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 100,
+    "question": "Nếu kết quả mong đợi (trong test case) không được xác định thì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Chúng ta không thể chạy kiểm thử"
+      },
+      {
+        "key": "b",
+        "text": "Có thể khó lặp lại bài kiểm thử"
+      },
+      {
+        "key": "c",
+        "text": "Có thể khó xác định xem bài kiểm thử là đạt hay không đạt"
+      },
+      {
+        "key": "d",
+        "text": "Chúng ta không thể nhập tự động đầu vào của người dùng"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Có thể khó xác định xem bài kiểm thử là đạt hay không đạt\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Có thể khó xác định xem bài kiểm thử là đạt hay không đạt\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Có thể khó xác định xem bài kiểm thử là đạt hay không đạt**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Có thể khó xác định xem bài kiểm thử là đạt hay không đạt\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 101,
+    "question": "Xác minh (verification) là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử xem chúng ta có đang xây dựng hệ thống có phù hợp không"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không"
+      },
+      {
+        "key": "c",
+        "text": "Được thực hiện bởi một nhóm kiểm thử độc lập"
+      },
+      {
+        "key": "d",
+        "text": "Đảm bảo rằng đó là những gì người dùng thực sự muốn"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 102,
+    "question": "Khi kiểm thử hệ thống tính điểm, tester xác định rằng tất cả các điểm từ 90 đến 100 sẽ mang lại kết quả A, nhưng điểm dưới 90 sẽ không được điểm A. Phương pháp phân tích này được gọi là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Phân vùng tương đương"
+      },
+      {
+        "key": "b",
+        "text": "Phân tích giá trị ranh giới"
+      },
+      {
+        "key": "c",
+        "text": "Bảng quyết định"
+      },
+      {
+        "key": "d",
+        "text": "Phân tích lại"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Phân vùng tương đương**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Phân vùng tương đương\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Phân vùng tương đương\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Phân vùng tương đương\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 103,
+    "question": "Phát biểu nào sau đây đúng với kiểm thử beta",
+    "options": [
+      {
+        "key": "a",
+        "text": "Được thực hiện bởi coder"
+      },
+      {
+        "key": "b",
+        "text": "Được thực hiện bởi các chuyên gia"
+      },
+      {
+        "key": "c",
+        "text": "Được thực hiện bởi người dùng cuối"
+      },
+      {
+        "key": "d",
+        "text": "Được thực hiện bởi tester"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Được thực hiện bởi người dùng cuối\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Được thực hiện bởi người dùng cuối\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Kiểm thử chấp nhận (Acceptance Testing) là mức kiểm thử cuối cùng để xác định xem hệ thống đã sẵn sàng bàn giao cho người dùng chưa, thường dựa trên yêu cầu nghiệp vụ thực tế của khách hàng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Được thực hiện bởi người dùng cuối\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 104,
+    "question": "Phát biểu nào sau đây về tiêu chuẩn component testing là sai:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Các kỹ thuật kiểm thử hộp đen đều có một kỹ thuật đo lường liên quan"
+      },
+      {
+        "key": "b",
+        "text": "Các kỹ thuật kiểm thử hộp trắng đều có một kỹ thuật đo lường liên quan"
+      },
+      {
+        "key": "c",
+        "text": "Độ phức tạp chu trình không phải là một kỹ thuật do kiểm thử"
+      },
+      {
+        "key": "d",
+        "text": "Các kỹ thuật đo lường kiểm thử hộp trắng đều có một kỹ thuật thiết kế kiểm thử liên quan"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Độ phức tạp chu trình không phải là một kỹ thuật do kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Độ phức tạp chu trình không phải là một kỹ thuật do kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Độ phức tạp chu trình không phải là một kỹ thuật do kiểm thử**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Độ phức tạp chu trình không phải là một kỹ thuật do kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 105,
+    "question": "Phát biểu nào sau đây đúng về kết quả mong đợi.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Chỉ quan trọng trong kiểm thử hệ thống"
+      },
+      {
+        "key": "b",
+        "text": "Chỉ được sử dụng trong kiểm thử đơn vị"
+      },
+      {
+        "key": "c",
+        "text": "Không bao giờ được xác định trước"
+      },
+      {
+        "key": "d",
+        "text": "Hữu ích nhất khi được xác định trước"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Hữu ích nhất khi được xác định trước\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Hữu ích nhất khi được xác định trước\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Hữu ích nhất khi được xác định trước\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Hữu ích nhất khi được xác định trước**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 106,
+    "question": "Given the Following program\nIF X &lt; Y\nTHEN Statement 1;\nELSE IF Y &gt;= Z\nTHEN Statement 2;\nEND\nĐộ phức tạp chu trình là bao nhiêu?",
+    "options": [
+      {
+        "key": "a",
+        "text": "2"
+      },
+      {
+        "key": "b",
+        "text": "3"
+      },
+      {
+        "key": "c",
+        "text": "4"
+      },
+      {
+        "key": "d",
+        "text": "5"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Độ phức tạp chu trình (Cyclomatic Complexity) đo lường số lượng đường đi độc lập tuyến tính qua đồ thị dòng điều khiển (CFG) của chương trình, giúp xác định số lượng test case tối thiểu cần để đạt 100% phủ nhánh.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 107,
+    "question": "Chúng ta có thể tìm thấy điều kiện dừng kiểm thử trong tài liệu nào.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Báo cáo kết quả kiểm thử"
+      },
+      {
+        "key": "b",
+        "text": "Test suite"
+      },
+      {
+        "key": "c",
+        "text": "Test case"
+      },
+      {
+        "key": "d",
+        "text": "Test plan"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Test plan\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Test plan\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Test plan\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Test plan**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 108,
+    "question": "Sau giai đoạn nào, chúng ta có thể tiến hành kiểm thử hộp trắng?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sau giai đoạn code"
+      },
+      {
+        "key": "b",
+        "text": "Sau giai đoạn thiết kế"
+      },
+      {
+        "key": "c",
+        "text": "Sau khi tạo SRS"
+      },
+      {
+        "key": "d",
+        "text": "Sau giai đoạn cài đặt"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Kiểm thử hộp trắng (White-box testing) dựa trên kiến thức về mã nguồn, cấu trúc thuật toán bên trong để kiểm tra các đường chạy (paths), nhánh quyết định (branches), và câu lệnh (statements) của chương trình.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sau giai đoạn code\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sau giai đoạn code\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sau giai đoạn code\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 109,
+    "question": "Lý do chính để kiểm thử phần mềm trước khi phát hành là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "để cho thấy rằng hệ thống sẽ hoạt động sau khi phát hành"
+      },
+      {
+        "key": "b",
+        "text": "để quyết định khi nào phần mềm có đủ chất lượng để phát hành"
+      },
+      {
+        "key": "c",
+        "text": "để tìm càng nhiều lỗi càng tốt trước khi phát hành"
+      },
+      {
+        "key": "d",
+        "text": "để cung cấp thông tin cho một quyết định dựa trên rủi ro về việc phát hành"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"để cung cấp thông tin cho một quyết định dựa trên rủi ro về việc phát hành\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"để cung cấp thông tin cho một quyết định dựa trên rủi ro về việc phát hành\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"để cung cấp thông tin cho một quyết định dựa trên rủi ro về việc phát hành\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **để cung cấp thông tin cho một quyết định dựa trên rủi ro về việc phát hành**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 110,
+    "question": "Phát biểu nào sau đây đúng về độ bao phủ",
+    "options": [
+      {
+        "key": "a",
+        "text": "Không liên quan gì đến thử nghiệm"
+      },
+      {
+        "key": "b",
+        "text": "Là một thước đo về tính kỹ lưỡng của thử nghiệm"
+      },
+      {
+        "key": "c",
+        "text": "Độ phủ nhánh phải là bắt buộc đối với tất cả phần mềm"
+      },
+      {
+        "key": "d",
+        "text": "Chỉ có thể được áp dụng trong kiểm thử đơn vị hoặc mô-đun, không áp dụng trong kiểm thử hệ thống"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Là một thước đo về tính kỹ lưỡng của thử nghiệm\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Độ bao phủ kiểm thử (Test Coverage) là tỷ lệ phần trăm các thành phần cấu trúc (lệnh, quyết định, nhánh) được thực thi bởi bộ ca kiểm thử. Độ bao phủ càng cao thì độ tin cậy của bộ kiểm thử càng cao.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Là một thước đo về tính kỹ lưỡng của thử nghiệm\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Là một thước đo về tính kỹ lưỡng của thử nghiệm\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 111,
+    "question": "Lỗi nào trong các lỗi sau tốn chi phí khắc phục nhất",
+    "options": [
+      {
+        "key": "a",
+        "text": "Lỗi trong đặc tả chương trình"
+      },
+      {
+        "key": "b",
+        "text": "Lỗi trong code"
+      },
+      {
+        "key": "c",
+        "text": "Lỗi trong yêu cầu"
+      },
+      {
+        "key": "d",
+        "text": "Lỗi trong thiết kế"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Lỗi trong yêu cầu\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Lỗi trong yêu cầu\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Lỗi trong yêu cầu**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Lỗi trong yêu cầu\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 112,
+    "question": "Mục tiêu chính khi review một giao phẩm phần mềm là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để xác định các lỗi tiềm ẩn bằng cách sử dụng đặc tả kiểm thử"
+      },
+      {
+        "key": "b",
+        "text": "Để xác định các (defect) khiếm khuyết trong bất kỳ sản phẩm công việc phần mềm nào"
+      },
+      {
+        "key": "c",
+        "text": "Để xác định các lỗi chính tả trong một đặc tả yêu cầu"
+      },
+      {
+        "key": "d",
+        "text": "Để xác định code viết không theo chuẩn"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Để xác định các (defect) khiếm khuyết trong bất kỳ sản phẩm công việc phần mềm nào\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Để xác định các (defect) khiếm khuyết trong bất kỳ sản phẩm công việc phần mềm nào**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Để xác định các (defect) khiếm khuyết trong bất kỳ sản phẩm công việc phần mềm nào\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Để xác định các (defect) khiếm khuyết trong bất kỳ sản phẩm công việc phần mềm nào\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 113,
+    "question": "Việc xác định tiêu chí dừng kiểm thử được thực hiện khi nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Trong khi lập kế hoạch kiểm thử"
+      },
+      {
+        "key": "b",
+        "text": "Khi đánh giá các tiêu chí dừng và lập báo cáo"
+      },
+      {
+        "key": "c",
+        "text": "Khi đóng quá trình kiểm thử"
+      },
+      {
+        "key": "d",
+        "text": "Khi kiểm soát quá trình kiểm thử"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Trong khi lập kế hoạch kiểm thử**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Trong khi lập kế hoạch kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Trong khi lập kế hoạch kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Trong khi lập kế hoạch kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 114,
+    "question": "Cho đoạn mã sau, cần tối thiểu bao nhiêu test case để phủ quyết định 100%?\nif width &gt; length\nthen\nbiggest_dimension = width\nif height &gt; width then\nbiggest_dimension = height\nend_if\nelse\nbiggest_dimension = length\nif height &gt; length then\nbiggest_dimension = height\nend_if\nend_if",
+    "options": [
+      {
+        "key": "a",
+        "text": "3"
+      },
+      {
+        "key": "b",
+        "text": "4"
+      },
+      {
+        "key": "c",
+        "text": "2"
+      },
+      {
+        "key": "d",
+        "text": "1"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **4**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 115,
+    "question": "Bạn đã thiết kế các test case để đạt 100% phủ lệnh và 100% phủ quyết định cho đoạn mã sau:\nif width &gt; length\nthen\nbiggest_dimension = width\nelse\nbiggest_dimension = length\nend_if\nPhần sau được thêm vào cuối đoạn mã ở trên\nprint \"Biggest dimension is \" &amp; biggest_dimension\nprint \"Width: \" &amp; width\nprint \"Length: \" &amp; length\nHỏi cần thêm bao nhiêu test case nữa để đạt được yêu cầu?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Thêm 1 test case nữa để đạt phủ cấp 2"
+      },
+      {
+        "key": "b",
+        "text": "Thêm 2 test case nữa để phủ cấp 1 và 1 trong 2 test case đó được dùng để phủ cấp 2"
+      },
+      {
+        "key": "c",
+        "text": "Không cần thêm test case nào nữa"
+      },
+      {
+        "key": "d",
+        "text": "Thêm 1 test case nữa để đạt phủ cấp 1"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Không cần thêm test case nào nữa\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Không cần thêm test case nào nữa\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Không cần thêm test case nào nữa**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Không cần thêm test case nào nữa\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 116,
+    "question": "Test suite được tạo ra trong giai đoạn nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Phân tích yêu cầu"
+      },
+      {
+        "key": "b",
+        "text": "Lập kế hoạch"
+      },
+      {
+        "key": "c",
+        "text": "Phát triển test case"
+      },
+      {
+        "key": "d",
+        "text": "Thiết lập môi trường"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Phát triển test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Phát triển test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Phát triển test case**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Phát triển test case\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 117,
+    "question": "Kiểm tra hệ thống nên:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Chỉ kiểm các yêu cầu phi chức năng không cần kiểm các yêu cầu chức năng"
+      },
+      {
+        "key": "b",
+        "text": "Chỉ kiểm các yêu cầu phi chức năng không cần kiểm các yêu cầu chức năng"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm cả yêu cầu phi chức năng và yêu cầu chức năng"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm yêu cầu phi chức năng hoặc yêu cầu chức năng"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm cả yêu cầu phi chức năng và yêu cầu chức năng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm cả yêu cầu phi chức năng và yêu cầu chức năng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Kiểm cả yêu cầu phi chức năng và yêu cầu chức năng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm cả yêu cầu phi chức năng và yêu cầu chức năng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 118,
+    "question": "Cái nào không phải là mục tiêu kiểm thử",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tìm khuyết điểm của phần mềm"
+      },
+      {
+        "key": "b",
+        "text": "Để đạt được mức độ tin tưởng về chất lượng"
+      },
+      {
+        "key": "c",
+        "text": "Ngăn ngừa khiếm khuyết"
+      },
+      {
+        "key": "d",
+        "text": "Gỡ lỗi"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Gỡ lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Gỡ lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Gỡ lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Gỡ lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 119,
+    "question": "Thứ tự nào sau đây phù hợp với vòng đời bug.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Open, Assigned, Fixed, Closed"
+      },
+      {
+        "key": "b",
+        "text": "Open, Fixed, Assigned, Closed"
+      },
+      {
+        "key": "c",
+        "text": "Assigned, Open, Closed, Fixed"
+      },
+      {
+        "key": "d",
+        "text": "Assigned, Open, Fixed, Closed"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Open, Assigned, Fixed, Closed**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Open, Assigned, Fixed, Closed\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Open, Assigned, Fixed, Closed\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Open, Assigned, Fixed, Closed\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 120,
+    "question": "Phát biểu nào sau đây mô tả về kiểm thử tĩnh là sai:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm tra tĩnh yêu cầu chạy các bài kiểm tra thông qua mã"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm tra tĩnh bao gồm kiểm tra bàn"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm tra tĩnh bao gồm các kỹ thuật như xem xét và kiểm tra"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm tra tĩnh có thể cho các phép đo như độ phức tạp chu kỳ"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Kiểm thử tĩnh (Static testing) là phương pháp xem xét mã nguồn, tài liệu thiết kế hoặc yêu cầu mà không cần thực thi chương trình. Nó giúp phát hiện lỗi cú pháp, cấu trúc lập trình và lỗi logic sớm trong vòng đời, tiết kiệm đáng kể chi phí sửa lỗi.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm tra tĩnh yêu cầu chạy các bài kiểm tra thông qua mã\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm tra tĩnh yêu cầu chạy các bài kiểm tra thông qua mã\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm tra tĩnh yêu cầu chạy các bài kiểm tra thông qua mã\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 121,
+    "question": "Phát biểu nào sau đây không đúng về kiểm thử hồi quy",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để đảm bảo phần mềm sau khi sửa chữa không gặp thêm lỗi mới có liên quan"
+      },
+      {
+        "key": "b",
+        "text": "Để đảm bảo các test case mới không trùng với test case cũ"
+      },
+      {
+        "key": "c",
+        "text": "Để đảm bảo phiên bản mới nhất của phần mềm không làm ảnh hưởng đến các chức năng đang hoạt động tốt"
+      },
+      {
+        "key": "d",
+        "text": "Để tiết kiệm công sức phải kiểm thử lại toàn bộ hệ thống"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Để đảm bảo phiên bản mới nhất của phần mềm không làm ảnh hưởng đến các chức năng đang hoạt động tốt\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Để đảm bảo phiên bản mới nhất của phần mềm không làm ảnh hưởng đến các chức năng đang hoạt động tốt\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Kiểm thử hồi quy (Regression Testing) được thực hiện sau khi mã nguồn có sự thay đổi (như sửa lỗi, tái cấu trúc, nâng cấp) để đảm bảo các thay đổi mới không làm phát sinh lỗi ở các chức năng vốn đang hoạt động ổn định.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Để đảm bảo phiên bản mới nhất của phần mềm không làm ảnh hưởng đến các chức năng đang hoạt động tốt\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 122,
+    "question": "Phát biểu nào sau đây phù hợp nhất với code review",
+    "options": [
+      {
+        "key": "a",
+        "text": "Chạy các test case để phát hiện các vấn đề của code"
+      },
+      {
+        "key": "b",
+        "text": "Chạy chương trình bằng tay để tìm lỗi"
+      },
+      {
+        "key": "c",
+        "text": "Dựa vào sơ đồ dòng dữ liệu để tìm lỗi"
+      },
+      {
+        "key": "d",
+        "text": "So sánh với tài liệu thiết kế để xác định code chưa đạt"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"So sánh với tài liệu thiết kế để xác định code chưa đạt\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"So sánh với tài liệu thiết kế để xác định code chưa đạt\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"So sánh với tài liệu thiết kế để xác định code chưa đạt\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **So sánh với tài liệu thiết kế để xác định code chưa đạt**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 123,
+    "question": "Các bước cơ bản của quá trình kiểm thử dòng điều khiển là",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tính độ phức tạp chu trình để xác định loại đồ thị dòng điều khiển, xác định đường thi hành, sinh test case dựa vào đường thi hành"
+      },
+      {
+        "key": "b",
+        "text": "Sinh đồ thị các test case từ code với độ đo cần kiểm thử, thực hiện các test case"
+      },
+      {
+        "key": "c",
+        "text": "Sinh đồ thị dòng điều khiển CFG với tiêu chỉ độ đo cần kiểm thử, sinh các test case, thực hiện các test case"
+      },
+      {
+        "key": "d",
+        "text": "Sinh đồ thị dòng điều khiển CFG với tiêu chỉ độ đo cần kiểm thử, sinh các đường thi hành, sinh test case, thực hiện các test case"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Sinh đồ thị dòng điều khiển CFG với tiêu chỉ độ đo cần kiểm thử, sinh các đường thi hành, sinh test case, thực hiện các test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Sinh đồ thị dòng điều khiển CFG với tiêu chỉ độ đo cần kiểm thử, sinh các đường thi hành, sinh test case, thực hiện các test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Sinh đồ thị dòng điều khiển CFG với tiêu chỉ độ đo cần kiểm thử, sinh các đường thi hành, sinh test case, thực hiện các test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Sinh đồ thị dòng điều khiển CFG với tiêu chỉ độ đo cần kiểm thử, sinh các đường thi hành, sinh test case, thực hiện các test case**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 124,
+    "question": "Định nghĩa nào là phù hợp cho test case",
+    "options": [
+      {
+        "key": "a",
+        "text": "Là một cơ chế xác minh tính chính xác của kết quả đầu ra"
+      },
+      {
+        "key": "b",
+        "text": "Là một cơ sở nguyên tắc về đo lường và thống kê"
+      },
+      {
+        "key": "c",
+        "text": "Là một tập giá trị đầu vào và đầu ra mong đợi"
+      },
+      {
+        "key": "d",
+        "text": "Là một trạng thái của hệ thống"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Là một tập giá trị đầu vào và đầu ra mong đợi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Là một tập giá trị đầu vào và đầu ra mong đợi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Là một tập giá trị đầu vào và đầu ra mong đợi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Là một tập giá trị đầu vào và đầu ra mong đợi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 125,
+    "question": "Phát biểu nào đúng về mối quan hệ giữa bao phủ dòng lệnh và bao phủ quyết định",
+    "options": [
+      {
+        "key": "a",
+        "text": "Bao phủ quyết định đạt 100% sẽ đảm bảo bao phủ lệnh 100%"
+      },
+      {
+        "key": "b",
+        "text": "Bao phủ lệnh đạt 100% sẽ đảm bảo bao phủ quyết định 100%"
+      },
+      {
+        "key": "c",
+        "text": "Bao phủ lệnh đạt 50% sẽ đảm bảo bao phủ quyết định 100%"
+      },
+      {
+        "key": "d",
+        "text": "Bao phủ quyết định đạt 50% sẽ đảm bảo bao phủ lệnh 100%"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Độ bao phủ kiểm thử (Test Coverage) là tỷ lệ phần trăm các thành phần cấu trúc (lệnh, quyết định, nhánh) được thực thi bởi bộ ca kiểm thử. Độ bao phủ càng cao thì độ tin cậy của bộ kiểm thử càng cao.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Bao phủ quyết định đạt 100% sẽ đảm bảo bao phủ lệnh 100%\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Bao phủ quyết định đạt 100% sẽ đảm bảo bao phủ lệnh 100%\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Bao phủ quyết định đạt 100% sẽ đảm bảo bao phủ lệnh 100%\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 126,
+    "question": "Công ty X muốn xây dựng hàm tính thưởng của một nhân viên dựa vào số năm làm việc với các mức sau:\nÍt hơn hoặc bằng 2 năm: 1 triệu\nNhiều hơn 2 năm và ít hơn 5 năm: 2 triệu\nNhiều hơn 5 năm và ít hơn 10 năm: 3 triệu\nTrên 10 năm: 4 triệu\nĐể kiểm thử hàm tính thưởng của công ty X theo phương pháp phân hoạch tương đương, cần tối thiểu bao nhiêu test case?",
+    "options": [
+      {
+        "key": "a",
+        "text": "2"
+      },
+      {
+        "key": "b",
+        "text": "3"
+      },
+      {
+        "key": "c",
+        "text": "4"
+      },
+      {
+        "key": "d",
+        "text": "5"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **4**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 127,
+    "question": "Thông tin nào không có trong báo cáo kết quả kiểm thử",
+    "options": [
+      {
+        "key": "a",
+        "text": "Mục tiêu kiểm thử và tiêu chí để đánh giá"
+      },
+      {
+        "key": "b",
+        "text": "Các vấn đề xảy ra trong quá trình kiểm thử"
+      },
+      {
+        "key": "c",
+        "text": "So sánh tiến trình thực tế với các tiêu chí đã đặt ra"
+      },
+      {
+        "key": "d",
+        "text": "Đánh giá chất lượng của đối tượng được kiểm thử"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Mục tiêu kiểm thử và tiêu chí để đánh giá**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Mục tiêu kiểm thử và tiêu chí để đánh giá\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Mục tiêu kiểm thử và tiêu chí để đánh giá\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Mục tiêu kiểm thử và tiêu chí để đánh giá\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 128,
+    "question": "Kiểm thử chức năng được thực hiện khi nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Chỉ được thực hiện ở mức kiểm thử hệ thống và kiểm thử chấp nhận"
+      },
+      {
+        "key": "b",
+        "text": "Chỉ được thực hiện ở mức kiểm thử đơn vị"
+      },
+      {
+        "key": "c",
+        "text": "Chỉ được thực hiện ở mức kiểm thử chấp nhận"
+      },
+      {
+        "key": "d",
+        "text": "Được thực hiện ở tất cả các mức kiểm thử"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Được thực hiện ở tất cả các mức kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Được thực hiện ở tất cả các mức kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Được thực hiện ở tất cả các mức kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Được thực hiện ở tất cả các mức kiểm thử**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 129,
+    "question": "Đâu không phải là mục tiêu của kiểm thử",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tìm lỗi"
+      },
+      {
+        "key": "b",
+        "text": "Tăng sự tự tin về chất lượng của chương trình"
+      },
+      {
+        "key": "c",
+        "text": "Ngăn chặn lỗi"
+      },
+      {
+        "key": "d",
+        "text": "Tìm nguyên nhân lỗi"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tìm nguyên nhân lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tìm nguyên nhân lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tìm nguyên nhân lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Tìm nguyên nhân lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 130,
+    "question": "Kiểm thử tĩnh được thực hiện trong giai đoạn nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Đặc tả yêu cầu"
+      },
+      {
+        "key": "b",
+        "text": "Thiết kế"
+      },
+      {
+        "key": "c",
+        "text": "Lập trình"
+      },
+      {
+        "key": "d",
+        "text": "Tất cả các giai đoạn trên"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các giai đoạn trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các giai đoạn trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các giai đoạn trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Kiểm thử tĩnh (Static testing) là phương pháp xem xét mã nguồn, tài liệu thiết kế hoặc yêu cầu mà không cần thực thi chương trình. Nó giúp phát hiện lỗi cú pháp, cấu trúc lập trình và lỗi logic sớm trong vòng đời, tiết kiệm đáng kể chi phí sửa lỗi."
+    }
+  },
+  {
+    "id": 131,
+    "question": "“Ngụy biện không có lỗi” (absence-of-errors fallacy) nghĩa là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Nếu không tìm thấy lỗi thì chắc chắn không có lỗi"
+      },
+      {
+        "key": "b",
+        "text": "Nếu phần mềm ít lỗi thì chắc chắn đáp ứng nhu cầu người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Dù ít/không có lỗi, phần mềm vẫn có thể không đáp ứng nhu cầu/giá trị sử dụng"
+      },
+      {
+        "key": "d",
+        "text": "Lỗi chỉ xuất hiện khi thay đổi môi trường triển khai"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Dù ít/không có lỗi, phần mềm vẫn có thể không đáp ứng nhu cầu/giá trị sử dụng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Dù ít/không có lỗi, phần mềm vẫn có thể không đáp ứng nhu cầu/giá trị sử dụng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Dù ít/không có lỗi, phần mềm vẫn có thể không đáp ứng nhu cầu/giá trị sử dụng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Dù ít/không có lỗi, phần mềm vẫn có thể không đáp ứng nhu cầu/giá trị sử dụng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 132,
+    "question": "Phát biểu nào mô tả đúng “exhaustive testing” (kiểm thử toàn diện)?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Luôn bắt buộc với mọi dự án"
+      },
+      {
+        "key": "b",
+        "text": "Thường không khả thi vì số lượng trường hợp đầu vào/quyết định quá lớn"
+      },
+      {
+        "key": "c",
+        "text": "Chỉ áp dụng cho UI testing"
+      },
+      {
+        "key": "d",
+        "text": "Chỉ cần đạt 100% statement coverage là đủ gọi là exhaustive"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Thường không khả thi vì số lượng trường hợp đầu vào/quyết định quá lớn\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Thường không khả thi vì số lượng trường hợp đầu vào/quyết định quá lớn**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Thường không khả thi vì số lượng trường hợp đầu vào/quyết định quá lớn\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Thường không khả thi vì số lượng trường hợp đầu vào/quyết định quá lớn\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 133,
+    "question": "Trong Junit, khi test có tham số thì annotation nào thường dùng để truyền dữ liệu nhiều dòng (CSV) trực tiếp?",
+    "options": [
+      {
+        "key": "a",
+        "text": "@CsvSource"
+      },
+      {
+        "key": "b",
+        "text": "@ValueSource"
+      },
+      {
+        "key": "c",
+        "text": "@MethodSource"
+      },
+      {
+        "key": "d",
+        "text": "@FileSource"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **@CsvSource**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"@CsvSource\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"@CsvSource\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"@CsvSource\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 134,
+    "question": "Để kiểm tra list chứa đúng các phần tử theo thứ tự 1,2,3, matcher phù hợp nhất là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "hasItems(1,2,3)"
+      },
+      {
+        "key": "b",
+        "text": "contains(1,2,3)"
+      },
+      {
+        "key": "c",
+        "text": "containsInAnyOrder(1,2,3)"
+      },
+      {
+        "key": "d",
+        "text": "everyItem(isOneOf(1,2,3))"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"contains(1,2,3)\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **contains(1,2,3)**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"contains(1,2,3)\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"contains(1,2,3)\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 135,
+    "question": "Trong JUnit 5, Annotation nào sau đây làm cho 1 phương thức được chạy trước phương thức test trong test class?",
+    "options": [
+      {
+        "key": "a",
+        "text": "@BeforeEach"
+      },
+      {
+        "key": "b",
+        "text": "@BeforeAll"
+      },
+      {
+        "key": "c",
+        "text": "@Before"
+      },
+      {
+        "key": "d",
+        "text": "@Before"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **@BeforeEach**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"@BeforeEach\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"@BeforeEach\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"@BeforeEach\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 136,
+    "question": "Trong JUnit 5, Matcher nào kiểm tra chuỗi bằng nhau, bỏ qua hoa/thường?",
+    "options": [
+      {
+        "key": "a",
+        "text": "equalToIgnoreCase()"
+      },
+      {
+        "key": "b",
+        "text": "equalsIgnoreCase()"
+      },
+      {
+        "key": "c",
+        "text": "sameTextIgnoreCase()"
+      },
+      {
+        "key": "d",
+        "text": "textEqualsIgnoreCase()"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **equalToIgnoreCase()**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"equalToIgnoreCase()\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"equalToIgnoreCase()\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"equalToIgnoreCase()\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 137,
+    "question": "Trong chiến lược kiểm thử tích hợp từ trên xuống (Top-down Integration), thành phần giả lập được sử dụng để thay thế cho các module cấp thấp chưa được phát triển gọi là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Driver"
+      },
+      {
+        "key": "b",
+        "text": "Stub"
+      },
+      {
+        "key": "c",
+        "text": "Dummy"
+      },
+      {
+        "key": "d",
+        "text": "Proxy"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Stub\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Kiểm thử tích hợp (Integration Testing) tập trung kiểm tra các giao tiếp (interfaces), tương tác và dòng dữ liệu qua lại giữa các module hoặc component phần mềm khác nhau.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Stub\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Stub\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 138,
+    "question": "Cho đoạn mã sau, cần tối thiểu bao nhiêu test case để phủ nhánh 100%?\nint n;\ncout &lt;&lt; \"Nhap n: \";\ncin &gt;&gt; n;\nswitch (n%3)\n{\ncase 0:\ncout &lt;&lt; \"Chia het cho 3\";\nbreak;\ncase 1:\ncase 2:\ncout &lt;&lt; \"Khong chia het cho 3\";\n}",
+    "options": [
+      {
+        "key": "a",
+        "text": "2"
+      },
+      {
+        "key": "b",
+        "text": "3"
+      },
+      {
+        "key": "c",
+        "text": "1"
+      },
+      {
+        "key": "d",
+        "text": "4"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **3**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 139,
+    "question": "Hoạt động nào dùng để kiểm tra xem đã phát triển sản phẩm theo yêu cầu của khách hàng chưa.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Validation"
+      },
+      {
+        "key": "b",
+        "text": "Verification"
+      },
+      {
+        "key": "c",
+        "text": "Quality Assurance"
+      },
+      {
+        "key": "d",
+        "text": "Quality Control"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Kiểm thử động (Dynamic testing) yêu cầu chương trình phải chạy thực tế trên máy tính với dữ liệu đầu vào cụ thể để so sánh kết quả thực tế và kết quả mong đợi.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Validation\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Validation\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Validation\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 140,
+    "question": "Annotation JUnit nào được sử dụng để đánh dấu một phương thức test có tham số?",
+    "options": [
+      {
+        "key": "a",
+        "text": "@ParametrizedTest"
+      },
+      {
+        "key": "b",
+        "text": "@Parameterized"
+      },
+      {
+        "key": "c",
+        "text": "@ParamTest"
+      },
+      {
+        "key": "d",
+        "text": "@ParameterizedTest"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"@ParameterizedTest\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"@ParameterizedTest\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"@ParameterizedTest\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **@ParameterizedTest**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 141,
+    "question": "Cho đoạn mã sau và phát biểu nào sau đây đúng:\nint USCLN(int a, int b){\nwhile (a != b)\nif (a &gt; b)\na = a - b;\nelse\nb = b - a;\nreturn a;\n}",
+    "options": [
+      {
+        "key": "a",
+        "text": "2 test case để phủ các dòng lệnh, 2 test case để phủ nhánh"
+      },
+      {
+        "key": "b",
+        "text": "1 test case để phủ các dòng lệnh, 2 test case để phủ nhánh"
+      },
+      {
+        "key": "c",
+        "text": "2 test case để phủ các dòng lệnh, 3 test case để phủ nhánh"
+      },
+      {
+        "key": "d",
+        "text": "1 test case để phủ các dòng lệnh, 1 test case để phủ nhánh"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"1 test case để phủ các dòng lệnh, 1 test case để phủ nhánh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"1 test case để phủ các dòng lệnh, 1 test case để phủ nhánh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"1 test case để phủ các dòng lệnh, 1 test case để phủ nhánh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **1 test case để phủ các dòng lệnh, 1 test case để phủ nhánh**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 142,
+    "question": "Một hệ thống tính phí gửi xe: Miễn phí cho 15 phút đầu. 10.000đ cho mỗi giờ tiếp theo. Tối đa 200.000đ/ngày. Kỹ thuật thiết kế test case nào phù hợp nhất để kiểm tra logic nghiệp vụ này?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Bảng quyết định (Decision Table Testing)"
+      },
+      {
+        "key": "b",
+        "text": "Phân tích luồng điều khiển (Control Flow Analysis)"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử trường hợp sử dụng (Use Case Testing)"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử chuyển đổi trạng thái (State Transition Testing)"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Bảng quyết định (Decision Table Testing)**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Bảng quyết định (Decision Table Testing)\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Bảng quyết định (Decision Table Testing)\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Bảng quyết định (Decision Table Testing)\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 143,
+    "question": "Cần tối thiểu bao nhiêu test case để phủ được cấp 3 đoạn mã sau:\nint f(int a, int b)\n{\nif (a &lt; 0 &amp;&amp; b &lt; 0)\nreturn 0;\nif (a &gt; b || a == b)\nreturn 1;\nreturn -1;\n}",
+    "options": [
+      {
+        "key": "a",
+        "text": "2"
+      },
+      {
+        "key": "b",
+        "text": "5"
+      },
+      {
+        "key": "c",
+        "text": "4"
+      },
+      {
+        "key": "d",
+        "text": "3"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **2**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"2\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"2\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"2\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 144,
+    "question": "Annotation JUnit nào được sử dụng để xác định thứ tự chạy của các test case?",
+    "options": [
+      {
+        "key": "a",
+        "text": "@Step"
+      },
+      {
+        "key": "b",
+        "text": "@Order"
+      },
+      {
+        "key": "c",
+        "text": "@Important"
+      },
+      {
+        "key": "d",
+        "text": "@Display"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"@Order\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **@Order**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"@Order\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"@Order\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 145,
+    "question": "Độ phức tạp chu trình của đoạn mã giả sau là bao nhiêu?\nint i = 1, s = 2;\ndo {\ns += i;\ncout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; \" =&gt; s = \" &lt;&lt; s &lt;&lt; endl;\n} while (i++ &lt; 10);",
+    "options": [
+      {
+        "key": "a",
+        "text": "3"
+      },
+      {
+        "key": "b",
+        "text": "2"
+      },
+      {
+        "key": "c",
+        "text": "4"
+      },
+      {
+        "key": "d",
+        "text": "5"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"2\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Độ phức tạp chu trình (Cyclomatic Complexity) đo lường số lượng đường đi độc lập tuyến tính qua đồ thị dòng điều khiển (CFG) của chương trình, giúp xác định số lượng test case tối thiểu cần để đạt 100% phủ nhánh.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"2\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"2\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 146,
+    "question": "Kiểm thử giá trị biên mạnh của hàm tính số lượng nghiệm không trùng nhau của phương trình bậc hai int f(int a, int b, int c) với ba số a, b, c có khoảng giá trị từ 1 đến 100 thì cần bao nhiêu test case",
+    "options": [
+      {
+        "key": "a",
+        "text": "13"
+      },
+      {
+        "key": "b",
+        "text": "19"
+      },
+      {
+        "key": "c",
+        "text": "9"
+      },
+      {
+        "key": "d",
+        "text": "125"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"19\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Phân tích giá trị biên (Boundary Value Analysis) là kỹ thuật kiểm thử hộp đen tập trung vào các điểm cực trị ở biên của phân vùng tương đương (như Min, Max, lân cận biên) do lỗi lập trình rất hay xảy ra tại các điểm này.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"19\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"19\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 147,
+    "question": "Nguyên tắc kiểm thử “Không thể chứng minh sự tồn tại của lỗi” có ý nghĩa gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử chỉ có thể phát hiện lỗi, không thể chứng minh phần mềm không có lỗi"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử có thể loại bỏ mọi lỗi trong phần mềm"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử giúp chứng minh phần mềm hoàn hảo"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử chỉ cần kiểm tra giao diện người dùng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Kiểm thử chỉ có thể phát hiện lỗi, không thể chứng minh phần mềm không có lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử chỉ có thể phát hiện lỗi, không thể chứng minh phần mềm không có lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử chỉ có thể phát hiện lỗi, không thể chứng minh phần mềm không có lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử chỉ có thể phát hiện lỗi, không thể chứng minh phần mềm không có lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 148,
+    "question": "Cái nào sau đây không phải là một trong những nguyên tắc của kiểm thử",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử càng sớm càng tốt"
+      },
+      {
+        "key": "b",
+        "text": "Lỗi thường phân bố tập trung"
+      },
+      {
+        "key": "c",
+        "text": "Nghịch lý thuốc trừ sâu"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử toàn bộ"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử toàn bộ\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử toàn bộ\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử toàn bộ\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Kiểm thử toàn bộ**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 149,
+    "question": "Cấp độ kiểm thử nào tập trung vào sự tương tác giữa các thành phần hoặc hệ thống?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử hệ thống (System Testing)"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử chấp nhận (Acceptance Testing)"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử đơn vị (Unit Testing)"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử tích hợp (Integration Testing)"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử tích hợp (Integration Testing)\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử tích hợp (Integration Testing)\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử tích hợp (Integration Testing)\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Kiểm thử tích hợp (Integration Testing)**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 150,
+    "question": "Bạn đang test một hệ thống bán hàng online. Chi phí vận chuyển được xác định với mức giá là: dưới 5Kg là 3$, từ 5Kg đến 10Kg là 5$, trên 10Kg là 10$. Trọng lượng mà nhỏ hơn hoặc bằng 0 được xem là không hợp lệ. Xác định có bao nhiêu lớp tương đương cần thiết để test.",
+    "options": [
+      {
+        "key": "a",
+        "text": "2"
+      },
+      {
+        "key": "b",
+        "text": "3"
+      },
+      {
+        "key": "c",
+        "text": "4"
+      },
+      {
+        "key": "d",
+        "text": "5"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **4**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 151,
+    "question": "Kỹ thuật đoán lỗi được sử dụng tốt nhất",
+    "options": [
+      {
+        "key": "a",
+        "text": "Khi tiếp cận đầu tiên để tạo ra các test case"
+      },
+      {
+        "key": "b",
+        "text": "Sau khi các kỹ thuật chính thức được áp dụng"
+      },
+      {
+        "key": "c",
+        "text": "Sau khi hệ thống hoạt động"
+      },
+      {
+        "key": "d",
+        "text": "Bởi những tester thiếu kinh nghiệm"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Sau khi các kỹ thuật chính thức được áp dụng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Sau khi các kỹ thuật chính thức được áp dụng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Sau khi các kỹ thuật chính thức được áp dụng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Sau khi các kỹ thuật chính thức được áp dụng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 152,
+    "question": "Cho đoạn mã giả sau, số test case tối thiểu cần có để phủ tất cả các nhánh?\nint test(int k){\nif(k&lt;=1) return -1;\nfor(int i=2; i&lt;k; i++)\nif(k%i==0) return -1;\nreturn 1;\n}",
+    "options": [
+      {
+        "key": "a",
+        "text": "Có 4 test case"
+      },
+      {
+        "key": "b",
+        "text": "Có 2 test case"
+      },
+      {
+        "key": "c",
+        "text": "Có 3 test case"
+      },
+      {
+        "key": "d",
+        "text": "Tất cả đều sai"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Có 3 test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Có 3 test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Có 3 test case**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Có 3 test case\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 153,
+    "question": "Đoạn mã giả: IF (Tuổi &lt; 18 OR Là_Học_Sinh == TRUE) THEN Giảm_giá = 10%. Để đạt được 100% Độ bao phủ quyết định (Decision Coverage) với số lượng test case tối thiểu, bạn cần các trường hợp nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "TC1: Tuổi=20, Là_Học_Sinh=FALSE"
+      },
+      {
+        "key": "b",
+        "text": "TC1: Tuổi=20, Là_Học_Sinh=TRUE; TC2: Tuổi=20, Là_Học_Sinh=FALSE"
+      },
+      {
+        "key": "c",
+        "text": "TC1: Tuổi=15, Là_Học_Sinh=TRUE; TC2: Tuổi=15, Là_Học_Sinh=FALSE"
+      },
+      {
+        "key": "d",
+        "text": "TC1: Tuổi=10, Là_Học_Sinh=FALSE"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"TC1: Tuổi=20, Là_Học_Sinh=TRUE; TC2: Tuổi=20, Là_Học_Sinh=FALSE\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Độ bao phủ kiểm thử (Test Coverage) là tỷ lệ phần trăm các thành phần cấu trúc (lệnh, quyết định, nhánh) được thực thi bởi bộ ca kiểm thử. Độ bao phủ càng cao thì độ tin cậy của bộ kiểm thử càng cao.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"TC1: Tuổi=20, Là_Học_Sinh=TRUE; TC2: Tuổi=20, Là_Học_Sinh=FALSE\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"TC1: Tuổi=20, Là_Học_Sinh=TRUE; TC2: Tuổi=20, Là_Học_Sinh=FALSE\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 154,
+    "question": "Phát biểu nào sau đây đúng về độ bao phủ",
+    "options": [
+      {
+        "key": "a",
+        "text": "Cho biết test kỹ hay không"
+      },
+      {
+        "key": "b",
+        "text": "Không liên quan gì đến kiểm thử"
+      },
+      {
+        "key": "c",
+        "text": "Chỉ dừng test khi đạt được độ bao phủ là 100%"
+      },
+      {
+        "key": "d",
+        "text": "Số test case càng lớn thì độ bao phủ càng cao"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Độ bao phủ kiểm thử (Test Coverage) là tỷ lệ phần trăm các thành phần cấu trúc (lệnh, quyết định, nhánh) được thực thi bởi bộ ca kiểm thử. Độ bao phủ càng cao thì độ tin cậy của bộ kiểm thử càng cao.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Cho biết test kỹ hay không\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Cho biết test kỹ hay không\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Cho biết test kỹ hay không\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 155,
+    "question": "Nguyên lý 'Nghịch lý thuốc trừ sâu' (Pesticide Paradox) gợi ý hành động nào sau đây?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Cần thường xuyên xem xét và cập nhật bộ test case, viết thêm test case mới"
+      },
+      {
+        "key": "b",
+        "text": "Dừng kiểm thử khi đã tìm thấy đủ số lượng lỗi dự kiến"
+      },
+      {
+        "key": "c",
+        "text": "Chỉ sử dụng những test case đã tìm thấy lỗi trong quá khứ"
+      },
+      {
+        "key": "d",
+        "text": "Nên tập trung vào kiểm thử tự động hơn là thủ công"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Kiểm thử động (Dynamic testing) yêu cầu chương trình phải chạy thực tế trên máy tính với dữ liệu đầu vào cụ thể để so sánh kết quả thực tế và kết quả mong đợi.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Cần thường xuyên xem xét và cập nhật bộ test case, viết thêm test case mới\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Cần thường xuyên xem xét và cập nhật bộ test case, viết thêm test case mới\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Cần thường xuyên xem xét và cập nhật bộ test case, viết thêm test case mới\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 156,
+    "question": "Nguồn nào sau đây là nguồn tốt nhất về “Kết quả mong đợi” cho các tập lệnh “Kiểm thử chấp nhận” của người dùng",
+    "options": [
+      {
+        "key": "a",
+        "text": "Đặc tả chương trình"
+      },
+      {
+        "key": "b",
+        "text": "Yêu cầu của người dùng"
+      },
+      {
+        "key": "c",
+        "text": "Đặc tả hệ thống"
+      },
+      {
+        "key": "d",
+        "text": "Kết quả thực tế"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Yêu cầu của người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Kiểm thử chấp nhận (Acceptance Testing) là mức kiểm thử cuối cùng để xác định xem hệ thống đã sẵn sàng bàn giao cho người dùng chưa, thường dựa trên yêu cầu nghiệp vụ thực tế của khách hàng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Yêu cầu của người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Yêu cầu của người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 157,
+    "question": "Cho đoạn mã giả sau, số test case tối thiểu để phủ được tất cả các nhánh là?\nif(x&gt;y)    x=x+1;\ny=y+1;\nwhile (x&gt;y)\ny=x*y;\nx=x+1;",
+    "options": [
+      {
+        "key": "a",
+        "text": "Có 2 ca kiểm thử"
+      },
+      {
+        "key": "b",
+        "text": "Có 1 ca kiểm thử"
+      },
+      {
+        "key": "c",
+        "text": "Có 3 ca kiểm thử"
+      },
+      {
+        "key": "d",
+        "text": "Có 4 ca kiểm thử"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Có 2 ca kiểm thử**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Có 2 ca kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Có 2 ca kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Có 2 ca kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 158,
+    "question": "Kết quả của đoạn mã sau là gì.\npublic class TestClass {\n@Test\npublic void testingMethod() {\nString message = \"Test\";\nassertEquals(3, message.length());\n}\n}",
+    "options": [
+      {
+        "key": "a",
+        "text": "Test chạy với kết quả là thành công"
+      },
+      {
+        "key": "b",
+        "text": "Lỗi Runtime"
+      },
+      {
+        "key": "c",
+        "text": "Lỗi biên dịch"
+      },
+      {
+        "key": "d",
+        "text": "Test chạy với kết quả là thất bại"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Test chạy với kết quả là thất bại\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Test chạy với kết quả là thất bại\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Test chạy với kết quả là thất bại\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Test chạy với kết quả là thất bại**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 159,
+    "question": "Ai thực hiện Unit Test",
+    "options": [
+      {
+        "key": "a",
+        "text": "QC"
+      },
+      {
+        "key": "b",
+        "text": "Developer"
+      },
+      {
+        "key": "c",
+        "text": "User"
+      },
+      {
+        "key": "d",
+        "text": "Designer"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Developer\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Kiểm thử đơn vị (Unit Testing) tập trung kiểm tra độc lập các đơn vị phần mềm nhỏ nhất có thể lập trình được (hàm, phương thức, lớp) và thường do chính các lập trình viên (Developers) thực hiện trước khi tích hợp.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Developer\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Developer\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 160,
+    "question": "Ưu điểm chính của phương pháp kiểm thử tích hợp dưới lên (Bottom-up) là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Không cần phải tạo stub"
+      },
+      {
+        "key": "b",
+        "text": "Thiết kế test case dễ và không cần driver"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử ngay chức năng điều khiển hệ thống"
+      },
+      {
+        "key": "d",
+        "text": "Phát hiện sớm các lỗi hệ thống"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Thiết kế test case dễ và không cần driver\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Kiểm thử tích hợp (Integration Testing) tập trung kiểm tra các giao tiếp (interfaces), tương tác và dòng dữ liệu qua lại giữa các module hoặc component phần mềm khác nhau.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Thiết kế test case dễ và không cần driver\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Thiết kế test case dễ và không cần driver\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 161,
+    "question": "Các file JUnit test được lưu trong các file có phần mở rộng là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": ".test"
+      },
+      {
+        "key": "b",
+        "text": ".unit"
+      },
+      {
+        "key": "c",
+        "text": ".junit"
+      },
+      {
+        "key": "d",
+        "text": ".java"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \".java\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \".java\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \".java\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Kiểm thử đơn vị (Unit Testing) tập trung kiểm tra độc lập các đơn vị phần mềm nhỏ nhất có thể lập trình được (hàm, phương thức, lớp) và thường do chính các lập trình viên (Developers) thực hiện trước khi tích hợp."
+    }
+  },
+  {
+    "id": 162,
+    "question": "Cho đoạn mã sau, cần tối thiểu bao nhiêu test case để phủ lệnh 100%?\nint n; cout &lt;&lt; \"Nhap n: \"; cin &gt;&gt; n;\nswitch (n%3){\ncase 0:\ncout &lt;&lt; \"Chia het cho 3\"; break;\ncase 1:\ncase 2:\ncout &lt;&lt; \"Khong chia het cho 3\";\n}",
+    "options": [
+      {
+        "key": "a",
+        "text": "1"
+      },
+      {
+        "key": "b",
+        "text": "3"
+      },
+      {
+        "key": "c",
+        "text": "2"
+      },
+      {
+        "key": "d",
+        "text": "4"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **4**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 163,
+    "question": "Kỹ thuật nào sau đây là một hình thức kiểm thử tĩnh?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Đoán lỗi"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử hồi quy tự động"
+      },
+      {
+        "key": "c",
+        "text": "Cung cấp đầu vào, chạy chương trình và kiểm tra kết quả đầu ra"
+      },
+      {
+        "key": "d",
+        "text": "Review code"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Review code\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Review code\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Review code\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Kiểm thử tĩnh (Static testing) là phương pháp xem xét mã nguồn, tài liệu thiết kế hoặc yêu cầu mà không cần thực thi chương trình. Nó giúp phát hiện lỗi cú pháp, cấu trúc lập trình và lỗi logic sớm trong vòng đời, tiết kiệm đáng kể chi phí sửa lỗi."
+    }
+  },
+  {
+    "id": 164,
+    "question": "Cái nào sau đây không phải là một phần của kiểm thử hệ thống:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử khả năng phục hồi khi gặp sự cố không"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm tra viết code có đúng chuẩn"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm tra xem có sử dụng dễ không"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử hiệu suất"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Kiểm tra viết code có đúng chuẩn\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Kiểm tra viết code có đúng chuẩn**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Kiểm tra viết code có đúng chuẩn\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Kiểm tra viết code có đúng chuẩn\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 165,
+    "question": "Kiểm thử hồi quy (Regression Testing) nên được thực hiện khi nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sau khi mã nguồn đã được sửa đổi hoặc thay đổi môi trường"
+      },
+      {
+        "key": "b",
+        "text": "Khi khách hàng yêu cầu kiểm thử hiệu năng"
+      },
+      {
+        "key": "c",
+        "text": "Chỉ thực hiện một lần duy nhất trước khi phát hành"
+      },
+      {
+        "key": "d",
+        "text": "Chỉ khi bắt đầu một dự án mới"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Kiểm thử hồi quy (Regression Testing) được thực hiện sau khi mã nguồn có sự thay đổi (như sửa lỗi, tái cấu trúc, nâng cấp) để đảm bảo các thay đổi mới không làm phát sinh lỗi ở các chức năng vốn đang hoạt động ổn định.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sau khi mã nguồn đã được sửa đổi hoặc thay đổi môi trường\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sau khi mã nguồn đã được sửa đổi hoặc thay đổi môi trường\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sau khi mã nguồn đã được sửa đổi hoặc thay đổi môi trường\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 166,
+    "question": "Phát biểu nào sau đây phù hợp với độ bao phủ?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Độ bao phủ không ảnh hưởng đến độ tin cậy của bộ kiểm thử"
+      },
+      {
+        "key": "b",
+        "text": "Độ bao phủ càng nhỏ thì độ tin cậy của bộ kiểm thử càng cao"
+      },
+      {
+        "key": "c",
+        "text": "Độ bao phủ càng lớn thì độ tin cậy của bộ kiểm thử càng thấp"
+      },
+      {
+        "key": "d",
+        "text": "Độ bao phủ càng lớn thì độ tin cậy của bộ kiểm thử càng cao"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Độ bao phủ càng lớn thì độ tin cậy của bộ kiểm thử càng cao\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Độ bao phủ càng lớn thì độ tin cậy của bộ kiểm thử càng cao\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Độ bao phủ càng lớn thì độ tin cậy của bộ kiểm thử càng cao\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Độ bao phủ kiểm thử (Test Coverage) là tỷ lệ phần trăm các thành phần cấu trúc (lệnh, quyết định, nhánh) được thực thi bởi bộ ca kiểm thử. Độ bao phủ càng cao thì độ tin cậy của bộ kiểm thử càng cao."
+    }
+  },
+  {
+    "id": 167,
+    "question": "Kỹ thuật nào là một kỹ thuật kiểm thử hộp đen?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kỹ thuật dựa vào kiến thức chung về thất bại của hệ thống và kiến thức về các lỗi đã xày ra"
+      },
+      {
+        "key": "b",
+        "text": "Kỹ thuật dựa vào đặc tả yêu cầu"
+      },
+      {
+        "key": "c",
+        "text": "Kỹ thuật kiểm tra xem một hệ thống có hoạt động theo thiết kế chi tiết không"
+      },
+      {
+        "key": "d",
+        "text": "Kỹ thuật dựa vào phân tích kiến trúc hệ thống"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Kỹ thuật dựa vào đặc tả yêu cầu\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Kiểm thử hộp đen (Black-box testing) là phương pháp thiết kế ca kiểm thử dựa hoàn toàn vào tài liệu đặc tả yêu cầu chức năng, giao diện của phần mềm mà không quan tâm đến cấu trúc mã nguồn bên trong.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Kỹ thuật dựa vào đặc tả yêu cầu\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Kỹ thuật dựa vào đặc tả yêu cầu\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 168,
+    "question": "Một lý do khiến các nhà phát triển gặp khó khăn trong việc kiểm thử công việc của chính họ là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Thiếu khách quan"
+      },
+      {
+        "key": "b",
+        "text": "Thiếu các công cụ kiểm tra trên thị trường dành cho nhà phát triển"
+      },
+      {
+        "key": "c",
+        "text": "Chưa qua đào tạo"
+      },
+      {
+        "key": "d",
+        "text": "Thiếu tài liệu kỹ thuật"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Thiếu khách quan**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Thiếu khách quan\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Thiếu khách quan\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Thiếu khách quan\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 169,
+    "question": "Kiểm thử hệ thống phi chức năng bao gồm:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử một tính năng để đáp ứng cho một hành động đó"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử để xem hệ thống hoạt động không bình thường ở đâu"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử tính mở rộng có dễ dàng không"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử các chức năng không nên tồn tại"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử tính mở rộng có dễ dàng không\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử tính mở rộng có dễ dàng không\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Kiểm thử tính mở rộng có dễ dàng không**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử tính mở rộng có dễ dàng không\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 170,
+    "question": "Kiểm thử giá trị biên mạnh (robust) của hàm tính số lượng nghiệm của phương trình bậc hai f(int a, int b, int c) với ba số a, b, c có khoảng giá trị từ 1 đến 100 thì cần bao nhiêu test case",
+    "options": [
+      {
+        "key": "a",
+        "text": "9"
+      },
+      {
+        "key": "b",
+        "text": "13"
+      },
+      {
+        "key": "c",
+        "text": "125"
+      },
+      {
+        "key": "d",
+        "text": "19"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"19\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"19\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"19\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Phân tích giá trị biên (Boundary Value Analysis) là kỹ thuật kiểm thử hộp đen tập trung vào các điểm cực trị ở biên của phân vùng tương đương (như Min, Max, lân cận biên) do lỗi lập trình rất hay xảy ra tại các điểm này."
+    }
+  },
+  {
+    "id": 171,
+    "question": "Một tập hợp các yếu tố đầu vào, điều kiện tiên quyết thực hiện và kết quả mong đợi được gọi là",
+    "options": [
+      {
+        "key": "a",
+        "text": "Test suite"
+      },
+      {
+        "key": "b",
+        "text": "Test plan"
+      },
+      {
+        "key": "c",
+        "text": "Test case"
+      },
+      {
+        "key": "d",
+        "text": "Test document"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Test case**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Test case\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 172,
+    "question": "Kiểm thử hộp trắng còn được gọi là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử dựa vào thiết kế"
+      },
+      {
+        "key": "b",
+        "text": "Kỹ thuật đoán lỗi"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử cấu trúc"
+      },
+      {
+        "key": "d",
+        "text": "Kỹ thuật dựa vào kinh nghiệm"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử cấu trúc\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử cấu trúc\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Kiểm thử hộp trắng (White-box testing) dựa trên kiến thức về mã nguồn, cấu trúc thuật toán bên trong để kiểm tra các đường chạy (paths), nhánh quyết định (branches), và câu lệnh (statements) của chương trình.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử cấu trúc\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 173,
+    "question": "Trong quá trình phát triển phần mềm, quá trình kiểm thử động có thể bắt đầu vào thời điểm nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Khi các yêu cầu phần mềm đã được phê duyệt"
+      },
+      {
+        "key": "b",
+        "text": "Khi mô-đun mã đầu tiên đã sẳn sàng để test đơn vị"
+      },
+      {
+        "key": "c",
+        "text": "Khi thiết kế hoàn tất"
+      },
+      {
+        "key": "d",
+        "text": "Khi code xong"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Khi mô-đun mã đầu tiên đã sẳn sàng để test đơn vị\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Kiểm thử động (Dynamic testing) yêu cầu chương trình phải chạy thực tế trên máy tính với dữ liệu đầu vào cụ thể để so sánh kết quả thực tế và kết quả mong đợi.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Khi mô-đun mã đầu tiên đã sẳn sàng để test đơn vị\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Khi mô-đun mã đầu tiên đã sẳn sàng để test đơn vị\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 174,
+    "question": "Đâu không phải là mục tiêu của kiểm thử",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tìm lỗi"
+      },
+      {
+        "key": "b",
+        "text": "Tăng sự tự tin về chất lượng của chương trình"
+      },
+      {
+        "key": "c",
+        "text": "Ngăn chặn lỗi"
+      },
+      {
+        "key": "d",
+        "text": "Phân tích nguyên nhân của lỗi"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Phân tích nguyên nhân của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Phân tích nguyên nhân của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Phân tích nguyên nhân của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **Phân tích nguyên nhân của lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 175,
+    "question": "Sự khác biệt giữa re-test (test lại) và kiểm tra hồi quy là",
+    "options": [
+      {
+        "key": "a",
+        "text": "re-testing là chạy kiểm thử lại; kiểm tra hồi quy tìm kiếm các tác dụng phụ không mong muốn"
+      },
+      {
+        "key": "b",
+        "text": "re-testing để tìm các tác dụng phụ không mong muốn; kiểm tra hồi quy chạy các test lặp đi lặp lại"
+      },
+      {
+        "key": "c",
+        "text": "re-testing được thực hiện sau khi các lỗi đã được khắc phục; kiểm tra hồi quy được thực hiện sớm hơn"
+      },
+      {
+        "key": "d",
+        "text": "re-testing sử dụng các môi trường khác nhau, kiểm tra hồi quy sử dụng cùng một môi trường"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Kiểm thử hồi quy (Regression Testing) được thực hiện sau khi mã nguồn có sự thay đổi (như sửa lỗi, tái cấu trúc, nâng cấp) để đảm bảo các thay đổi mới không làm phát sinh lỗi ở các chức năng vốn đang hoạt động ổn định.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"re-testing là chạy kiểm thử lại; kiểm tra hồi quy tìm kiếm các tác dụng phụ không mong muốn\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"re-testing là chạy kiểm thử lại; kiểm tra hồi quy tìm kiếm các tác dụng phụ không mong muốn\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"re-testing là chạy kiểm thử lại; kiểm tra hồi quy tìm kiếm các tác dụng phụ không mong muốn\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 176,
+    "question": "Chọn phát biểu phù hợp nhất trong các phát biểu sau",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử hồi quy được sử dụng sau khi hệ thống cần kiểm có sửa đổi"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử hồi quy chỉ chạy được 1 lần duy nhất"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử hồi quy được thực hiện càng sớm càng tốt, có thể bắt đầu khi đã có SRS"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử hồi quy không cần thay đổi"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Kiểm thử hồi quy được sử dụng sau khi hệ thống cần kiểm có sửa đổi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử hồi quy được sử dụng sau khi hệ thống cần kiểm có sửa đổi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử hồi quy được sử dụng sau khi hệ thống cần kiểm có sửa đổi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử hồi quy được sử dụng sau khi hệ thống cần kiểm có sửa đổi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 177,
+    "question": "Nội dung nào sau đây không có trong tài liệu test plan:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Những gì không được kiểm tra"
+      },
+      {
+        "key": "b",
+        "text": "Môi trường thử nghiệm"
+      },
+      {
+        "key": "c",
+        "text": "Test case"
+      },
+      {
+        "key": "d",
+        "text": "Milestone"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Test case**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Test case\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 178,
+    "question": "Phát biểu nào sau đây phù hợp nhất về bao phủ dòng lệnh",
+    "options": [
+      {
+        "key": "a",
+        "text": "Bao phủ dòng lệnh là một độ đo khẳng định rằng tất cả các statement đã được phủ hay chưa"
+      },
+      {
+        "key": "b",
+        "text": "Bao phủ dòng lệnh là một độ đo về số % statement trong source code đã được thực thi"
+      },
+      {
+        "key": "c",
+        "text": "Bao phủ dòng lệnh là một độ đo về số lượng statement trong source code đã được thực thi bởi các test case thành công"
+      },
+      {
+        "key": "d",
+        "text": "Bao phủ dòng lệnh là một độ đo về số % test case đã được thực thi"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Bao phủ dòng lệnh là một độ đo về số % statement trong source code đã được thực thi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Độ bao phủ kiểm thử (Test Coverage) là tỷ lệ phần trăm các thành phần cấu trúc (lệnh, quyết định, nhánh) được thực thi bởi bộ ca kiểm thử. Độ bao phủ càng cao thì độ tin cậy của bộ kiểm thử càng cao.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Bao phủ dòng lệnh là một độ đo về số % statement trong source code đã được thực thi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Bao phủ dòng lệnh là một độ đo về số % statement trong source code đã được thực thi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 179,
+    "question": "Ưu điểm chính của phương pháp kiểm thử tích hợp từ trên xuống dưới (top down) là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử nhanh theo từng đơn vị"
+      },
+      {
+        "key": "b",
+        "text": "Thiết kế test case dễ không cần stub"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử ngay chức năng điều khiển hệ thống"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử được các stub"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử ngay chức năng điều khiển hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử ngay chức năng điều khiển hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Kiểm thử tích hợp (Integration Testing) tập trung kiểm tra các giao tiếp (interfaces), tương tác và dòng dữ liệu qua lại giữa các module hoặc component phần mềm khác nhau.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử ngay chức năng điều khiển hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 180,
+    "question": "Mục đích của kiểm thử đơn vị là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Chứng minh đơn vị không còn lỗi"
+      },
+      {
+        "key": "b",
+        "text": "Chứng minh tính thỏa mãn tất cả yêu cầu của khách hàng và khách hàng chấp nhận sản phẩm"
+      },
+      {
+        "key": "c",
+        "text": "Chứng minh đơn vị làm đúng với đặc tả"
+      },
+      {
+        "key": "d",
+        "text": "Chứng minh đơn vị vẫn còn có lỗi"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Chứng minh đơn vị làm đúng với đặc tả\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Chứng minh đơn vị làm đúng với đặc tả\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Kiểm thử đơn vị (Unit Testing) tập trung kiểm tra độc lập các đơn vị phần mềm nhỏ nhất có thể lập trình được (hàm, phương thức, lớp) và thường do chính các lập trình viên (Developers) thực hiện trước khi tích hợp.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Chứng minh đơn vị làm đúng với đặc tả\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 181,
+    "question": "Loại kiểm thử nào sau đây là kiểm thử phi chức năng?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử hiệu năng"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử chấp nhận"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử hệ thống"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử đơn vị"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Kiểm thử hiệu năng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử hiệu năng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử hiệu năng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử hiệu năng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 182,
+    "question": "Cho đoạn mã sau và chọn phát biểu đúng nhất:\nRead P\nRead Q\nIF(P&gt;0 &amp;&amp; Q&gt;0) THEN\nPrint “Large”\nElse\nPrint “Not large”\nENDIF",
+    "options": [
+      {
+        "key": "a",
+        "text": "1 test case để phủ các dòng lệnh, 1 test case để phủ nhánh"
+      },
+      {
+        "key": "b",
+        "text": "2 test case để phủ các dòng lệnh, 3 test case để phủ nhánh"
+      },
+      {
+        "key": "c",
+        "text": "1 test case để phủ các dòng lệnh, 3 test case để phủ nhánh"
+      },
+      {
+        "key": "d",
+        "text": "2 test case để phủ các dòng lệnh, 2 test case để phủ nhánh"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"2 test case để phủ các dòng lệnh, 2 test case để phủ nhánh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"2 test case để phủ các dòng lệnh, 2 test case để phủ nhánh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"2 test case để phủ các dòng lệnh, 2 test case để phủ nhánh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **2 test case để phủ các dòng lệnh, 2 test case để phủ nhánh**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 183,
+    "question": "Yêu cầu nào sau đây là có thể kiểm thử được?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Hệ thống phải thân thiện với người dùng"
+      },
+      {
+        "key": "b",
+        "text": "Các bộ phận quan trọng về an toàn của hệ thống phải có 0 lỗi"
+      },
+      {
+        "key": "c",
+        "text": "Thời gian đáp ứng phải nhỏ hơn một giây đối với tải thiết kế quy định"
+      },
+      {
+        "key": "d",
+        "text": "Hệ thống phải được xây dựng để di động (portable)"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Thời gian đáp ứng phải nhỏ hơn một giây đối với tải thiết kế quy định\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Thời gian đáp ứng phải nhỏ hơn một giây đối với tải thiết kế quy định\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Thời gian đáp ứng phải nhỏ hơn một giây đối với tải thiết kế quy định**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Thời gian đáp ứng phải nhỏ hơn một giây đối với tải thiết kế quy định\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 184,
+    "question": "Công ty X muốn xây dựng hàm tính thưởng của một nhân viên dựa vào số năm làm việc với các mức sau:\nÍt hơn hoặc bằng 2 năm: 1 triệu\nNhiều hơn 2 năm và ít hơn 5 năm: 3 triệu\nTừ 5 đến 10 năm: 5 triệu\nNhiều hơn 10 năm: 7 triệu\nĐể kiểm thử hàm tính thưởng của công ty X theo phương pháp phân vùng tương đương cần tối thiểu bao nhiêu test case",
+    "options": [
+      {
+        "key": "a",
+        "text": "4"
+      },
+      {
+        "key": "b",
+        "text": "5"
+      },
+      {
+        "key": "c",
+        "text": "2"
+      },
+      {
+        "key": "d",
+        "text": "3"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Phân vùng tương đương là kỹ thuật kiểm thử hộp đen chia miền đầu vào thành các lớp dữ liệu mà phần mềm xử lý giống nhau, từ đó chọn đại diện từ mỗi lớp để kiểm thử, giúp giảm số lượng test case cần thiết.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 185,
+    "question": "Cho đoạn mã giả sau, số test case tối thiểu cần có để phủ điều kiện?\nif(A&gt;0 || B&lt;7)\ncout &lt;&lt; “valid input”;\nelse\ncout &lt;&lt; “invalid input”;",
+    "options": [
+      {
+        "key": "a",
+        "text": "4"
+      },
+      {
+        "key": "b",
+        "text": "2"
+      },
+      {
+        "key": "c",
+        "text": "1"
+      },
+      {
+        "key": "d",
+        "text": "3"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **3**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 186,
+    "question": "Trường hợp nào không nên dùng bảng quyết định",
+    "options": [
+      {
+        "key": "a",
+        "text": "Các biến đầu vào và đầu ra có quan hệ với nhau"
+      },
+      {
+        "key": "b",
+        "text": "Các biến đầu vào có quan hệ với nhau"
+      },
+      {
+        "key": "c",
+        "text": "Độ phức tạp chu trình cao"
+      },
+      {
+        "key": "d",
+        "text": "Độ phức tạp chu trình thấp"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Các biến đầu vào có quan hệ với nhau\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Các biến đầu vào có quan hệ với nhau**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Các biến đầu vào có quan hệ với nhau\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Các biến đầu vào có quan hệ với nhau\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 187,
+    "question": "Một textbox chỉ nhận giá trị ký tự từ [a, z], [A, Z], [0, 9]. Chỉ ra một lớp tương đương không hợp lệ?",
+    "options": [
+      {
+        "key": "a",
+        "text": "$"
+      },
+      {
+        "key": "b",
+        "text": "w"
+      },
+      {
+        "key": "c",
+        "text": "j"
+      },
+      {
+        "key": "d",
+        "text": "5"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **$**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"$\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"$\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"$\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 188,
+    "question": "Trong kiểm thử tích hợp, ngoài cách tích hợp tăng dần (từ trên xuống, từ dưới lên) thì chúng ta có tích hợp đồng thời. Loại tích hợp này có tên là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tích hợp sandwich"
+      },
+      {
+        "key": "b",
+        "text": "Tích hợp Big-bang"
+      },
+      {
+        "key": "c",
+        "text": "Tích hợp theo chiều rộng (width)"
+      },
+      {
+        "key": "d",
+        "text": "Tích hợp theo chiều sâu (deep)"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Kiểm thử tích hợp (Integration Testing) tập trung kiểm tra các giao tiếp (interfaces), tương tác và dòng dữ liệu qua lại giữa các module hoặc component phần mềm khác nhau.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Tích hợp sandwich\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Tích hợp sandwich\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Tích hợp sandwich\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 189,
+    "question": "Cho đoạn mã giả sau, số test case tối thiểu để phủ cấp 3 là bao nhiêu?\nIf(x&gt;y) x=1;\nelse if(x==y)\nx=0;\nelse x = -1",
+    "options": [
+      {
+        "key": "a",
+        "text": "3"
+      },
+      {
+        "key": "b",
+        "text": "1"
+      },
+      {
+        "key": "c",
+        "text": "4"
+      },
+      {
+        "key": "d",
+        "text": "2"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **3**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 190,
+    "question": "Phát biểu nào sau đây đúng cho đoạn mã sau:\ndiscountRate = 1;\nfare = 1000;\nif((person == “senior citizen”) and (travelMonth ==”January”))\nbonusPoints = bonusPoint + 100;\nif(class == “first”)\ndiscountRate = 5;\nfare = fare* discountRate;",
+    "options": [
+      {
+        "key": "a",
+        "text": "1 test case để phủ lệnh, 2 test case để phủ nhánh"
+      },
+      {
+        "key": "b",
+        "text": "2 test case để phủ lệnh, 2 test case để phủ nhánh"
+      },
+      {
+        "key": "c",
+        "text": "1 test case để phủ lệnh, 3 test case để phủ nhánh"
+      },
+      {
+        "key": "d",
+        "text": "2 test case để phủ lệnh, 4 test case để phủ nhánh"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **1 test case để phủ lệnh, 2 test case để phủ nhánh**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"1 test case để phủ lệnh, 2 test case để phủ nhánh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"1 test case để phủ lệnh, 2 test case để phủ nhánh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"1 test case để phủ lệnh, 2 test case để phủ nhánh\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 191,
+    "question": "Phát biểu nào phù hợp với test suite?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Là 1 báo cáo test"
+      },
+      {
+        "key": "b",
+        "text": "Là 1 nhóm các test case"
+      },
+      {
+        "key": "c",
+        "text": "Là 1 phần mềm quản lý test case"
+      },
+      {
+        "key": "d",
+        "text": "Là 1 tài liệu hướng dẫn test"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Là 1 nhóm các test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Là 1 nhóm các test case**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Là 1 nhóm các test case\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Là 1 nhóm các test case\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 192,
+    "question": "Độ bao phủ được dùng để đo điều gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Xu hướng phân tích"
+      },
+      {
+        "key": "b",
+        "text": "Thời gian kiểm thử"
+      },
+      {
+        "key": "c",
+        "text": "Hiệu quả của kiểm thử"
+      },
+      {
+        "key": "d",
+        "text": "Số lượng lỗi"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Hiệu quả của kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Hiệu quả của kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Độ bao phủ kiểm thử (Test Coverage) là tỷ lệ phần trăm các thành phần cấu trúc (lệnh, quyết định, nhánh) được thực thi bởi bộ ca kiểm thử. Độ bao phủ càng cao thì độ tin cậy của bộ kiểm thử càng cao.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Hiệu quả của kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 193,
+    "question": "Chúng ta chia kiểm thử thành các giai đoạn riêng biệt chủ yếu vì:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Mỗi giai đoạn kiểm tra có một mục đích khác nhau"
+      },
+      {
+        "key": "b",
+        "text": "Việc quản lý thử nghiệm theo từng giai đoạn dễ dàng hơn"
+      },
+      {
+        "key": "c",
+        "text": "Chúng tôi có thể chạy các bài kiểm tra khác nhau trong các môi trường khác nhau"
+      },
+      {
+        "key": "d",
+        "text": "Chúng tôi càng có nhiều giai đoạn, thử nghiệm càng tốt"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Mỗi giai đoạn kiểm tra có một mục đích khác nhau**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Mỗi giai đoạn kiểm tra có một mục đích khác nhau\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Mỗi giai đoạn kiểm tra có một mục đích khác nhau\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Mỗi giai đoạn kiểm tra có một mục đích khác nhau\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 194,
+    "question": "Mục đích của điều kiện dừng trong kế hoạch kiểm thử là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Để biết khi nào dừng chạy chương trình"
+      },
+      {
+        "key": "b",
+        "text": "Để đảm bảo rằng đã hoàn thành theo kế hoạch"
+      },
+      {
+        "key": "c",
+        "text": "Để biết khi nào việc lập kế hoạch kiểm thử hoàn tất"
+      },
+      {
+        "key": "d",
+        "text": "Để biết khi nào một bài kiểm thử cụ thể đã kết thúc quá trình thực hiện"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Để đảm bảo rằng đã hoàn thành theo kế hoạch\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Chính xác! Đáp án đúng là: **Để đảm bảo rằng đã hoàn thành theo kế hoạch**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Để đảm bảo rằng đã hoàn thành theo kế hoạch\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Để đảm bảo rằng đã hoàn thành theo kế hoạch\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 195,
+    "question": "Một chương trình có độ phức tạp chu trình cao có nghĩa là",
+    "options": [
+      {
+        "key": "a",
+        "text": "Chương trình lớn"
+      },
+      {
+        "key": "b",
+        "text": "Chương trình nhỏ"
+      },
+      {
+        "key": "c",
+        "text": "Chương trình khó test"
+      },
+      {
+        "key": "d",
+        "text": "Chương trình khó code"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Chương trình khó test\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Chương trình khó test\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Độ phức tạp chu trình (Cyclomatic Complexity) đo lường số lượng đường đi độc lập tuyến tính qua đồ thị dòng điều khiển (CFG) của chương trình, giúp xác định số lượng test case tối thiểu cần để đạt 100% phủ nhánh.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Chương trình khó test\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 196,
+    "question": "Cái nào sau đây không phải là một phần của kiểm thử hệ thống:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử hiệu suất, tải"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm tra khả năng sử dụng"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử BIG BANG"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử dựa trên quy trình kinh doanh"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử BIG BANG\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử BIG BANG\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Đáp án đúng là: **Kiểm thử BIG BANG**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử BIG BANG\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 197,
+    "question": "Cần tối thiểu bao nhiêu test case để phù lệnh và tối thiểu bao nhiêu test case để phủ quyết định đoạn mã giả sau:\nRead a\nRead b\nRead c\nif c&lt;a then\nif c&gt;b then\nprint “c must be smaller than at least one number”\nelse\nprint “Proceed to next stage”\nendif\nelse\nprint “b can be smaller than c”\nendif",
+    "options": [
+      {
+        "key": "a",
+        "text": "3, 3"
+      },
+      {
+        "key": "b",
+        "text": "2, 3"
+      },
+      {
+        "key": "c",
+        "text": "2, 4"
+      },
+      {
+        "key": "d",
+        "text": "3, 2"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **3, 3**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"3, 3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"3, 3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"3, 3\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 198,
+    "question": "Điều nào sau đây không có trong kiểm thử đơn vị?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm tra cú pháp"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm tra lỗi chính tả"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm tra khả năng phục hồi"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm tra xem code có viết đúng theo chuẩn yêu cầu không"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm tra khả năng phục hồi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm tra khả năng phục hồi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Chính xác! Kiểm thử đơn vị (Unit Testing) tập trung kiểm tra độc lập các đơn vị phần mềm nhỏ nhất có thể lập trình được (hàm, phương thức, lớp) và thường do chính các lập trình viên (Developers) thực hiện trước khi tích hợp.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm tra khả năng phục hồi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+    }
+  },
+  {
+    "id": 199,
+    "question": "Số test case tối thiểu để phủ cấp 1, phủ cấp 2 của hàm sau là\nint f(int m, int n, boolean x, boolean y)\n{\nint res=0;\nif(m&lt;0) {res = n-m;}\nelse if(x || y){\nres=-1;\nif(n==m) {res=1;}\n}else {res=n;}\nreturn res;\n}",
+    "options": [
+      {
+        "key": "a",
+        "text": "3, 2"
+      },
+      {
+        "key": "b",
+        "text": "4, 3"
+      },
+      {
+        "key": "c",
+        "text": "2, 3"
+      },
+      {
+        "key": "d",
+        "text": "3, 4"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"3, 4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"3, 4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"3, 4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Chính xác! Đáp án đúng là: **3, 4**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+    }
+  },
+  {
+    "id": 200,
+    "question": "Mô tả nào phù hợp cho chẩn đoán lỗi:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Bổ sung các kỹ thuật thiết kế kiểm thử chính thức"
+      },
+      {
+        "key": "b",
+        "text": "Chỉ có thể được sử dụng trong kiểm thử thành phần. tích hợp hệ thống"
+      },
+      {
+        "key": "c",
+        "text": "Chỉ được thực hiện trong kiểm thử chấp nhận của người dùng"
+      },
+      {
+        "key": "d",
+        "text": "Không thể lặp lại và không nên sử dụng"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Chính xác! Đáp án đúng là: **Bổ sung các kỹ thuật thiết kế kiểm thử chính thức**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
+      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Bổ sung các kỹ thuật thiết kế kiểm thử chính thức\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Bổ sung các kỹ thuật thiết kế kiểm thử chính thức\". Hãy xem lại khái niệm lý thuyết tương ứng.",
+      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Bổ sung các kỹ thuật thiết kế kiểm thử chính thức\". Hãy xem lại khái niệm lý thuyết tương ứng."
     }
   }
 ];
