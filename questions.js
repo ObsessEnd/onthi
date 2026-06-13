@@ -25,10 +25,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "c",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Test tĩnh là một cách ít tốn kém để phát hiện và loại bỏ lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Test tĩnh là một cách ít tốn kém để phát hiện và loại bỏ lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Chính xác! Kiểm thử tĩnh (Static testing) là phương pháp xem xét mã nguồn, tài liệu thiết kế hoặc yêu cầu mà không cần thực thi chương trình. Nó giúp phát hiện lỗi cú pháp, cấu trúc lập trình và lỗi logic sớm trong vòng đời, tiết kiệm đáng kể chi phí sửa lỗi.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Test tĩnh là một cách ít tốn kém để phát hiện và loại bỏ lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Kiểm thử tĩnh và kiểm thử động bổ trợ cho nhau. Kiểm thử tĩnh tìm lỗi logic và cấu trúc sớm, còn kiểm thử động tìm lỗi lúc chạy, không thể nói cái nào ít giá trị hơn.",
+      "b": "Sai. Các vấn đề thời gian chạy (runtime) như rò rỉ bộ nhớ hay nghẽn luồng chỉ có thể được tìm thấy bằng kiểm thử động khi thực thi code.",
+      "c": "Chính xác! Kiểm thử tĩnh (Static testing) xem xét tài liệu, đặc tả hoặc mã nguồn mà không chạy chương trình, giúp phát hiện lỗi sớm nên chi phí khắc phục rất thấp.",
+      "d": "Sai. Cả hai phương pháp đều có giá trị lớn và đóng vai trò quan trọng trong các giai đoạn khác nhau của vòng đời phát triển phần mềm."
     }
   },
   {
@@ -54,10 +54,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "c",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Chính xác! Phân vùng tương đương là kỹ thuật kiểm thử hộp đen chia miền đầu vào thành các lớp dữ liệu mà phần mềm xử lý giống nhau, từ đó chọn đại diện từ mỗi lớp để kiểm thử, giúp giảm số lượng test case cần thiết.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"3\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. 2 phân vùng là không đủ để đại diện cho 3 mức thưởng khác nhau được quy định trong đề bài.",
+      "b": "Sai. 4 phân vùng là không chính xác nếu chỉ tính các phân vùng hợp lệ đại diện cho các mốc thưởng.",
+      "c": "Chính xác! Có 3 mốc thời gian làm việc tương ứng với 3 mức thưởng khác nhau: [2 đến dưới 5 năm] (thưởng 10%), [5 đến 10 năm] (thưởng 25%), và [trên 10 năm] (thưởng 35%).",
+      "d": "Sai. 5 phân vùng là dư thừa cho việc kiểm thử các điều kiện thưởng hợp lệ nêu trong đề bài."
     }
   },
   {
@@ -83,10 +83,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "d",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Phủ quyết định mạnh hơn phủ lệnh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Phủ quyết định mạnh hơn phủ lệnh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Phủ quyết định mạnh hơn phủ lệnh\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Chính xác! Đáp án đúng là: **Phủ quyết định mạnh hơn phủ lệnh**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+      "a": "Sai. Phủ quyết định (Decision coverage) mạnh hơn phủ lệnh (Statement coverage). Đạt 100% phủ quyết định thì chắc chắn đạt 100% phủ lệnh, nhưng ngược lại thì không.",
+      "b": "Sai. Hoàn toàn có thể đạt được 100% phủ quyết định bằng cách thiết kế các bộ test case đi qua mọi nhánh True/False của các điều kiện.",
+      "c": "Sai. Phủ lệnh 100% chỉ đảm bảo mọi câu lệnh được chạy, chứ không đảm bảo mọi nhánh quyết định True/False đều được kiểm tra.",
+      "d": "Chính xác! Phủ quyết định mạnh hơn phủ lệnh vì nó yêu cầu kiểm tra tất cả các nhánh rẽ của quyết định, bao phủ được cả trường hợp nhánh rỗng."
     }
   },
   {
@@ -112,10 +112,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Được thực hiện bởi người dùng cuối\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Kiểm thử chấp nhận (Acceptance Testing) là mức kiểm thử cuối cùng để xác định xem hệ thống đã sẵn sàng bàn giao cho người dùng chưa, thường dựa trên yêu cầu nghiệp vụ thực tế của khách hàng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Được thực hiện bởi người dùng cuối\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Được thực hiện bởi người dùng cuối\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Lập trình viên (coder) chỉ thực hiện các mức kiểm thử nội bộ như kiểm thử đơn vị hoặc kiểm thử tích hợp chứ không làm kiểm thử beta.",
+      "b": "Chính xác! Kiểm thử Beta (Beta testing) được thực hiện bởi người dùng cuối hoặc đối tượng khách hàng tiềm năng tại môi trường thực tế của họ trước khi phát hành chính thức.",
+      "c": "Sai. Tester của dự án thực hiện kiểm thử hệ thống và kiểm thử chấp nhận alpha, còn beta được bàn giao cho người dùng ngoài dự án.",
+      "d": "Sai. Các chuyên gia tư vấn thường tham gia đánh giá thiết kế hoặc bảo mật, còn kiểm thử beta nhắm vào người dùng thực tế."
     }
   },
   {
@@ -141,10 +141,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Không thể test tất cả các kết hợp tập đầu vào trong một hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Không thể test tất cả các kết hợp tập đầu vào trong một hệ thống**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Không thể test tất cả các kết hợp tập đầu vào trong một hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Không thể test tất cả các kết hợp tập đầu vào trong một hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Không thể kiểm thử tất cả mọi thứ (Exhaustive testing) vì tổ hợp dữ liệu đầu vào và các kịch bản sử dụng là vô hạn.",
+      "b": "Chính xác! Do giới hạn thời gian và chi phí, việc kiểm thử toàn bộ tất cả các kết hợp đầu vào của một hệ thống là không khả thi.",
+      "c": "Sai. Kiểm thử chỉ có thể chỉ ra sự hiện diện của lỗi (presence of defects) chứ không thể chứng minh phần mềm hoàn toàn không còn lỗi (absence of defects).",
+      "d": "Sai. Dù có công cụ mạnh đến đâu thì việc chạy hết mọi tổ hợp đầu vào vẫn là bất khả thi về mặt toán học và thực tế."
     }
   },
   {
@@ -170,10 +170,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "a",
     "explanations": {
-      "a": "Chính xác! Đáp án đúng là: **Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Kiểm thử xem chúng ta có đang xây dựng hệ thống đúng cách không\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Chính xác! Xác minh (Verification) tập trung vào việc đánh giá xem sản phẩm có được xây dựng đúng theo các đặc tả kỹ thuật và tiêu chuẩn thiết kế ban đầu hay không (Are we building the product right?).",
+      "b": "Sai. Kiểm thử xem sản phẩm có phù hợp hay không là định nghĩa của Xác nhận (Validation) (Are we building the right product?).",
+      "c": "Sai. Xác minh có thể được thực hiện bởi chính lập trình viên (qua review code) hoặc kiểm thử viên ở nhiều giai đoạn khác nhau.",
+      "d": "Sai. Đảm bảo những gì người dùng thực sự muốn là mục tiêu của Xác nhận (Validation)."
     }
   },
   {
@@ -199,10 +199,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Có thể ngăn chặn sự nhân lên của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Có thể ngăn chặn sự nhân lên của lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Có thể ngăn chặn sự nhân lên của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Có thể ngăn chặn sự nhân lên của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Chuẩn bị kiểm thử dễ dàng chỉ là một tiện ích đi kèm, không phải mục quan trọng nhất của thiết kế kiểm thử sớm.",
+      "b": "Chính xác! Thiết kế kiểm thử sớm giúp phát hiện sớm các sai sót trong tài liệu yêu cầu và thiết kế, ngăn chặn lỗi lan truyền và nhân lên ở các pha lập trình tiếp theo.",
+      "c": "Sai. Không có kỹ thuật nào giúp tìm ra 100% tất cả các lỗi trong phần mềm.",
+      "d": "Sai. Thiết kế sớm có thể làm tăng chi phí thiết kế ban đầu nhưng giúp tiết kiệm chi phí sửa lỗi về sau."
     }
   },
   {
@@ -228,10 +228,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Driver\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Driver**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Driver\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Driver\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Mock là đối tượng giả lập dùng để thay thế các thành phần phụ thuộc của đối tượng đang được kiểm thử, chứ không dùng để gọi hàm.",
+      "b": "Chính xác! Driver là một chương trình mồi/điều khiển được viết để gọi hàm cần kiểm thử và truyền dữ liệu kiểm thử (test data) vào hàm đó.",
+      "c": "Sai. Stub là thành phần giả lập được gọi bởi hàm đang kiểm thử (để thay thế cho các hàm cấp thấp chưa được viết).",
+      "d": "Sai. Proxy là đối tượng đại diện trung gian điều khiển truy cập, không phải công cụ hỗ trợ gọi hàm trong Unit Test."
     }
   },
   {
@@ -257,10 +257,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "a",
     "explanations": {
-      "a": "Chính xác! Đáp án đúng là: **Sau khi có tài liệu đặc tả**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sau khi có tài liệu đặc tả\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sau khi có tài liệu đặc tả\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Sau khi có tài liệu đặc tả\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Chính xác! Các ca kiểm thử (test cases) có thể được thiết kế ngay sau khi có tài liệu đặc tả yêu cầu (requirements specification), giúp phát hiện lỗi tài liệu sớm.",
+      "b": "Sai. Thiết kế test case sau khi viết code là quá muộn và dễ bị ảnh hưởng bởi tư duy lối mòn của người viết code.",
+      "c": "Sai. Mặc dù có thể thiết kế dựa trên bản thiết kế, nhưng đặc tả yêu cầu mới là mốc sớm nhất có thể thực hiện.",
+      "d": "Sai. Thiết kế test case trong lúc chạy test sẽ gây thiếu tổ chức và không đảm bảo độ bao phủ."
     }
   },
   {
@@ -286,10 +286,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "a",
     "explanations": {
-      "a": "Chính xác! Đáp án đúng là: **Test các khu vực rủi ro cao**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Test các khu vực rủi ro cao\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Test các khu vực rủi ro cao\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Test các khu vực rủi ro cao\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Chính xác! Việc xác định độ ưu tiên kiểm thử giúp tập trung tài nguyên vào việc kiểm thử các khu vực có rủi ro cao nhất trước, đảm bảo các lỗi nghiêm trọng được phát hiện sớm.",
+      "b": "Sai. Tìm nhiều lỗi nhất không phải mục tiêu tối thượng nếu đó chỉ là các lỗi nhỏ nhặt, không quan trọng.",
+      "c": "Sai. Đạt độ bao phủ cao là thước đo kỹ thuật, không phản ánh trực tiếp giá trị rủi ro của hệ thống.",
+      "d": "Sai. Kiểm thử cái dễ trước là phương pháp thiếu khoa học, dễ bỏ sót lỗi nghiêm trọng ở các phần phức tạp."
     }
   },
   {
@@ -315,10 +315,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "a",
     "explanations": {
-      "a": "Chính xác! Đáp án đúng là: **Nó làm giảm sự gia tăng của lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Nó làm giảm sự gia tăng của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Nó làm giảm sự gia tăng của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Nó làm giảm sự gia tăng của lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Chính xác! Việc xác minh (verification) sớm giúp phát hiện sớm lỗi thiết kế và yêu cầu, ngăn chặn lỗi nhân lên và lan truyền xuống giai đoạn viết code.",
+      "b": "Sai. Việc thiết lập môi trường phụ thuộc vào kế hoạch kiểm thử hệ thống, không phải lợi ích trực tiếp của xác minh sớm.",
+      "c": "Sai. Xác minh là đối chiếu với đặc tả có sẵn, còn việc xác định thay đổi yêu cầu của người dùng thuộc pha phân tích yêu cầu.",
+      "d": "Sai. Việc người kiểm thử tham gia sớm là hoạt động nhân sự, không phải lợi ích kỹ thuật của việc xác minh sớm."
     }
   },
   {
@@ -344,10 +344,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "c",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Một kỹ thuật dựa trên các đặc tả yêu cầu chính thức\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Một kỹ thuật dựa trên các đặc tả yêu cầu chính thức\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Chính xác! Kiểm thử hộp đen (Black-box testing) là phương pháp thiết kế ca kiểm thử dựa hoàn toàn vào tài liệu đặc tả yêu cầu chức năng, giao diện của phần mềm mà không quan tâm đến cấu trúc mã nguồn bên trong.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Một kỹ thuật dựa trên các đặc tả yêu cầu chính thức\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Thiết kế dựa trên phân tích kiến trúc mã nguồn thuộc kỹ thuật kiểm thử hộp trắng (White-box).",
+      "b": "Sai. Kỹ thuật dựa vào kinh nghiệm hoặc lỗi trong quá khứ là kiểm thử dựa trên kinh nghiệm (Experience-based testing).",
+      "c": "Chính xác! Kiểm thử hộp đen (Black-box) thiết kế các ca kiểm thử dựa trên tài liệu đặc tả yêu cầu chính thức mà không cần biết cấu trúc mã nguồn.",
+      "d": "Sai. Kiểm tra xem đối tượng hoạt động theo thiết kế kỹ thuật chi tiết bên trong là kiểm thử hộp trắng."
     }
   },
   {
@@ -373,10 +373,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "d",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử trước khi phát hành được thực hiện bởi nhóm đại diện người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử trước khi phát hành được thực hiện bởi nhóm đại diện người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử trước khi phát hành được thực hiện bởi nhóm đại diện người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Chính xác! Kiểm thử chấp nhận (Acceptance Testing) là mức kiểm thử cuối cùng để xác định xem hệ thống đã sẵn sàng bàn giao cho người dùng chưa, thường dựa trên yêu cầu nghiệp vụ thực tế của khách hàng."
+      "a": "Sai. Kiểm thử cuối cùng trước khi phát hành cho toàn bộ công chúng là kiểm thử beta hoặc phát hành thử nghiệm.",
+      "b": "Sai. Kiểm thử đầu tiên thường là kiểm thử đơn vị (Unit Testing) do lập trình viên thực hiện.",
+      "c": "Sai. Kiểm thử sau khi phát hành được thực hiện bởi người dùng cuối là hoạt động vận hành thực tế.",
+      "d": "Chính xác! Kiểm thử Alpha (Alpha testing) là kiểm thử chấp nhận được thực hiện bởi khách hàng hoặc nhóm đại diện người dùng ngay tại môi trường phát triển của nhà sản xuất."
     }
   },
   {
@@ -402,10 +402,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Test chấp nhận\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Test chấp nhận**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Test chấp nhận\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Test chấp nhận\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Kiểm thử hệ thống (System Testing) do nhóm kiểm thử độc lập (testers) thực hiện.",
+      "b": "Chính xác! Kiểm thử chấp nhận (Acceptance testing) được thực hiện bởi khách hàng hoặc người dùng cuối để đưa ra quyết định có nhận bàn giao phần mềm hay không.",
+      "c": "Sai. Kiểm thử bảo mật (Security testing) thường do nhóm testers chuyên môn thực hiện.",
+      "d": "Sai. Kiểm thử tích hợp (Integration testing) do nhóm phát triển hoặc testers thực hiện."
     }
   },
   {
@@ -431,10 +431,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "d",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý kiến trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý kiến trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tất cả các ý kiến trên\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Chính xác! Đáp án đúng là: **Tất cả các ý kiến trên**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+      "a": "Sai. Chạy chương trình tìm lỗi chỉ là một phần của kiểm thử động, chưa bao hàm kiểm thử tĩnh.",
+      "b": "Sai. Đo lường chất lượng chỉ là một mục tiêu gián tiếp của kiểm thử phần mềm.",
+      "c": "Sai. Đánh giá sản phẩm trung gian là hoạt động đảm bảo chất lượng (QA/QC), chưa đủ định nghĩa kiểm thử.",
+      "d": "Chính xác! Kiểm thử bao gồm toàn bộ quá trình thực thi chương trình để tìm lỗi, đo lường chất lượng và đánh giá các sản phẩm trung gian trong suốt vòng đời phát triển."
     }
   },
   {
@@ -460,10 +460,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "d",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm tra sự tích hợp giữa các module\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm tra sự tích hợp giữa các module\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm tra sự tích hợp giữa các module\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Chính xác! Đáp án đúng là: **Kiểm tra sự tích hợp giữa các module**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+      "a": "Sai. Kiểm tra các chức năng nghiệp vụ là hoạt động trọng tâm của kiểm thử hệ thống.",
+      "b": "Sai. Kiểm tra hiệu năng hệ thống (Performance) là một phần của kiểm thử phi chức năng ở mức hệ thống.",
+      "c": "Sai. Kiểm tra giao diện người dùng (UI) cũng được thực hiện ở mức kiểm thử hệ thống.",
+      "d": "Chính xác! Kiểm tra sự tích hợp giữa các module là công việc của Kiểm thử tích hợp (Integration Testing), diễn ra trước khi tiến hành kiểm thử hệ thống."
     }
   },
   {
@@ -489,10 +489,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "a",
     "explanations": {
-      "a": "Chính xác! Đáp án đúng là: **Không khả thi trong thực tế**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Không khả thi trong thực tế\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Không khả thi trong thực tế\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Không khả thi trong thực tế\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Chính xác! Kiểm thử toàn diện (Exhaustive testing - thử mọi tổ hợp đầu vào và đường chạy) là không khả thi trong thực tế do số lượng trường hợp là vô hạn.",
+      "b": "Sai. Dù có công cụ mạnh đến đâu cũng không thể chạy hết các trường hợp vô hạn trong thời gian hữu hạn.",
+      "c": "Sai. Kiểm thử toàn diện không bắt buộc vì nó bất khả thi.",
+      "d": "Sai. Khách hàng cũng không thể yêu cầu kiểm thử toàn diện vì chi phí và thời gian sẽ là vô hạn."
     }
   },
   {
@@ -518,10 +518,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "d",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử là để chứng minh phần mềm không có lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử là để chứng minh phần mềm không có lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử là để chứng minh phần mềm không có lỗi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Chính xác! Đáp án đúng là: **Kiểm thử là để chứng minh phần mềm không có lỗi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+      "a": "Sai. 'Kiểm thử chứng minh sự hiện diện của lỗi' là một nguyên tắc cơ bản (kiểm thử chỉ tìm thấy lỗi chứ không chứng minh hệ thống hết lỗi).",
+      "b": "Sai. 'Kiểm thử càng sớm càng tốt' là nguyên tắc giúp tối ưu hóa chi phí sửa lỗi.",
+      "c": "Sai. 'Kiểm thử độc lập' giúp tăng hiệu quả tìm lỗi do không bị lối mòn tư duy của nhà phát triển.",
+      "d": "Chính xác! Phát biểu này sai vì nguyên tắc kiểm thử quy định kiểm thử không thể chứng minh phần mềm hoàn toàn không có lỗi."
     }
   },
   {
@@ -547,10 +547,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "a",
     "explanations": {
-      "a": "Chính xác! Đáp án đúng là: **Để biết khi nào cần dừng việc kiểm thử**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để biết khi nào cần dừng việc kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để biết khi nào cần dừng việc kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Để biết khi nào cần dừng việc kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Chính xác! Điều kiện dừng kiểm thử (Exit criteria) được định nghĩa để xác định khi nào hoạt động kiểm thử đã đạt yêu cầu và có thể dừng lại (như đạt độ bao phủ, hết ngân sách, tỷ lệ lỗi dưới ngưỡng).",
+      "b": "Sai. Không thể chứng minh mọi lỗi đã được tìm thấy.",
+      "c": "Sai. Kết thúc dự án đúng hạn thuộc về quản trị dự án, không phải mục đích kỹ thuật của điều kiện dừng.",
+      "d": "Sai. Tiết kiệm chi phí không phải lý do chính để đặt ra điều kiện dừng kiểm thử."
     }
   },
   {
@@ -576,10 +576,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "d",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Chính xác! Đáp án đúng là: **4**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+      "a": "Chính xác! Hàm maxAm có cấu trúc rẽ nhánh phức tạp. Để đạt độ bao phủ cấp 3 (path coverage), cần tối thiểu 3 ca kiểm thử đi qua các nhánh: nhánh không vào loop/trả về 0, nhánh không thỏa mãn if, và nhánh thỏa mãn if để gán max.",
+      "b": "Sai. 2 test case là không đủ để đi qua hết các đường chạy logic độc lập của hàm.",
+      "c": "Sai. 1 test case chỉ đi qua được 1 đường duy nhất, không thể đạt phủ cấp 3.",
+      "d": "Sai. 4 test case là dư thừa vì chỉ cần 3 đường chạy là bao phủ toàn bộ cấu trúc độc lập."
     }
   },
   {
@@ -605,10 +605,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "d",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"4\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Chính xác! Đáp án đúng là: **4**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+      "a": "Sai. 1 test case không thể bao phủ hết các điều kiện boolean True/False trong biểu thức phức hợp.",
+      "b": "Sai. 3 test case là dư thừa nếu ta thiết kế khéo léo để bao phủ các giá trị logic True/False.",
+      "c": "Chính xác! Để đạt phủ điều kiện 100%, mỗi điều kiện đơn lẻ trong `a[i] < 0` và `(max == 0 || a[i] > max)` phải được đánh giá cả True và False ít nhất một lần. Cần tối thiểu 2 test case.",
+      "d": "Sai. 4 test case là quá nhiều và không cần thiết đối với bài toán này."
     }
   },
   {
@@ -634,10 +634,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "c",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"2\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"2\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Chính xác! Đáp án đúng là: **2**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"2\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. 3 test case là dư thừa cho việc phủ nhánh (Branch coverage) của hàm này.",
+      "b": "Sai. 1 test case chỉ đi qua một nhánh rẽ, không thể phủ hết nhánh True/False.",
+      "c": "Chính xác! Phủ nhánh yêu cầu mọi quyết định rẽ nhánh (`i < n` và điều kiện `if`) đều được thực thi cả hai hướng True và False. Cần tối thiểu 2 test case.",
+      "d": "Sai. 4 test case là quá nhiều đối với việc phủ nhánh của hàm `maxAm`."
     }
   },
   {
@@ -663,10 +663,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "d",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Big-Bang testing\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Big-Bang testing\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Big-Bang testing\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Chính xác! Kiểm thử tích hợp (Integration Testing) tập trung kiểm tra các giao tiếp (interfaces), tương tác và dòng dữ liệu qua lại giữa các module hoặc component phần mềm khác nhau."
+      "a": "Sai. Tích hợp Sandwich kết hợp cả Bottom-up và Top-down.",
+      "b": "Sai. Tích hợp từ dưới lên (Bottom-up) tích hợp các module cấp thấp trước rồi tiến dần lên trên.",
+      "c": "Sai. Tích hợp từ trên xuống (Top-down) tích hợp các module điều khiển cấp cao trước.",
+      "d": "Chính xác! Tích hợp Big-Bang là phương pháp ghép nối tất cả các module cùng một lúc rồi tiến hành kiểm thử, dễ gây khó khăn khi cô lập lỗi."
     }
   },
   {
@@ -692,10 +692,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"1000, 5000, 10000\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **1000, 5000, 10000**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"1000, 5000, 10000\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"1000, 5000, 10000\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. 999999 nằm ngoài khoảng [1000, 99999], thuộc lớp không hợp lệ, trong khi 10000 và 50000 thuộc lớp hợp lệ.",
+      "b": "Chính xác! Cả 3 giá trị 1000, 5000, và 10000 đều nằm trong khoảng hợp lệ [1000, 99999] nên chúng thuộc cùng một lớp tương đương hợp lệ.",
+      "c": "Sai. 100000 nằm ngoài khoảng [1000, 99999], thuộc lớp không hợp lệ.",
+      "d": "Sai. 999999 là không hợp lệ còn 10000 là hợp lệ."
     }
   },
   {
@@ -721,10 +721,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "c",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Báo cáo kết quả test\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Báo cáo kết quả test\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Chính xác! Đáp án đúng là: **Báo cáo kết quả test**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Báo cáo kết quả test\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Kế hoạch kiểm thử (Test Plan) bắt buộc phải định nghĩa môi trường thử nghiệm.",
+      "b": "Sai. Phạm vi không kiểm thử (out of scope) là phần quan trọng trong Test Plan.",
+      "c": "Chính xác! Báo cáo kết quả test (Test Report) là tài liệu được tạo ra sau khi thực thi kiểm thử, không nằm trong tài liệu lập kế hoạch Test Plan ban đầu.",
+      "d": "Sai. Lịch trình và thời hạn là nội dung bắt buộc của Test Plan."
     }
   },
   {
@@ -750,10 +750,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "d",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử chấp nhận\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử chấp nhận\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Kiểm thử chấp nhận\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Chính xác! Đáp án đúng là: **Kiểm thử chấp nhận**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+      "a": "Sai. Kiểm thử tích hợp được thực hiện trước kiểm thử hệ thống.",
+      "b": "Sai. Kiểm thử module là một dạng của kiểm thử đơn vị/tích hợp, được làm trước kiểm thử hệ thống.",
+      "c": "Sai. Kiểm thử đơn vị là mức kiểm thử đầu tiên, làm trước kiểm thử hệ thống.",
+      "d": "Chính xác! Kiểm thử hệ thống (System Testing) nhằm xác minh toàn bộ sản phẩm hoàn chỉnh, được thực hiện trước khi chuyển giao sang cho khách hàng làm Kiểm thử chấp nhận (Acceptance Testing)."
     }
   },
   {
@@ -779,10 +779,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "c",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Để chia các giá trị đầu vào thành các lớp tương đương nhằm giảm số ca kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Để chia các giá trị đầu vào thành các lớp tương đương nhằm giảm số ca kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Chính xác! Phân vùng tương đương là kỹ thuật kiểm thử hộp đen chia miền đầu vào thành các lớp dữ liệu mà phần mềm xử lý giống nhau, từ đó chọn đại diện từ mỗi lớp để kiểm thử, giúp giảm số lượng test case cần thiết.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Để chia các giá trị đầu vào thành các lớp tương đương nhằm giảm số ca kiểm thử\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Phân vùng tương đương không dùng để kiểm tra cấu trúc tương đương của các thành phần.",
+      "b": "Sai. Mục tiêu của mọi kỹ thuật là tìm lỗi, nhưng mục tiêu đặc thù của phân vùng tương đương là giảm số ca kiểm thử bằng cách chọn đại diện dữ liệu.",
+      "c": "Chính xác! Kỹ thuật này chia miền đầu vào thành các phân vùng mà chương trình xử lý như nhau, giúp giảm số lượng ca kiểm thử cần thiết mà vẫn giữ được hiệu quả.",
+      "d": "Sai. Kỹ thuật này áp dụng cho dữ liệu đầu vào, không dùng để so sánh các phiên bản phần mềm."
     }
   },
   {
@@ -808,10 +808,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "c",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử tích hợp\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử tích hợp\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Chính xác! Đáp án đúng là: **Kiểm thử tích hợp**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Kiểm thử tích hợp\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Kiểm thử module được làm trước cả kiểm thử tích hợp.",
+      "b": "Sai. Kiểm thử đơn vị là bước đầu tiên của lập trình viên.",
+      "c": "Chính xác! Theo quy trình kiểm thử chuẩn, kiểm thử hệ thống (System Testing) được tiến hành ngay sau khi hoàn thành mức Kiểm thử tích hợp (Integration Testing).",
+      "d": "Sai. Kiểm thử chấp nhận diễn ra sau kiểm thử hệ thống."
     }
   },
   {
@@ -837,10 +837,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Chứng minh tính thỏa mãn tất cả yêu cầu của khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Kiểm thử chấp nhận (Acceptance Testing) là mức kiểm thử cuối cùng để xác định xem hệ thống đã sẵn sàng bàn giao cho người dùng chưa, thường dựa trên yêu cầu nghiệp vụ thực tế của khách hàng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Chứng minh tính thỏa mãn tất cả yêu cầu của khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Chứng minh tính thỏa mãn tất cả yêu cầu của khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Không có hoạt động kiểm thử nào có thể chứng minh hệ thống hoàn toàn hết lỗi.",
+      "b": "Chính xác! Mục tiêu của kiểm thử chấp nhận (Acceptance Testing) là để khách hàng đánh giá và xác nhận phần mềm đã thỏa mãn đầy đủ các yêu cầu nghiệp vụ của họ để nghiệm thu bàn giao.",
+      "c": "Sai. Kiểm thử bảo mật là một loại kiểm thử phi chức năng, không phải mục tiêu chính của kiểm thử chấp nhận.",
+      "d": "Sai. Kiểm thử tích hợp mới có nhiệm vụ chứng minh tính tích hợp của hệ thống."
     }
   },
   {
@@ -866,10 +866,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "d",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tìm các lỗi giao diện\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tìm các lỗi giao diện\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Tìm các lỗi giao diện\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Chính xác! Kiểm thử tích hợp (Integration Testing) tập trung kiểm tra các giao tiếp (interfaces), tương tác và dòng dữ liệu qua lại giữa các module hoặc component phần mềm khác nhau."
+      "a": "Sai. Lỗi thủ tục thuộc về kiểm thử đơn vị hoặc tĩnh.",
+      "b": "Sai. Lỗi bảo mật được tìm ở mức kiểm thử hệ thống.",
+      "c": "Sai. Lỗi thiết kế hệ thống lớn được phát hiện ở kiểm thử hệ thống.",
+      "d": "Chính xác! Kiểm thử tích hợp tập trung vào việc phát hiện lỗi xảy ra tại các giao diện kết nối (giao tiếp) giữa các thành phần hoặc hệ thống với nhau."
     }
   },
   {
@@ -895,10 +895,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "a",
     "explanations": {
-      "a": "Chính xác! Đáp án đúng là: **Lỗi thường tập trung**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lỗi thường tập trung\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lỗi thường tập trung\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Lỗi thường tập trung\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Chính xác! Nguyên lý 'Lỗi thường tập trung' (Defect Clustering) chỉ ra rằng phần lớn các lỗi thường được phát hiện tập trung ở một số ít các module cốt lõi hoặc phức tạp của hệ thống.",
+      "b": "Sai. Nghịch lý thuốc trừ sâu nói về việc bộ test case lặp lại nhiều lần sẽ không tìm thấy lỗi mới.",
+      "c": "Sai. Test theo ngữ cảnh phát biểu rằng việc kiểm thử phải linh hoạt theo từng đặc thù dự án.",
+      "d": "Sai. 'Không thể chứng minh hết lỗi' nói về tính không hoàn hảo của kiểm thử."
     }
   },
   {
@@ -924,10 +924,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "d",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Cho biết số lỗi còn lại trong hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Cho biết số lỗi còn lại trong hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Cho biết số lỗi còn lại trong hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Chính xác! Độ bao phủ kiểm thử (Test Coverage) là tỷ lệ phần trăm các thành phần cấu trúc (lệnh, quyết định, nhánh) được thực thi bởi bộ ca kiểm thử. Độ bao phủ càng cao thì độ tin cậy của bộ kiểm thử càng cao."
+      "a": "Sai. Thước đo bao phủ lệnh thực thi là một tiêu chí phủ đúng đắn.",
+      "b": "Sai. Bao phủ yêu cầu người dùng cũng là một thước đo độ phủ hợp lệ ở mức hệ thống/chấp nhận.",
+      "c": "Sai. Điều kiện phủ rất hay được dùng để làm tiêu chuẩn hoàn thành kiểm thử (Exit criteria).",
+      "d": "Chính xác! Độ bao phủ chỉ cho biết tỷ lệ các phần tử cấu trúc được quét qua, chứ không thể chỉ ra số lượng lỗi cụ thể còn lại trong hệ thống."
     }
   },
   {
@@ -953,10 +953,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đây là một thước đo được sử dụng để tính toán và đo lường phần trăm các câu lệnh trong code đã được thực thi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Đây là một thước đo được sử dụng để tính toán và đo lường phần trăm các câu lệnh trong code đã được thực thi**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đây là một thước đo được sử dụng để tính toán và đo lường phần trăm các câu lệnh trong code đã được thực thi\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đây là một thước đo được sử dụng để tính toán và đo lường phần trăm các câu lệnh trong code đã được thực thi\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Phủ lệnh là đo lường chứ không phải một công cụ xác nhận tự động.",
+      "b": "Chính xác! Phủ lệnh (Statement Coverage) là thước đo tỷ lệ phần trạng các câu lệnh (dòng lệnh) trong mã nguồn đã được thực thi bởi bộ ca kiểm thử.",
+      "c": "Sai. Đo lường tỷ lệ các test case đã chạy là đo lường tiến độ thực thi test, không phải phủ lệnh.",
+      "d": "Sai. Phủ lệnh tính trên toàn bộ mã nguồn được quét qua, không phân biệt test case pass hay fail."
     }
   },
   {
@@ -982,10 +982,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "d",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Đối với một hệ thống phần mềm, thông thường không thể kiểm tra tất cả các kết hợp đầu vào và đầu ra\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Đối với một hệ thống phần mềm, thông thường không thể kiểm tra tất cả các kết hợp đầu vào và đầu ra\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **D**: \"Đối với một hệ thống phần mềm, thông thường không thể kiểm tra tất cả các kết hợp đầu vào và đầu ra\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Chính xác! Đáp án đúng là: **Đối với một hệ thống phần mềm, thông thường không thể kiểm tra tất cả các kết hợp đầu vào và đầu ra**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm."
+      "a": "Sai. Kiểm thử tự động giúp tăng hiệu suất chạy test, không phải nguyên lý nền tảng của kiểm thử phần mềm.",
+      "b": "Sai. Kiểm thử toàn diện là bất khả thi, phát biểu này đi ngược lại nguyên lý kiểm thử.",
+      "c": "Sai. Mục đích kiểm thử là chỉ ra lỗi chứ không thể chứng minh phần mềm không có lỗi.",
+      "d": "Chính xác! Đây là một nguyên lý cơ bản: Không thể kiểm thử toàn bộ (Exhaustive testing) tất cả các tổ hợp đầu vào và đầu ra của hệ thống."
     }
   },
   {
@@ -1011,10 +1011,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "a",
     "explanations": {
-      "a": "Chính xác! Kiểm thử chấp nhận (Acceptance Testing) là mức kiểm thử cuối cùng để xác định xem hệ thống đã sẵn sàng bàn giao cho người dùng chưa, thường dựa trên yêu cầu nghiệp vụ thực tế của khách hàng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Acceptance testing\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Acceptance testing\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"Acceptance testing\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Chính xác! Alpha và Beta testing là hai hình thức chính của kiểm thử chấp nhận (Acceptance testing) nhằm xác nhận sự sẵn sàng phát hành của sản phẩm.",
+      "b": "Sai. Chúng là kiểm thử hộp đen, không phải hộp trắng (White-box).",
+      "c": "Sai. Mặc dù chúng dùng kỹ thuật hộp đen, nhưng phân loại mức độ kiểm thử của chúng là kiểm thử chấp nhận.",
+      "d": "Sai. Kiểm thử hệ thống diễn ra trước kiểm thử alpha/beta và do đội ngũ test nội bộ thực hiện."
     }
   },
   {
@@ -1040,10 +1040,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình xác định các thành phần phần mềm và mối liên kết giữa chúng dựa trên yêu cầu của khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Quá trình xác định các thành phần phần mềm và mối liên kết giữa chúng dựa trên yêu cầu của khách hàng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình xác định các thành phần phần mềm và mối liên kết giữa chúng dựa trên yêu cầu của khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình xác định các thành phần phần mềm và mối liên kết giữa chúng dựa trên yêu cầu của khách hàng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Viết mã nguồn thuộc pha Hiện thực (Coding), không thuộc pha thiết kế.",
+      "b": "Chính xác! Thiết kế phần mềm là pha xác định cấu trúc các thành phần hệ thống và mối quan hệ tương tác giữa chúng dựa trên yêu cầu khách hàng.",
+      "c": "Sai. Kiểm thử phần mềm là hoạt động độc lập nhằm tìm lỗi, không phải thiết kế.",
+      "d": "Sai. Bảo trì diễn ra sau khi bàn giao sản phẩm."
     }
   },
   {
@@ -1069,10 +1069,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình hiện thực hóa thiết kế thành chương trình\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Quá trình hiện thực hóa thiết kế thành chương trình**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình hiện thực hóa thiết kế thành chương trình\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình hiện thực hóa thiết kế thành chương trình\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Kiểm thử là hoạt động xác minh và tìm lỗi sau hoặc song song với hiện thực.",
+      "b": "Chính xác! Hiện thực phần mềm (Coding/Implementation) chính là quá trình chuyển đổi bản thiết kế chi tiết thành chương trình mã nguồn chạy được.",
+      "c": "Sai. Viết tài liệu hướng dẫn là hoạt động hỗ trợ bàn giao.",
+      "d": "Sai. Bảo trì là giai đoạn sau khi sản phẩm đã được đưa vào sử dụng thực tế."
     }
   },
   {
@@ -1098,10 +1098,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đan xen lẫn nhau\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Kiểm thử động (Dynamic testing) yêu cầu chương trình phải chạy thực tế trên máy tính với dữ liệu đầu vào cụ thể để so sánh kết quả thực tế và kết quả mong đợi.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đan xen lẫn nhau\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đan xen lẫn nhau\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Trong thực tế, lập trình viên thường vừa viết code vừa tinh chỉnh thiết kế chi tiết.",
+      "b": "Chính xác! Thiết kế chi tiết và lập trình là hai hoạt động đan xen, tác động qua lại lẫn nhau trong quá trình phát triển.",
+      "c": "Sai. Chúng có liên hệ chặt chẽ và không thể tách rời.",
+      "d": "Sai. Thiết kế là nền tảng để viết code, chúng liên quan trực tiếp đến nhau."
     }
   },
   {
@@ -1127,10 +1127,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "a",
     "explanations": {
-      "a": "Chính xác! Đáp án đúng là: **UML**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"UML\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"UML\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **A**: \"UML\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Chính xác! UML (Unified Modeling Language) cung cấp các biểu đồ chuẩn hóa để thiết kế và biểu diễn hệ thống hướng đối tượng.",
+      "b": "Sai. SQL là ngôn ngữ truy vấn cơ sở dữ liệu quan hệ.",
+      "c": "Sai. HTML là ngôn ngữ đánh dấu siêu văn bản để dựng trang web.",
+      "d": "Sai. XML là ngôn ngữ đánh dấu dùng để truyền tải và lưu trữ dữ liệu."
     }
   },
   {
@@ -1156,10 +1156,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "c",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Một phương pháp để giải quyết các vấn đề thiết kế thường gặp\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Một phương pháp để giải quyết các vấn đề thiết kế thường gặp\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Chính xác! Đáp án đúng là: **Một phương pháp để giải quyết các vấn đề thiết kế thường gặp**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Một phương pháp để giải quyết các vấn đề thiết kế thường gặp\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Lập trình hướng đối tượng hay hướng thủ tục là phương pháp lập trình, không phải mẫu thiết kế.",
+      "b": "Sai. Thiết kế giao diện (UI) có các quy chuẩn riêng, khác với thiết kế mẫu kiến trúc phần mềm.",
+      "c": "Chính xác! Thiết kế mẫu (Design Pattern) cung cấp các giải pháp mẫu đã được chuẩn hóa để giải quyết các vấn đề thiết kế kiến trúc mã nguồn thường gặp.",
+      "d": "Sai. Thiết kế mẫu không thuộc lĩnh vực kiểm thử phần mềm."
     }
   },
   {
@@ -1185,10 +1185,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Sử dụng và phát triển các thành phần mã nguồn mở\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Sử dụng và phát triển các thành phần mã nguồn mở**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Sử dụng và phát triển các thành phần mã nguồn mở\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Sử dụng và phát triển các thành phần mã nguồn mở\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Phần mềm đóng gói thương mại thuộc bản quyền mã nguồn đóng.",
+      "b": "Chính xác! Phát triển mã nguồn mở liên quan trực tiếp đến việc sử dụng, tùy biến và đóng góp cho các thành phần phần mềm có mã nguồn công khai.",
+      "c": "Sai. Thiết kế giao diện là công việc thiết kế mỹ thuật, áp dụng chung cho mọi loại phần mềm.",
+      "d": "Sai. Quản lý dự án là hoạt động quản trị con người và tiến độ, không đặc thù cho mã nguồn mở."
     }
   },
   {
@@ -1214,10 +1214,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Tính đến nhu cầu, kinh nghiệm và khả năng của người dùng hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Tính đến nhu cầu, kinh nghiệm và khả năng của người dùng hệ thống**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Tính đến nhu cầu, kinh nghiệm và khả năng của người dùng hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Tính đến nhu cầu, kinh nghiệm và khả năng của người dùng hệ thống\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Tối ưu cho di động chỉ là một yêu cầu kỹ thuật đa nền tảng cụ thể, không phải nguyên lý UI/UX tổng quát.",
+      "b": "Chính xác! Nguyên tắc vàng của thiết kế UI/UX là phải lấy người dùng làm trung tâm, thấu hiểu kinh nghiệm và giới hạn khả năng của họ để giao diện trực quan nhất.",
+      "c": "Sai. Thiết kế UI kỹ lưỡng có thể làm tăng thời gian phát triển ban đầu.",
+      "d": "Sai. Thiết kế UI tốt thường yêu cầu đầu tư chi phí cao hơn ở giai đoạn đầu."
     }
   },
   {
@@ -1243,10 +1243,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Các hạn chế về vật lý và tinh thần của người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Các hạn chế về vật lý và tinh thần của người dùng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Các hạn chế về vật lý và tinh thần của người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Các hạn chế về vật lý và tinh thần của người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Hạn chế tài chính thuộc về quản lý dự án, không thuộc nguyên lý thiết kế UI.",
+      "b": "Chính xác! Thiết kế giao diện cần thấu hiểu giới hạn sinh lý và nhận thức của con người (thị lực, kích thước ngón tay, trí nhớ ngắn hạn) để tránh gây nhầm lẫn.",
+      "c": "Sai. Lạm dụng công nghệ mới nhất mà không tối ưu cho người dùng sẽ gây phản tác dụng.",
+      "d": "Sai. Yêu cầu chức năng quyết định hệ thống làm gì, còn thiết kế UI quyết định làm thế nào để tương tác thân thiện."
     }
   },
   {
@@ -1272,10 +1272,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Là cơ chế giao tiếp quan trọng giữa các nhóm thiết kế khác nhau\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Là cơ chế giao tiếp quan trọng giữa các nhóm thiết kế khác nhau**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Là cơ chế giao tiếp quan trọng giữa các nhóm thiết kế khác nhau\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Là cơ chế giao tiếp quan trọng giữa các nhóm thiết kế khác nhau\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Việc lập tài liệu mô hình ban đầu có thể kéo dài thời gian chuẩn bị thiết kế.",
+      "b": "Chính xác! Các mô hình hệ thống đóng vai trò như ngôn ngữ kỹ thuật chung để các nhóm lập trình khác nhau trao đổi và phối hợp tích hợp.",
+      "c": "Sai. Mô hình chuẩn giúp tối ưu hóa chi phí chứ không phải để tăng chi phí dự án.",
+      "d": "Sai. Mô hình thiết kế rõ ràng giúp hạn chế lỗi, nhưng vai trò giao tiếp trực tiếp là quan trọng nhất trong dự án lớn."
     }
   },
   {
@@ -1301,10 +1301,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình thiết kế các thuật toán để giải quyết các vấn đề cụ thể\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Quá trình thiết kế các thuật toán để giải quyết các vấn đề cụ thể**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình thiết kế các thuật toán để giải quyết các vấn đề cụ thể\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Quá trình thiết kế các thuật toán để giải quyết các vấn đề cụ thể\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Thiết kế giao diện liên quan đến đồ họa và luồng đi của người dùng.",
+      "b": "Chính xác! Thiết kế thuật toán là quá trình xây dựng các bước logic tuần tự và tính toán để giải quyết một bài toán xử lý cụ thể.",
+      "c": "Sai. Viết mã nguồn (Coding) là pha hiện thực hóa thuật toán đã thiết kế.",
+      "d": "Sai. Kiểm thử phần mềm nhằm tìm lỗi của chương trình sau khi code."
     }
   },
   {
@@ -1330,10 +1330,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Thiết kế cấu trúc và tổ chức của cơ sở dữ liệu\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Thiết kế cấu trúc và tổ chức của cơ sở dữ liệu**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Thiết kế cấu trúc và tổ chức của cơ sở dữ liệu\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Thiết kế cấu trúc và tổ chức của cơ sở dữ liệu\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Giao diện hiển thị dữ liệu ra màn hình, còn CSDL lưu trữ dữ liệu bên dưới.",
+      "b": "Chính xác! Thiết kế cơ sở dữ liệu liên quan đến việc xác định cấu trúc lưu trữ, định dạng bảng, khóa ngoại và chỉ mục để truy vấn dữ liệu hiệu quả.",
+      "c": "Sai. Thiết kế thuật toán tập trung vào luồng tính toán logic.",
+      "d": "Sai. Kiểm thử cơ sở dữ liệu là pha kiểm định phụ, không phải thiết kế."
     }
   },
   {
@@ -1359,10 +1359,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Ai cũng có thể nhầm lẫn\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Ai cũng có thể nhầm lẫn**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Ai cũng có thể nhầm lẫn\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Ai cũng có thể nhầm lẫn\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Người dùng rất dễ gặp khó khăn hoặc bỡ ngỡ khi tiếp cận hệ thống mới.",
+      "b": "Chính xác! Thừa nhận 'con người ai cũng có thể nhầm lẫn' giúp thiết kế giao diện có dung sai cao (có xác nhận hành vi, nút Undo, thông báo lỗi rõ ràng).",
+      "c": "Sai. Mọi hệ thống phần mềm đều có nguy cơ phát sinh lỗi khách quan.",
+      "d": "Sai. Giao diện thân thiện là mục tiêu sống còn của UI thiết kế."
     }
   },
   {
@@ -1388,10 +1388,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đáp ứng nhu cầu và trải nghiệm người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Đáp ứng nhu cầu và trải nghiệm người dùng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đáp ứng nhu cầu và trải nghiệm người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Đáp ứng nhu cầu và trải nghiệm người dùng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Thiết kế giao diện kỹ lưỡng đòi hỏi nhiều thời gian phân tích hơn.",
+      "b": "Chính xác! Mục tiêu cao nhất của thiết kế UI/UX là mang lại trải nghiệm tối ưu, giúp người dùng thao tác dễ dàng và hài lòng khi sử dụng.",
+      "c": "Sai. Thiết kế UI chuyên nghiệp làm tăng chi phí thiết kế ban đầu.",
+      "d": "Sai. Bảo mật là nhiệm vụ của kiến trúc phân quyền hệ thống, không phải của giao diện đồ họa."
     }
   },
   {
@@ -1417,10 +1417,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "b",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Định nghĩa các thành phần phần mềm và mối liên kết giữa chúng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Chính xác! Đáp án đúng là: **Định nghĩa các thành phần phần mềm và mối liên kết giữa chúng**. Điều này hoàn toàn phù hợp với các định nghĩa lý thuyết và tiêu chuẩn thực hành của môn Kiểm thử phần mềm.",
-      "c": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Định nghĩa các thành phần phần mềm và mối liên kết giữa chúng\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **B**: \"Định nghĩa các thành phần phần mềm và mối liên kết giữa chúng\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Viết mã nguồn là công việc thuộc pha hiện thực.",
+      "b": "Chính xác! Thiết kế phần mềm là quá trình kiến trúc hóa hệ thống, định nghĩa cấu trúc của các mô-đun thành phần và các giao diện tích hợp giữa chúng.",
+      "c": "Sai. Kiểm thử diễn ra sau khi đã có code chạy được để tìm lỗi.",
+      "d": "Sai. Bảo trì thực hiện sau khi phần mềm đã bàn giao cho khách hàng sử dụng."
     }
   },
   {
@@ -1446,10 +1446,10 @@ const QUESTIONS_DATA = [
     ],
     "correct": "c",
     "explanations": {
-      "a": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Biểu đồ hoạt động swimming lane\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "b": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Biểu đồ hoạt động swimming lane\". Hãy xem lại khái niệm lý thuyết tương ứng.",
-      "c": "Chính xác! Kiểm thử động (Dynamic testing) yêu cầu chương trình phải chạy thực tế trên máy tính với dữ liệu đầu vào cụ thể để so sánh kết quả thực tế và kết quả mong đợi.",
-      "d": "Lựa chọn này chưa chính xác. Phương án đúng phải là **C**: \"Biểu đồ hoạt động swimming lane\". Hãy xem lại khái niệm lý thuyết tương ứng."
+      "a": "Sai. Biểu đồ lớp (Class Diagram) mô tả cấu trúc tĩnh, không mô tả hoạt động.",
+      "b": "Sai. Biểu đồ liên kết mô tả sự kết nối tĩnh giữa các đối tượng.",
+      "c": "Chính xác! Biểu đồ hoạt động bơi làn (Swimlane Activity Diagram) mô tả luồng công việc với các hành động được phân chia theo từng làn đại diện cho các đối tượng thực hiện.",
+      "d": "Sai. Biểu đồ thành phần mô tả cấu trúc vật lý của mã nguồn, là biểu đồ tĩnh."
     }
   },
   {
