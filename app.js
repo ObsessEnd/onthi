@@ -415,8 +415,31 @@ function renderQuestionCard() {
       feedbackDetail = `Bạn đã chọn phương án <strong>${selectedLabel}. ${escapeHTML(selectedOptText)}</strong>. <br>Đáp án đúng là <strong>${correctLabel}. ${escapeHTML(correctOptText)}</strong>.`;
     }
 
-    // Look up option-specific explanation, fallback to correct explanation
-    const explanationText = q.explanations[answer.selectedKey] || q.explanations[q.correct] || "";
+    // Construct explanations detail
+    let explanationHTMLDesc = "";
+    if (isCorrect) {
+      explanationHTMLDesc = `
+        <div class="explanation-desc">
+          <strong>Giải thích chi tiết:</strong> ${escapeHTML(q.explanations[q.correct] || "")}
+        </div>
+      `;
+    } else {
+      const correctExplanation = q.explanations[q.correct] || "";
+      const selectedExplanation = q.explanations[answer.selectedKey] || "";
+      
+      explanationHTMLDesc = `
+        <div class="explanation-desc" style="margin-bottom: 8px;">
+          <strong>Giải thích đáp án đúng (${correctLabel}):</strong> ${escapeHTML(correctExplanation)}
+        </div>
+      `;
+      if (selectedExplanation && answer.selectedKey !== q.correct) {
+        explanationHTMLDesc += `
+          <div class="explanation-desc" style="opacity: 0.95; font-size: 0.95em; border-top: 1px dashed var(--border); padding-top: 8px; margin-top: 8px; font-style: normal;">
+            <strong>Giải thích phương án bạn chọn (${selectedLabel}):</strong> ${escapeHTML(selectedExplanation)}
+          </div>
+        `;
+      }
+    }
 
     explanationHTML = `
       <div class="explanation-box ${boxClass}">
@@ -425,10 +448,8 @@ function renderQuestionCard() {
           <span>${titleText}</span>
         </div>
         <div class="explanation-body">
-          <p>${feedbackDetail}</p>
-          <div class="explanation-desc">
-            <strong>Giải thích chi tiết:</strong> ${escapeHTML(explanationText)}
-          </div>
+          <p style="margin-bottom: 12px;">${feedbackDetail}</p>
+          ${explanationHTMLDesc}
         </div>
       </div>
     `;
