@@ -1428,4 +1428,81 @@ input:checked + .slider:before {
   }
 }
 
+/* ====================================================
+   PHOENIX STATUS INDICATOR & EGG WOBBLE STYLES
+   ==================================================== */
+
+.phoenix-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 63, 0, 0.3);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
+  box-shadow: 0 0 10px rgba(255, 63, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  height: 38px;
+}
+
+[data-theme="light"] .phoenix-status {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.phoenix-status.active {
+  border-color: #f97316;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.4);
+  animation: phoenixPulse 2s infinite alternate;
+}
+
+.phoenix-status.inactive {
+  border-color: var(--border);
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+.phoenix-status-icon {
+  font-size: 16px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.phoenix-status.active .phoenix-status-icon {
+  animation: phoenixHover 1.5s infinite ease-in-out alternate;
+}
+
+.phoenix-status-count {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+@keyframes phoenixPulse {
+  from {
+    box-shadow: 0 0 8px rgba(249, 115, 22, 0.3);
+    border-color: rgba(249, 115, 22, 0.4);
+  }
+  to {
+    box-shadow: 0 0 16px rgba(249, 115, 22, 0.6);
+    border-color: rgba(249, 115, 22, 0.8);
+  }
+}
+
+@keyframes phoenixHover {
+  from { transform: translateY(-1px) scale(1.05); }
+  to { transform: translateY(1px) scale(0.95); }
+}
+
+@keyframes eggWobble {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  15% { transform: rotate(-12deg) scale(1.05); }
+  30% { transform: rotate(10deg) scale(1.05); }
+  45% { transform: rotate(-8deg) scale(1); }
+  60% { transform: rotate(6deg) scale(1); }
+}
+
 

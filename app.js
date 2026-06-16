@@ -9,7 +9,8 @@ let userAnswers = {};
 // Bookmarked question IDs set: { [originalQuestionId]: boolean }
 let bookmarks = {};
 // Questions that have been resurrected (given a second chance)
-let resurrectedQuestions = {};
+let phoenixCharge = true;
+let eggCorrectStreak = 0;
 
 // Active filters: "all", "unanswered", "answered", "correct", "incorrect", "bookmarked"
 let activeFilter = "all";
@@ -37,7 +38,9 @@ const KEYS = {
   SHUFFLE_O: STORAGE_PREFIX + "shuffle_o",
   CURRENT_INDEX: STORAGE_PREFIX + "current_index",
   SHUFFLED_STATE: STORAGE_PREFIX + "shuffled_state",
-  TROLL_DISABLED: STORAGE_PREFIX + "troll_disabled"
+  TROLL_DISABLED: STORAGE_PREFIX + "troll_disabled",
+  PHOENIX_CHARGE: STORAGE_PREFIX + "phoenix_charge",
+  EGG_STREAK: STORAGE_PREFIX + "egg_streak"
 };
 
 // ----------------------------------------------------
@@ -85,6 +88,11 @@ function loadState() {
   if (typeof updateUmlTabVisibility === "function") {
     updateUmlTabVisibility();
   }
+
+  // 5. Phoenix Resurrection state
+  phoenixCharge = localStorage.getItem(KEYS.PHOENIX_CHARGE) !== "false";
+  eggCorrectStreak = parseInt(localStorage.getItem(KEYS.EGG_STREAK), 10) || 0;
+  updatePhoenixIndicator();
 }
 
 // Initialize questions list based on shuffle and options settings
@@ -158,6 +166,8 @@ function saveState() {
   localStorage.setItem(KEYS.ANSWERS, JSON.stringify(userAnswers));
   localStorage.setItem(KEYS.BOOKMARKS, JSON.stringify(bookmarks));
   localStorage.setItem(KEYS.CURRENT_INDEX, currentIndex.toString());
+  localStorage.setItem(KEYS.PHOENIX_CHARGE, phoenixCharge.toString());
+  localStorage.setItem(KEYS.EGG_STREAK, eggCorrectStreak.toString());
 }
 
 // Reset everything
@@ -167,10 +177,12 @@ function resetQuiz() {
   }
   userAnswers = {};
   bookmarks = {};
-  resurrectedQuestions = {};
+  phoenixCharge = true;
+  eggCorrectStreak = 0;
   currentIndex = 0;
   activeFilter = "all";
   document.getElementById("filter-select").value = "all";
+  updatePhoenixIndicator();
   
   localStorage.removeItem(KEYS.SHUFFLED_STATE);
   initializeQuestions();
@@ -514,24 +526,41 @@ function selectAnswer(questionId, selectedKey, bypassCheck = false) {
 
   const isCorrect = Array.isArray(q.correct) ? q.correct.includes(selectedKey) : selectedKey === q.correct;
   
-  // Resurrection Easter Egg: when the user gets the question wrong for the first time
-  if (!isCorrect && !resurrectedQuestions[questionId]) {
-    resurrectedQuestions[questionId] = true;
-    
-    // Find the clicked option button and style it as wrong and disabled
-    const buttons = document.querySelectorAll(".option-btn");
-    buttons.forEach(btn => {
-      if (btn.getAttribute("onclick") && btn.getAttribute("onclick").includes(`'${selectedKey}'`)) {
-        btn.classList.add("selected-incorrect");
-        btn.disabled = true;
+  if (!isCorrect) {
+    // Phoenix resurrection triggers only if charge is active
+    if (phoenixCharge) {
+      phoenixCharge = false;
+      eggCorrectStreak = 0;
+      saveState();
+      updatePhoenixIndicator();
+      
+      const buttons = document.querySelectorAll(".option-btn");
+      buttons.forEach(btn => {
+        if (btn.getAttribute("onclick") && btn.getAttribute("onclick").includes(`'${selectedKey}'`)) {
+          btn.classList.add("selected-incorrect");
+          btn.disabled = true;
+        }
+      });
+      
+      triggerPhoenixResurrection(() => {
+        // Keep options interactive so they can pick again
+      });
+      return;
+    }
+  } else {
+    // If correct and the charge is inactive (it is currently an egg), charge the egg
+    if (!phoenixCharge) {
+      eggCorrectStreak++;
+      if (eggCorrectStreak >= 10) {
+        phoenixCharge = true;
+        eggCorrectStreak = 0;
+        saveState();
+        triggerEggHatch();
+      } else {
+        saveState();
+        updatePhoenixIndicator();
       }
-    });
-    
-    // Trigger the premium phoenix resurrection screen
-    triggerPhoenixResurrection(() => {
-      // Keep options interactive so they can pick again
-    });
-    return;
+    }
   }
 
   userAnswers[questionId] = {
@@ -1627,4 +1656,142 @@ function playResurrectionSound() {
   } catch (e) {
     console.error("Audio Context Error: ", e);
   }
+}
+
+// ----------------------------------------------------
+// PHOENIX EGG HATCHING & STATUS INDICATOR
+// ----------------------------------------------------
+
+function updatePhoenixIndicator() {
+  const indicator = document.getElementById("phoenix-status-indicator");
+  if (!indicator) return;
+  
+  const iconEl = indicator.querySelector(".phoenix-status-icon");
+  const countEl = indicator.querySelector(".phoenix-status-count");
+  
+  if (phoenixCharge) {
+    indicator.className = "phoenix-status active";
+    indicator.title = "Phượng Hoàng sẵn sàng hồi sinh bạn!";
+    iconEl.textContent = "🐦‍🔥";
+    countEl.style.display = "none";
+  } else {
+    indicator.className = "phoenix-status inactive";
+    indicator.title = `Trứng Phượng Hoàng đang sưởi ấm. Trả lời đúng thêm ${10 - eggCorrectStreak} câu để nở!`;
+    iconEl.textContent = "🥚";
+    countEl.textContent = `${eggCorrectStreak}/10`;
+    countEl.style.display = "inline";
+  }
+}
+
+function triggerEggHatch() {
+  playHatchSound();
+  
+  let overlay = document.getElementById("phoenix-hatch-overlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.id = "phoenix-hatch-overlay";
+    overlay.className = "phoenix-overlay";
+    document.body.appendChild(overlay);
+  }
+
+  overlay.innerHTML = `
+    <div class="hatch-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div class="hatch-egg" id="hatching-egg-element" style="font-size: 80px; filter: drop-shadow(0 0 15px #facc15); animation: eggWobble 1.2s infinite ease-in-out;">🥚</div>
+      <div class="phoenix-text" style="margin-top: 24px; font-size: 28px;">TRỨNG PHƯỢNG HOÀNG ĐANG NỞ...</div>
+    </div>
+  `;
+  
+  overlay.classList.add("active");
+  
+  // Phase 2: Egg cracks after 1.2s
+  setTimeout(() => {
+    const eggEl = overlay.querySelector("#hatching-egg-element");
+    if (eggEl) {
+      eggEl.textContent = "🐣";
+      eggEl.style.animation = "none";
+      eggEl.style.transform = "scale(1.4)";
+      overlay.querySelector(".phoenix-text").textContent = "PHƯỢNG HOÀNG LỬA CHÀO ĐỜI! 🐦‍🔥";
+      
+      // Spawn golden particles
+      const particleSymbols = ["✨", "🌟", "🔥", "💖"];
+      for (let i = 0; i < 20; i++) {
+        const p = document.createElement("span");
+        p.className = "phoenix-fire-particle";
+        p.textContent = particleSymbols[Math.floor(Math.random() * particleSymbols.length)];
+        p.style.left = `${Math.random() * 100 - 50}px`;
+        p.style.bottom = `40px`;
+        p.style.animationDelay = `${Math.random() * 0.5}s`;
+        p.style.animationDuration = `${Math.random() * 0.8 + 0.6}s`;
+        p.style.fontSize = `${Math.random() * 16 + 12}px`;
+        eggEl.appendChild(p);
+      }
+    }
+  }, 1200);
+
+  // Phase 3: Phoenix rises after 2.4s
+  setTimeout(() => {
+    const eggEl = overlay.querySelector("#hatching-egg-element");
+    if (eggEl) {
+      eggEl.textContent = "🐦‍🔥";
+      eggEl.style.transition = "all 0.8s cubic-bezier(0.25, 1, 0.5, 1)";
+      eggEl.style.transform = "translateY(-150px) scale(2.0)";
+      eggEl.style.filter = "drop-shadow(0 0 25px #ff5a00) drop-shadow(0 0 50px #ff0000)";
+    }
+  }, 2400);
+
+  // Close and clean up after 3.8s
+  setTimeout(() => {
+    overlay.classList.remove("active");
+    setTimeout(() => {
+      overlay.innerHTML = "";
+      updatePhoenixIndicator();
+    }, 500);
+  }, 3800);
+}
+
+function playHatchSound() {
+  try {
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const now = audioCtx.currentTime;
+    
+    // Chirp 1 (High pitch sweep)
+    const osc1 = audioCtx.createOscillator();
+    const gain1 = audioCtx.createGain();
+    osc1.type = "sine";
+    osc1.frequency.setValueAtTime(800, now);
+    osc1.frequency.exponentialRampToValueAtTime(2200, now + 0.12);
+    gain1.gain.setValueAtTime(0.08, now);
+    gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+    osc1.connect(gain1);
+    gain1.connect(audioCtx.destination);
+    
+    // Chirp 2
+    const osc2 = audioCtx.createOscillator();
+    const gain2 = audioCtx.createGain();
+    osc2.type = "sine";
+    osc2.frequency.setValueAtTime(900, now + 0.15);
+    osc2.frequency.exponentialRampToValueAtTime(2500, now + 0.15 + 0.12);
+    gain2.gain.setValueAtTime(0.08, now + 0.15);
+    gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.15 + 0.12);
+    osc2.connect(gain2);
+    gain2.connect(audioCtx.destination);
+
+    // Chirp 3 (Phoenix cry minor chime)
+    const osc3 = audioCtx.createOscillator();
+    const gain3 = audioCtx.createGain();
+    osc3.type = "triangle";
+    osc3.frequency.setValueAtTime(1200, now + 0.3);
+    osc3.frequency.exponentialRampToValueAtTime(3000, now + 0.3 + 0.25);
+    gain3.gain.setValueAtTime(0.06, now + 0.3);
+    gain3.gain.exponentialRampToValueAtTime(0.001, now + 0.3 + 0.25);
+    osc3.connect(gain3);
+    gain3.connect(audioCtx.destination);
+
+    osc1.start(now);
+    osc1.stop(now + 0.15);
+    osc2.start(now + 0.15);
+    osc2.stop(now + 0.3);
+    osc3.start(now + 0.3);
+    osc3.stop(now + 0.6);
+  } catch (e) {}
 }
