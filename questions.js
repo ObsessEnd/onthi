@@ -2635,7 +2635,7 @@ const QUESTIONS_DATA = [
       },
       {
         "key": "b",
-        "text": "This is a <br />sentence"
+        "text": "This is a &lt;br /&gt;sentence"
       },
       {
         "key": "c",
