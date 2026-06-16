@@ -1457,10 +1457,10 @@ function triggerPhoenixResurrection(callback) {
     const p = document.createElement("span");
     p.className = "phoenix-fire-particle";
     p.textContent = particleSymbols[Math.floor(Math.random() * particleSymbols.length)];
-    p.style.left = \`\${Math.random() * 260 + 20}px\`;
-    p.style.animationDelay = \`\${Math.random() * 1.5}s\`;
-    p.style.animationDuration = \`\${Math.random() * 1.2 + 0.8}s\`;
-    p.style.fontSize = \`\${Math.random() * 20 + 16}px\`;
+    p.style.left = `${Math.random() * 260 + 20}px`;
+    p.style.animationDelay = `${Math.random() * 1.5}s`;
+    p.style.animationDuration = `${Math.random() * 1.2 + 0.8}s`;
+    p.style.fontSize = `${Math.random() * 20 + 16}px`;
     particlesContainer.appendChild(p);
   }
   
