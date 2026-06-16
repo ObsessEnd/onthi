@@ -8,6 +8,8 @@ let currentIndex = 0; // Index in the active questions array
 let userAnswers = {};
 // Bookmarked question IDs set: { [originalQuestionId]: boolean }
 let bookmarks = {};
+// Questions that have been resurrected (given a second chance)
+let resurrectedQuestions = {};
 
 // Active filters: "all", "unanswered", "answered", "correct", "incorrect", "bookmarked"
 let activeFilter = "all";
@@ -165,6 +167,7 @@ function resetQuiz() {
   }
   userAnswers = {};
   bookmarks = {};
+  resurrectedQuestions = {};
   currentIndex = 0;
   activeFilter = "all";
   document.getElementById("filter-select").value = "all";
@@ -510,6 +513,27 @@ function selectAnswer(questionId, selectedKey, bypassCheck = false) {
   }
 
   const isCorrect = Array.isArray(q.correct) ? q.correct.includes(selectedKey) : selectedKey === q.correct;
+  
+  // Resurrection Easter Egg: when the user gets the question wrong for the first time
+  if (!isCorrect && !resurrectedQuestions[questionId]) {
+    resurrectedQuestions[questionId] = true;
+    
+    // Find the clicked option button and style it as wrong and disabled
+    const buttons = document.querySelectorAll(".option-btn");
+    buttons.forEach(btn => {
+      if (btn.getAttribute("onclick") && btn.getAttribute("onclick").includes(`'${selectedKey}'`)) {
+        btn.classList.add("selected-incorrect");
+        btn.disabled = true;
+      }
+    });
+    
+    // Trigger the premium phoenix resurrection screen
+    triggerPhoenixResurrection(() => {
+      // Keep options interactive so they can pick again
+    });
+    return;
+  }
+
   userAnswers[questionId] = {
     selectedKey: selectedKey,
     isCorrect: isCorrect
@@ -1384,4 +1408,119 @@ function triggerChooseQuicklyGhost() {
     ghost.style.transform = "translateY(0)";
     setTimeout(() => ghost.remove(), 400);
   }, 2800);
+}
+
+// ----------------------------------------------------
+// PHOENIX RESURRECTION EASTER EGG
+// ----------------------------------------------------
+
+function triggerPhoenixResurrection(callback) {
+  let overlay = document.getElementById("phoenix-resurrection-overlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.id = "phoenix-resurrection-overlay";
+    overlay.className = "phoenix-overlay";
+    document.body.appendChild(overlay);
+  }
+  
+  overlay.innerHTML = `
+    <div class="phoenix-container">
+      <div class="phoenix-bird">
+        <svg width="160" height="160" viewBox="0 0 100 100" fill="url(#fireGradientResurrect)">
+          <defs>
+            <linearGradient id="fireGradientResurrect" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="#ef4444" />
+              <stop offset="30%" stop-color="#f97316" />
+              <stop offset="70%" stop-color="#eab308" />
+              <stop offset="100%" stop-color="#fff" />
+            </linearGradient>
+            <filter id="glowResurrect" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="6" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+          <path d="M50 15 C42 32 25 38 2 32 C22 42 38 52 42 75 C45 62 47 52 50 46 C53 52 55 62 58 75 C62 52 78 42 98 32 C75 38 58 32 50 15 Z" filter="url(#glowResurrect)" />
+          <path d="M50 32 C46 39 40 42 32 45 C41 48 46 52 46 58 C47 52 49 48 50 42 Z" opacity="0.95" fill="#fff" />
+          <path d="M25 38 C14 46 3 43 0 40 C10 48 20 50 24 53 Z" />
+          <path d="M75 38 C86 46 97 43 100 40 C90 48 80 50 76 53 Z" />
+        </svg>
+      </div>
+      <div class="phoenix-particles" id="phoenix-fire-particles"></div>
+    </div>
+    <div class="phoenix-text">PHƯỢNG HOÀNG LỬA HỒI SINH! 🔥</div>
+    <div class="phoenix-subtext">Bạn được trao cơ hội thứ hai để làm lại câu này!</div>
+  `;
+  
+  const particlesContainer = overlay.querySelector("#phoenix-fire-particles");
+  const particleSymbols = ["🔥", "✨", "☄️", "💥"];
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement("span");
+    p.className = "phoenix-fire-particle";
+    p.textContent = particleSymbols[Math.floor(Math.random() * particleSymbols.length)];
+    p.style.left = \`\${Math.random() * 260 + 20}px\`;
+    p.style.animationDelay = \`\${Math.random() * 1.5}s\`;
+    p.style.animationDuration = \`\${Math.random() * 1.2 + 0.8}s\`;
+    p.style.fontSize = \`\${Math.random() * 20 + 16}px\`;
+    particlesContainer.appendChild(p);
+  }
+  
+  playResurrectionSound();
+  overlay.classList.add("active");
+  
+  setTimeout(() => {
+    overlay.classList.remove("active");
+    setTimeout(() => {
+      overlay.innerHTML = "";
+      if (callback) callback();
+    }, 500);
+  }, 2600);
+}
+
+function playResurrectionSound() {
+  try {
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const now = audioCtx.currentTime;
+    
+    const osc = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+    const filter = audioCtx.createBiquadFilter();
+    
+    osc.connect(filter);
+    filter.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    
+    osc.type = "sawtooth";
+    osc.frequency.setValueAtTime(180, now);
+    osc.frequency.exponentialRampToValueAtTime(1100, now + 1.6);
+    
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(350, now);
+    filter.frequency.exponentialRampToValueAtTime(3200, now + 1.6);
+    
+    gainNode.gain.setValueAtTime(0.01, now);
+    gainNode.gain.linearRampToValueAtTime(0.06, now + 0.6);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, now + 2.0);
+    
+    osc.start(now);
+    osc.stop(now + 2.0);
+    
+    // Play ascending major chord arpeggio
+    const chordNotes = [261.63, 329.63, 392.00, 523.25]; // C4, E4, G4, C5
+    chordNotes.forEach((freq, idx) => {
+      const o = audioCtx.createOscillator();
+      const g = audioCtx.createGain();
+      o.connect(g);
+      g.connect(audioCtx.destination);
+      o.type = "triangle";
+      o.frequency.setValueAtTime(freq, now + 0.3 + idx * 0.1);
+      o.frequency.exponentialRampToValueAtTime(freq * 1.5, now + 1.6);
+      
+      g.gain.setValueAtTime(0, now + 0.3 + idx * 0.1);
+      g.gain.linearRampToValueAtTime(0.04, now + 0.3 + idx * 0.1 + 0.2);
+      g.gain.exponentialRampToValueAtTime(0.001, now + 2.0);
+      
+      o.start(now + 0.3 + idx * 0.1);
+      o.stop(now + 2.0);
+    });
+  } catch (e) {}
 }
