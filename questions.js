@@ -2345,7 +2345,7 @@ const QUESTIONS_DATA = [
       },
       {
         "key": "b",
-        "text": "body {color: red;}"
+        "text": "body {color=red;}"
       },
       {
         "key": "c",
@@ -2631,7 +2631,7 @@ const QUESTIONS_DATA = [
     "options": [
       {
         "key": "a",
-        "text": "This is a sentence"
+        "text": "This is a <br />sentence"
       },
       {
         "key": "b",
