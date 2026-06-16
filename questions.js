@@ -3139,12 +3139,12 @@ const QUESTIONS_DATA = [
         "text": "text1  text2"
       }
     ],
-    "correct": "d",
+    "correct": "b",
     "explanations": {
       "a": "Phương án này chưa chính xác. Trình duyệt nén nhiều khoảng trắng thường thành 1 khoảng trắng duy nhất. Để hiện 2 khoảng trắng, ta phải dùng thực thể ký tự &nbsp;&nbsp; (hoặc dấu cách cứng trong một số phương án hiển thị).",
-      "b": "Phương án này chưa chính xác. Trình duyệt nén nhiều khoảng trắng thường thành 1 khoảng trắng duy nhất. Để hiện 2 khoảng trắng, ta phải dùng thực thể ký tự &nbsp;&nbsp; (hoặc dấu cách cứng trong một số phương án hiển thị).",
+      "b": "[Chủ đề: HTML Spaces &nbsp;] Trình duyệt nén nhiều khoảng trắng thường thành 1 khoảng trắng duy nhất. Để hiện 2 khoảng trắng, ta phải dùng thực thể ký tự &nbsp;&nbsp; (hoặc dấu cách cứng trong một số phương án hiển thị).",
       "c": "Phương án này chưa chính xác. Trình duyệt nén nhiều khoảng trắng thường thành 1 khoảng trắng duy nhất. Để hiện 2 khoảng trắng, ta phải dùng thực thể ký tự &nbsp;&nbsp; (hoặc dấu cách cứng trong một số phương án hiển thị).",
-      "d": "[Chủ đề: HTML Spaces &nbsp;] Trình duyệt nén nhiều khoảng trắng thường thành 1 khoảng trắng duy nhất. Để hiện 2 khoảng trắng, ta phải dùng thực thể ký tự &nbsp;&nbsp; (hoặc dấu cách cứng trong một số phương án hiển thị)."
+      "d": "Phương án này chưa chính xác. Trình duyệt nén nhiều khoảng trắng thường thành 1 khoảng trắng duy nhất. Để hiện 2 khoảng trắng, ta phải dùng thực thể ký tự &nbsp;&nbsp; (hoặc dấu cách cứng trong một số phương án hiển thị)."
     }
   },
   {
