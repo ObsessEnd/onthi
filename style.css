@@ -294,6 +294,7 @@ header {
   font-size: 20px;
   line-height: 1.6;
   font-weight: 600;
+  white-space: pre-wrap;
 }
 
 .options-list {
@@ -318,6 +319,7 @@ header {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   outline: none;
+  white-space: pre-wrap;
 }
 
 [data-theme="light"] .option-btn {
