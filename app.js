@@ -632,11 +632,7 @@ function escapeHTML(str) {
     .replace(/&lt;\/u&gt;/gi, "</u>")
     .replace(/&lt;code&gt;/gi, "<code>")
     .replace(/&lt;\/code&gt;/gi, "</code>")
-    .replace(/&lt;br\s*\/?&gt;/gi, "<br>")
-    .replace(/&lt;strong&gt;/gi, "<strong>")
-    .replace(/&lt;\/strong&gt;/gi, "</strong>")
-    .replace(/&lt;em&gt;/gi, "<em>")
-    .replace(/&lt;\/em&gt;/gi, "</em>");
+    .replace(/&lt;br\s*\/?&gt;/gi, "<br>");
 
   return escaped;
 }
