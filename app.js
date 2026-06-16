@@ -1481,46 +1481,150 @@ function playResurrectionSound() {
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     const now = audioCtx.currentTime;
     
-    const osc = audioCtx.createOscillator();
-    const gainNode = audioCtx.createGain();
-    const filter = audioCtx.createBiquadFilter();
+    // Main Master Gain (cực lớn theo yêu cầu của user)
+    const masterGain = audioCtx.createGain();
+    masterGain.gain.setValueAtTime(0.4, now); // 0.4 gain is very loud and dramatic
+    masterGain.connect(audioCtx.destination);
     
-    osc.connect(filter);
-    filter.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
+    // ----------------------------------------------------
+    // 1. TIẾNG LỬA GẦM RÚ (Fire Roar - Filtered Noise)
+    // ----------------------------------------------------
+    const bufferSize = audioCtx.sampleRate * 2.5; 
+    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = Math.random() * 2 - 1;
+    }
     
-    osc.type = "sawtooth";
-    osc.frequency.setValueAtTime(180, now);
-    osc.frequency.exponentialRampToValueAtTime(1100, now + 1.6);
+    const noiseNode = audioCtx.createBufferSource();
+    noiseNode.buffer = buffer;
     
-    filter.type = "lowpass";
-    filter.frequency.setValueAtTime(350, now);
-    filter.frequency.exponentialRampToValueAtTime(3200, now + 1.6);
+    const fireFilter = audioCtx.createBiquadFilter();
+    fireFilter.type = "bandpass";
+    fireFilter.frequency.setValueAtTime(160, now);
+    fireFilter.Q.setValueAtTime(1.2, now);
     
-    gainNode.gain.setValueAtTime(0.01, now);
-    gainNode.gain.linearRampToValueAtTime(0.06, now + 0.6);
-    gainNode.gain.exponentialRampToValueAtTime(0.001, now + 2.0);
+    // LFO modulate để tạo độ bập bùng của ngọn lửa
+    const lfo = audioCtx.createOscillator();
+    const lfoGain = audioCtx.createGain();
+    lfo.type = "sine";
+    lfo.frequency.setValueAtTime(8, now); // 8 Hz bập bùng
+    lfoGain.gain.setValueAtTime(60, now); 
     
-    osc.start(now);
-    osc.stop(now + 2.0);
+    lfo.connect(lfoGain);
+    lfoGain.connect(fireFilter.frequency);
     
-    // Play ascending major chord arpeggio
-    const chordNotes = [261.63, 329.63, 392.00, 523.25]; // C4, E4, G4, C5
+    const fireGain = audioCtx.createGain();
+    fireGain.gain.setValueAtTime(0, now);
+    fireGain.gain.linearRampToValueAtTime(1.0, now + 0.3); // Bùng lên mạnh mẽ
+    fireGain.gain.exponentialRampToValueAtTime(0.001, now + 2.4);
+    
+    noiseNode.connect(fireFilter);
+    fireFilter.connect(fireGain);
+    fireGain.connect(masterGain);
+    
+    lfo.start(now);
+    noiseNode.start(now);
+    lfo.stop(now + 2.5);
+    noiseNode.stop(now + 2.5);
+
+    // ----------------------------------------------------
+    // 2. TIẾNG LỬA TÁCH TÁCH (Fire Crackles - High Click Impulses)
+    // ----------------------------------------------------
+    for (let i = 0; i < 24; i++) {
+      const clickTime = now + Math.random() * 1.8;
+      const clickOsc = audioCtx.createOscillator();
+      const clickGain = audioCtx.createGain();
+      clickOsc.type = "triangle";
+      clickOsc.frequency.setValueAtTime(1800 + Math.random() * 3200, clickTime);
+      
+      clickGain.gain.setValueAtTime(0, clickTime);
+      clickGain.gain.linearRampToValueAtTime(0.4, clickTime + 0.002);
+      clickGain.gain.exponentialRampToValueAtTime(0.001, clickTime + 0.025);
+      
+      clickOsc.connect(clickGain);
+      clickGain.connect(masterGain);
+      
+      clickOsc.start(clickTime);
+      clickOsc.stop(clickTime + 0.04);
+    }
+
+    // ----------------------------------------------------
+    // 3. TIẾNG PHƯỢNG HOÀNG KÊU (Phoenix Screech - Ring Modulated Sawtooth)
+    // ----------------------------------------------------
+    const pOsc1 = audioCtx.createOscillator();
+    const pOsc2 = audioCtx.createOscillator();
+    const pGain = audioCtx.createGain();
+    
+    pOsc1.type = "sawtooth";
+    pOsc1.frequency.setValueAtTime(800, now + 0.15);
+    pOsc1.frequency.exponentialRampToValueAtTime(1600, now + 0.35);
+    pOsc1.frequency.linearRampToValueAtTime(750, now + 1.1);
+    pOsc1.frequency.exponentialRampToValueAtTime(80, now + 1.7);
+    
+    // LFO siêu nhanh (vibrato/screech texture)
+    const screechLfo = audioCtx.createOscillator();
+    const screechLfoGain = audioCtx.createGain();
+    screechLfo.type = "sine";
+    screechLfo.frequency.setValueAtTime(50, now); // 50Hz để tạo giọng rít
+    screechLfoGain.gain.setValueAtTime(200, now);
+    
+    screechLfo.connect(screechLfoGain);
+    screechLfoGain.connect(pOsc1.frequency);
+    
+    pOsc2.type = "triangle";
+    pOsc2.frequency.setValueAtTime(1200, now + 0.15); // Quãng năm hoàn hảo
+    pOsc2.frequency.exponentialRampToValueAtTime(2400, now + 0.35);
+    pOsc2.frequency.linearRampToValueAtTime(1125, now + 1.1);
+    pOsc2.frequency.exponentialRampToValueAtTime(120, now + 1.7);
+    screechLfoGain.connect(pOsc2.frequency);
+
+    pGain.gain.setValueAtTime(0, now);
+    pGain.gain.linearRampToValueAtTime(0.85, now + 0.15 + 0.1); // Tiếng thét lớn khởi đầu
+    pGain.gain.linearRampToValueAtTime(0.55, now + 0.8);
+    pGain.gain.exponentialRampToValueAtTime(0.001, now + 1.7);
+    
+    const screechFilter = audioCtx.createBiquadFilter();
+    screechFilter.type = "bandpass";
+    screechFilter.frequency.setValueAtTime(1300, now);
+    screechFilter.frequency.exponentialRampToValueAtTime(650, now + 1.5);
+    screechFilter.Q.setValueAtTime(1.8, now);
+    
+    pOsc1.connect(screechFilter);
+    pOsc2.connect(screechFilter);
+    screechFilter.connect(pGain);
+    pGain.connect(masterGain);
+    
+    screechLfo.start(now);
+    pOsc1.start(now + 0.15);
+    pOsc2.start(now + 0.15);
+    
+    screechLfo.stop(now + 1.75);
+    pOsc1.stop(now + 1.75);
+    pOsc2.stop(now + 1.75);
+    
+    // ----------------------------------------------------
+    // 4. LỚP HỢP ÂM MAGICAL (Magical Major Chord)
+    // ----------------------------------------------------
+    const chordNotes = [261.63, 329.63, 392.00, 523.25, 659.25]; // Đô trưởng
     chordNotes.forEach((freq, idx) => {
       const o = audioCtx.createOscillator();
       const g = audioCtx.createGain();
       o.connect(g);
-      g.connect(audioCtx.destination);
-      o.type = "triangle";
-      o.frequency.setValueAtTime(freq, now + 0.3 + idx * 0.1);
-      o.frequency.exponentialRampToValueAtTime(freq * 1.5, now + 1.6);
+      g.connect(masterGain);
+      o.type = "sine";
+      o.frequency.setValueAtTime(freq, now + 0.35 + idx * 0.08);
+      o.frequency.exponentialRampToValueAtTime(freq * 1.4, now + 1.8);
       
-      g.gain.setValueAtTime(0, now + 0.3 + idx * 0.1);
-      g.gain.linearRampToValueAtTime(0.04, now + 0.3 + idx * 0.1 + 0.2);
-      g.gain.exponentialRampToValueAtTime(0.001, now + 2.0);
+      g.gain.setValueAtTime(0, now + 0.35 + idx * 0.08);
+      g.gain.linearRampToValueAtTime(0.18, now + 0.35 + idx * 0.08 + 0.15);
+      g.gain.exponentialRampToValueAtTime(0.001, now + 2.2);
       
-      o.start(now + 0.3 + idx * 0.1);
-      o.stop(now + 2.0);
+      o.start(now + 0.35 + idx * 0.08);
+      o.stop(now + 2.2);
     });
-  } catch (e) {}
+
+  } catch (e) {
+    console.error("Audio Context Error: ", e);
+  }
 }
