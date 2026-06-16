@@ -1997,11 +1997,11 @@ const QUESTIONS_DATA = [
       },
       {
         "key": "b",
-        "text": "This is a sentence"
+        "text": "This is a <br />sentence"
       },
       {
         "key": "c",
-        "text": "This is a sentence"
+        "text": "This is a &lt;i&gt;sentence&lt;/i&gt;"
       },
       {
         "key": "d",
@@ -2063,7 +2063,7 @@ const QUESTIONS_DATA = [
       },
       {
         "key": "d",
-        "text": "// ..."
+        "text": "<!-- ... -->"
       }
     ],
     "correct": "c",
@@ -2403,7 +2403,7 @@ const QUESTIONS_DATA = [
       },
       {
         "key": "b",
-        "text": "1-10"
+        "text": "1 - 10"
       },
       {
         "key": "c",
@@ -2733,12 +2733,12 @@ const QUESTIONS_DATA = [
         "text": "abd"
       }
     ],
-    "correct": "a",
+    "correct": "d",
     "explanations": {
-      "a": "[Chủ đề: HTML Invalid Tags Rendering] Các thẻ tùy biến không hợp lệ (như <c>) sẽ bị trình duyệt bỏ qua và chỉ hiển thị phần chữ nội dung bên trong là abcd.",
-      "b": "Phương án này chưa chính xác. Các thẻ tùy biến không hợp lệ (như <c>) sẽ bị trình duyệt bỏ qua và chỉ hiển thị phần chữ nội dung bên trong là abcd.",
-      "c": "Phương án này chưa chính xác. Các thẻ tùy biến không hợp lệ (như <c>) sẽ bị trình duyệt bỏ qua và chỉ hiển thị phần chữ nội dung bên trong là abcd.",
-      "d": "Phương án này chưa chính xác. Các thẻ tùy biến không hợp lệ (như <c>) sẽ bị trình duyệt bỏ qua và chỉ hiển thị phần chữ nội dung bên trong là abcd."
+      "a": "Phương án này chưa chính xác. Trình duyệt bỏ qua thẻ <c> và </c> (không hiển thị thẻ) nên chữ c nằm bên trong tag brackets không được hiển thị.",
+      "b": "Phương án này chưa chính xác. Trình duyệt bỏ qua các thẻ không hợp lệ chứ không gây lỗi ngắt biên dịch hay hiển thị.",
+      "c": "Phương án này chưa chính xác. Các dấu ngoặc nhọn < > của thẻ tùy biến không được hiển thị ra màn hình trừ khi được viết dưới dạng thực thể HTML.",
+      "d": "[Chủ đề: HTML Invalid Tags Rendering] Các thẻ tùy biến không hợp lệ (như <c>) sẽ bị trình duyệt bỏ qua (không hiển thị tag name và cặp ngoặc nhọn), và chỉ hiển thị phần chữ nội dung bên ngoài/bên trong là abd."
     }
   },
   {
@@ -3139,12 +3139,12 @@ const QUESTIONS_DATA = [
         "text": "text1  text2"
       }
     ],
-    "correct": "b",
+    "correct": "d",
     "explanations": {
       "a": "Phương án này chưa chính xác. Trình duyệt nén nhiều khoảng trắng thường thành 1 khoảng trắng duy nhất. Để hiện 2 khoảng trắng, ta phải dùng thực thể ký tự &nbsp;&nbsp; (hoặc dấu cách cứng trong một số phương án hiển thị).",
-      "b": "[Chủ đề: HTML Spaces &nbsp;] Trình duyệt nén nhiều khoảng trắng thường thành 1 khoảng trắng duy nhất. Để hiện 2 khoảng trắng, ta phải dùng thực thể ký tự &nbsp;&nbsp; (hoặc dấu cách cứng trong một số phương án hiển thị).",
+      "b": "Phương án này chưa chính xác. Trình duyệt nén nhiều khoảng trắng thường thành 1 khoảng trắng duy nhất. Để hiện 2 khoảng trắng, ta phải dùng thực thể ký tự &nbsp;&nbsp; (hoặc dấu cách cứng trong một số phương án hiển thị).",
       "c": "Phương án này chưa chính xác. Trình duyệt nén nhiều khoảng trắng thường thành 1 khoảng trắng duy nhất. Để hiện 2 khoảng trắng, ta phải dùng thực thể ký tự &nbsp;&nbsp; (hoặc dấu cách cứng trong một số phương án hiển thị).",
-      "d": "Phương án này chưa chính xác. Trình duyệt nén nhiều khoảng trắng thường thành 1 khoảng trắng duy nhất. Để hiện 2 khoảng trắng, ta phải dùng thực thể ký tự &nbsp;&nbsp; (hoặc dấu cách cứng trong một số phương án hiển thị)."
+      "d": "[Chủ đề: HTML Spaces &nbsp;] Trình duyệt nén nhiều khoảng trắng thường thành 1 khoảng trắng duy nhất. Để hiện 2 khoảng trắng, ta phải dùng thực thể ký tự &nbsp;&nbsp; (hoặc dấu cách cứng trong một số phương án hiển thị)."
     }
   },
   {
