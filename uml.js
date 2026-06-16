@@ -340,24 +340,11 @@ function switchMode(mode) {
 function updateUmlTabVisibility() {
   const tabUml = document.getElementById("tab-uml-btn");
   const tabBar = document.querySelector(".tab-bar");
-  
-  // Read value from app.js or localStorage
-  const isSeriousMode = typeof isTrollDisabled !== "undefined" ? isTrollDisabled : (localStorage.getItem("onthi_quiz_troll_disabled") === "true");
-  
-  if (tabUml) {
-    if (isSeriousMode) {
-      tabUml.style.display = "";
-      if (tabBar) tabBar.style.display = "flex";
-    } else {
-      tabUml.style.display = "none";
-      if (tabBar) tabBar.style.display = "none";
-      
-      // If we are currently showing UML mode, force back to quiz mode
-      const umlContainer = document.getElementById("uml-mode-container");
-      if (umlContainer && umlContainer.style.display !== "none") {
-        switchMode("quiz");
-      }
-    }
+  if (tabUml) tabUml.style.display = "none";
+  if (tabBar) tabBar.style.display = "none";
+  const umlContainer = document.getElementById("uml-mode-container");
+  if (umlContainer && umlContainer.style.display !== "none") {
+    switchMode("quiz");
   }
 }
 

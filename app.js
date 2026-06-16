@@ -370,7 +370,7 @@ function renderQuestionCard() {
     
     if (isAnswered) {
       const isSelected = answer.selectedKey === opt.key;
-      const isCorrectOpt = opt.key === q.correct;
+      const isCorrectOpt = Array.isArray(q.correct) ? q.correct.includes(opt.key) : opt.key === q.correct;
       
       if (isSelected) {
         buttonClass = answer.isCorrect ? "selected-correct" : "selected-incorrect";
@@ -398,33 +398,52 @@ function renderQuestionCard() {
     const isCorrect = answer.isCorrect;
     const boxClass = isCorrect ? "correct" : "incorrect";
     const titleText = isCorrect ? "🎉 Chính Xác!" : "❌ Chưa Chính Xác!";
-    const correctOptText = q.options.find(o => o.key === q.correct)?.text || "";
+    
+    let correctLabels = [];
+    let correctOptTexts = [];
+    if (Array.isArray(q.correct)) {
+      q.correct.forEach(key => {
+        const idx = q.options.findIndex(opt => opt.key === key);
+        if (idx !== -1) {
+          correctLabels.push(String.fromCharCode(65 + idx));
+          correctOptTexts.push(q.options[idx].text);
+        }
+      });
+    } else {
+      const idx = q.options.findIndex(opt => opt.key === q.correct);
+      if (idx !== -1) {
+        correctLabels.push(String.fromCharCode(65 + idx));
+        correctOptTexts.push(q.options[idx].text);
+      }
+    }
+    const correctLabel = correctLabels.join(", ");
+    const correctOptText = correctOptTexts.map((txt, i) => `${correctLabels[i]}. ${txt}`).join(" và ");
+
     const selectedOptText = q.options.find(o => o.key === answer.selectedKey)?.text || "";
 
     const selectedIndex = q.options.findIndex(opt => opt.key === answer.selectedKey);
     const selectedLabel = String.fromCharCode(65 + selectedIndex); // A, B, C, D
-    
-    const correctIndex = q.options.findIndex(opt => opt.key === q.correct);
-    const correctLabel = String.fromCharCode(65 + correctIndex); // A, B, C, D
 
     // Formulate feedback
     let feedbackDetail = "";
     if (isCorrect) {
-      feedbackDetail = `Bạn đã chọn phương án đúng: <strong>${selectedLabel}. ${escapeHTML(correctOptText)}</strong>.`;
+      feedbackDetail = `Bạn đã chọn phương án đúng: <strong>${selectedLabel}. ${escapeHTML(selectedOptText)}</strong>.`;
     } else {
-      feedbackDetail = `Bạn đã chọn phương án <strong>${selectedLabel}. ${escapeHTML(selectedOptText)}</strong>. <br>Đáp án đúng là <strong>${correctLabel}. ${escapeHTML(correctOptText)}</strong>.`;
+      feedbackDetail = `Bạn đã chọn phương án <strong>${selectedLabel}. ${escapeHTML(selectedOptText)}</strong>. <br>Đáp án đúng là <strong>${correctOptText}</strong>.`;
     }
 
     // Construct explanations detail
     let explanationHTMLDesc = "";
+    const firstCorrectKey = Array.isArray(q.correct) ? q.correct[0] : q.correct;
+    const correctExplanation = q.explanations[firstCorrectKey] || "";
+    
     if (isCorrect) {
       explanationHTMLDesc = `
         <div class="explanation-desc">
-          <strong>Giải thích chi tiết:</strong> ${escapeHTML(q.explanations[q.correct] || "")}
+          <strong>Giải thích chi tiết:</strong> ${escapeHTML(correctExplanation)}
         </div>
       `;
     } else {
-      const correctExplanation = q.explanations[q.correct] || "";
       const selectedExplanation = q.explanations[answer.selectedKey] || "";
       
       explanationHTMLDesc = `
@@ -432,7 +451,8 @@ function renderQuestionCard() {
           <strong>Giải thích đáp án đúng (${correctLabel}):</strong> ${escapeHTML(correctExplanation)}
         </div>
       `;
-      if (selectedExplanation && answer.selectedKey !== q.correct) {
+      const isActuallyCorrect = Array.isArray(q.correct) ? q.correct.includes(answer.selectedKey) : answer.selectedKey === q.correct;
+      if (selectedExplanation && !isActuallyCorrect) {
         explanationHTMLDesc += `
           <div class="explanation-desc" style="opacity: 0.95; font-size: 0.95em; border-top: 1px dashed var(--border); padding-top: 8px; margin-top: 8px; font-style: normal;">
             <strong>Giải thích phương án bạn chọn (${selectedLabel}):</strong> ${escapeHTML(selectedExplanation)}
@@ -489,7 +509,7 @@ function selectAnswer(questionId, selectedKey, bypassCheck = false) {
     return;
   }
 
-  const isCorrect = selectedKey === q.correct;
+  const isCorrect = Array.isArray(q.correct) ? q.correct.includes(selectedKey) : selectedKey === q.correct;
   userAnswers[questionId] = {
     selectedKey: selectedKey,
     isCorrect: isCorrect
@@ -595,12 +615,30 @@ function handleFilterChange(e) {
 // ----------------------------------------------------
 function escapeHTML(str) {
   if (typeof str !== "string") return "";
-  return str
+  let escaped = str
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+
+  // Restore safe HTML tags for styling/formatting
+  escaped = escaped
+    .replace(/&lt;sup&gt;/gi, "<sup>")
+    .replace(/&lt;\/sup&gt;/gi, "</sup>")
+    .replace(/&lt;sub&gt;/gi, "<sub>")
+    .replace(/&lt;\/sub&gt;/gi, "</sub>")
+    .replace(/&lt;u&gt;/gi, "<u>")
+    .replace(/&lt;\/u&gt;/gi, "</u>")
+    .replace(/&lt;code&gt;/gi, "<code>")
+    .replace(/&lt;\/code&gt;/gi, "</code>")
+    .replace(/&lt;br\s*\/?&gt;/gi, "<br>")
+    .replace(/&lt;strong&gt;/gi, "<strong>")
+    .replace(/&lt;\/strong&gt;/gi, "</strong>")
+    .replace(/&lt;em&gt;/gi, "<em>")
+    .replace(/&lt;\/em&gt;/gi, "</em>");
+
+  return escaped;
 }
 
 // Custom toast notifications
@@ -1254,9 +1292,9 @@ window.addEventListener("DOMContentLoaded", () => {
             const proctor = document.querySelector(".strict-proctor");
             if (proctor) proctor.remove();
           }
-          showNotification("Chế độ Học Tập Nghiêm Túc đã kích hoạt! 📖 (Đã tắt Easter Eggs & Trolls, đã hiện Tự Luận UML)");
+          showNotification("Chế độ Học Tập Nghiêm Túc đã kích hoạt! 📖 (Đã tắt Easter Eggs & Trolls)");
         } else {
-          showNotification("Chế độ Học Tập Vui Vẻ đã kích hoạt! 🎉 (Đã bật lại Easter Eggs & Trolls, đã ẩn Tự Luận UML)");
+          showNotification("Chế độ Học Tập Vui Vẻ đã kích hoạt! 🎉 (Đã bật lại Easter Eggs & Trolls)");
           // Restart proctor timer if current question is unanswered
           const filtered = getFilteredQuestions();
           if (filtered.length > 0 && currentIndex < filtered.length) {
